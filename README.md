@@ -18,7 +18,10 @@ loom: https://www.loom.com/share/bb31aae084174736a107ca5b2cdf77f0
 
 1. npm install storybook-addon-anima-internal
 2. add to main.js file under addons array: "storybook-addon-anima-internal"
-3. add to `.env` file `STORYBOOK_X_API_TOKEN={ANIMA TOKEN}`
+3. add to `.env` file with:
+```
+STORYBOOK_X_API_TOKEN={ANIMA TOKEN}
+```
 4. you should see the addon now
 5. some modifications you have to do:
     a. in preview.js file expose the packageJson + add widget library data

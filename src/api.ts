@@ -1,37 +1,36 @@
 const CONFIG = require("./config");
 
 class AnimaAPI {
-  host = `${CONFIG.hostUrl}`;
-  defaultHeaders = {
+  #host = `${CONFIG.hostUrl}`;
+  #headers = {
     "Content-Type": "application/json",
     "X-API-Token": process.env.STORYBOOK_X_API_TOKEN,
   };
 
-  constructor() {}
-
   POST = async (path: string, body: any) => {
     const reqObj = {
       method: "POST",
-      headers: this.defaultHeaders,
+      headers: this.#headers,
       body: JSON.stringify(body),
     };
 
-    const url = `${this.host}${path}`;
-    console.log(`calling ${url} with:`,reqObj,)
-    let response = await fetch(url, reqObj);
+    const url = `${this.#host}${path}`;
+    console.log(`calling ${url} with:`, reqObj);
+
+    const response = await fetch(url, reqObj);
     if (response.status == 200) {
-      let json = await response.json();
+      const json = await response.json();
       return json;
     } else {
-      console.log(`ERROR ${url} > `, response);
-      let json = await response.json();
-      if (json.error) {
-        console.error("error in api");
-        return "error";
-      } else {
-        console.error("error in api");
-        return "error";
+      console.error(`ERROR ${url} > `, response);
+
+      try {
+        console.error(await response.json());
+      } catch {
+        console.error(await response.text());
       }
+
+      return "error";
     }
   };
 
