@@ -1,7 +1,5 @@
-const CONFIG = require("./config");
-
 class AnimaAPI {
-  #host = `${CONFIG.hostUrl}`;
+  #host = process.env.STORYBOOK_HOST_URL;
   #headers = {
     "Content-Type": "application/json",
     "X-API-Token": process.env.STORYBOOK_X_API_TOKEN,

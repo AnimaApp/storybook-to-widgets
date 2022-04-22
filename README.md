@@ -20,6 +20,7 @@ loom: https://www.loom.com/share/bb31aae084174736a107ca5b2cdf77f0
 2. add to main.js file under addons array: "storybook-addon-anima-internal"
 3. add to `.env` file with:
 ```
+STORYBOOK_HOST_URL={ANIMA HOST URL}
 STORYBOOK_X_API_TOKEN={ANIMA TOKEN}
 ```
 4. you should see the addon now
