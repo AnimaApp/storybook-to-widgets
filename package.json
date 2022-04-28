@@ -39,6 +39,11 @@
     "release": "yarn build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.mjs"
   },
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "antd": "^4.19.1",
+    "lodash.startcase": "^4.4.0"
+  },
   "devDependencies": {
     "@anima/story-code-parser": "^1.0.15",
     "@babel/cli": "^7.12.1",
@@ -91,10 +96,5 @@
       "angular"
     ],
     "icon": "https://a.storyblok.com/f/89137/x/e1adbda50a/anima-logo.svg"
-  },
-  "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "antd": "^4.19.1",
-    "lodash.startcase": "^4.4.0"
   }
 }
