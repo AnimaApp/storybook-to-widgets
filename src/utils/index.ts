@@ -4,4 +4,3 @@ export {
   createCodeTemplateCompound,
 } from "./codeTemplateHelper";
 export type { UserParam } from "./userParamsHelper";
-export default {};

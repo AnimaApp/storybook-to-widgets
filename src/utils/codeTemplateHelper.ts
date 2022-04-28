@@ -18,7 +18,6 @@ export const createCodeTemplate = (
   codePrefix += "\r\nconst Example = ";
   const codeAffix =
     '\r\n;\r\nconst args = <%-params%>;\r\n\r\n\r\nReactDOM.render(<Example {...args} />, document.querySelector(".${nodeClass}"));';
-  // @ts-ignore
   let codeTemplate = codePrefix + storySource.source + codeAffix;
 
   return codeTemplate;

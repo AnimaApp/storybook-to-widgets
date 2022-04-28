@@ -1,11 +1,6 @@
 import { Story, ArgTypes, API } from "@storybook/api";
 import startCase from "lodash.startcase";
 import { UserParam, createUserParams } from "../utils/index";
-import {
-  createStoryCode,
-  IStory,
-  StoryCompiler,
-} from "@anima/story-code-parser";
 
 type StoriesCollection = { [key: string]: Story };
 
@@ -72,7 +67,7 @@ const getStoryInfo = (story: Story, sbApi: API): StoryInfo => {
   const titleArg = story?.parameters?.titleArg;
   const layout = story?.parameters?.layout;
 
-  // @ts-ignore
+  // @ts-expect-error
   const title = story?.title ? story?.title : "";
 
   let subStoriesNames: Set<string> = new Set();

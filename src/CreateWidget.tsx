@@ -6,7 +6,6 @@ import {
   useGlobals,
   useChannel,
   Story,
-  useStorybookState,
 } from "@storybook/api";
 import { IconButton } from "@storybook/components";
 import { EVENTS } from "./constants";
@@ -66,14 +65,13 @@ const createWidgetApi = async (
         return { ...params, story_id: storyId };
       }),
       custom_css: widgetStory?.custom_css,
-      // @ts-ignore
       name: widgetStory.title,
       description: widgetStory.description,
       widget_library_name: libraryName,
     };
 
     if (isCompoundStory) {
-      // @ts-ignore
+      // @ts-expect-error
       body.root_story = widgetStory?.id;
     }
 

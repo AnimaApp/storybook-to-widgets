@@ -22,10 +22,6 @@ export const withArgsMapping = (mapping: {
             return [key, mappingFunc(value)];
           }
 
-          // Causes issues with "doc" panel
-          // if (typeof value === "object") {
-          //   return [key, applyMapping(value, mapping)];
-          // }
           return [key, value];
         })
       );
