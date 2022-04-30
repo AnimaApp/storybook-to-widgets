@@ -5,7 +5,7 @@ import { SimpleMenuItem } from "./MenuItem.stories";
 import { SimpleMenuItemGroup } from "./MenuItemGroup.stories";
 
 export default {
-  title: "Menu",
+  title: "Vertical menu/Menu",
   component: Antd.Menu,
   parameters: {
     docs: {

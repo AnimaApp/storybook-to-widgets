@@ -4,7 +4,7 @@ import { SimpleMenuItem } from "./MenuItem.stories";
 const keyTransform = "<%- `\"g${(Math.floor(Math.random() * 1000) + 1).toString()}\"` %>";
 
 export default {
-  title: "MenuItemGroup",
+  title: "Vertical menu/MenuItemGroup",
   component: Antd.Menu.ItemGroup,
   parameters: {
     docs: {

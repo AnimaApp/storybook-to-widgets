@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useGlobals } from "@storybook/api";
+import { useStorybookApi, Story } from "@storybook/api";
 import { IconButton } from "@storybook/components";
 import AnimaAPI from "./api";
+import getPackageJsonFromStory from "./utils/getPackageJsonFromStory";
+import getMetadataFromStory from "./utils/getMetadataFromStory";
 
 const createLibraryApi = async (library: any, dependencies: any) => {
   try {
@@ -30,12 +32,8 @@ const createLibraryApi = async (library: any, dependencies: any) => {
 };
 
 const CreateLibrary = () => {
+  const sbApi = useStorybookApi();
   const [isCreatingLibrary, setIsCreatingLibrary] = useState(false);
-  const [{ packageJson, library }] = useGlobals();
-  let dependencies = {};
-  if (packageJson) {
-    dependencies = packageJson.dependencies;
-  }
 
   return (
     <>
@@ -43,8 +41,12 @@ const CreateLibrary = () => {
         active={false}
         title="Create Library"
         onClick={async () => {
+          const currentStory = sbApi.getCurrentStoryData() as Story;
+          const packageJson = await getPackageJsonFromStory(currentStory);
+          const metadata = await getMetadataFromStory(currentStory);
+
           setIsCreatingLibrary(true);
-          await createLibraryApi(library, dependencies);
+          await createLibraryApi(metadata, packageJson.dependencies);
           setIsCreatingLibrary(false);
         }}
       >

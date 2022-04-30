@@ -39,8 +39,6 @@
     "release": "yarn build && auto shipit"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
-    "antd": "^4.19.1",
     "lodash.startcase": "^4.4.0"
   },
   "devDependencies": {
@@ -95,5 +93,8 @@
       "angular"
     ],
     "icon": "https://a.storyblok.com/f/89137/x/e1adbda50a/anima-logo.svg"
-  }
+  },
+  "workspaces": [
+    "widget-libraries/*"
+  ]
 }

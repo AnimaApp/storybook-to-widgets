@@ -7,7 +7,7 @@ const iconTransform = "<% if (param !== 'None') { %><AntDesignIcons.<%= param %>
 const keyTransform = "<%- `\"${(Math.floor(Math.random() * 1000) + 1).toString()}\"` %>";
 
 export default {
-  title: "MenuItem",
+  title: "Vertical menu/MenuItem",
   component: Antd.Menu.Item,
   parameters: {
     docs: {

@@ -3,7 +3,6 @@ import {
   useArgTypes,
   useStorybookApi,
   useParameter,
-  useGlobals,
   useChannel,
   Story,
 } from "@storybook/api";
@@ -12,6 +11,8 @@ import { EVENTS } from "./constants";
 import { StoryInfo, generateStoriesInfo } from "./code-generator";
 import { createCodeTemplate, createCodeTemplateCompound } from "./utils/index";
 import AnimaAPI from "./api";
+import getStoryDependencies from "./utils/getStoryDependencies";
+import getMetadataFromStory from "./utils/getMetadataFromStory";
 
 const createWidgetStoriesApi = async (
   storiesInfo: { [key: string]: StoryInfo },
@@ -45,7 +46,6 @@ const createWidgetStoriesApi = async (
 const createWidgetApi = async (
   widgetStory: StoryInfo,
   dependencies: any,
-  libraryName: any,
   isCompoundStory: boolean
 ) => {
   try {
@@ -56,6 +56,8 @@ const createWidgetApi = async (
       code_template = createCodeTemplate(widgetStory, dependencies);
     }
 
+    const [libraryName, widgetName] = widgetStory.title.split("/")
+
     let body = {
       source_type: "react",
       code_template,
@@ -65,7 +67,7 @@ const createWidgetApi = async (
         return { ...params, story_id: storyId };
       }),
       custom_css: widgetStory?.custom_css,
-      name: widgetStory.title,
+      name: widgetName,
       description: widgetStory.description,
       widget_library_name: libraryName,
     };
@@ -96,19 +98,11 @@ const CreateWidget = () => {
       console.log("Retrieved analyzed story", result),
   });
 
-  const [{ packageJson, library }] = useGlobals();
-  let dependencies = {};
-  if (packageJson) {
-    dependencies = packageJson.dependencies;
-    const exculdedDependencies: string[] = library?.["excluded_packages"];
-    dependencies = Object.fromEntries(
-      Object.entries(dependencies).filter(
-        ([key]) => !exculdedDependencies?.includes(key)
-      )
-    );
-  }
-
   const onCreateWidgetClick = async () => {
+    const currentStory = sbApi.getCurrentStoryData() as Story;
+    const metadata = await getMetadataFromStory(currentStory);
+    const dependencies = await getStoryDependencies(currentStory);
+
     setIsCreatingWidget(true);
     emit(EVENTS.ANALYZE_STORY_REQUEST);
 
@@ -122,10 +116,10 @@ const CreateWidget = () => {
     );
 
     if (isCompoundStory) {
-      await createWidgetStoriesApi(storiesInfo, library.name as string);
-      await createWidgetApi(rootStoryInfo, dependencies, library.name, true);
+      await createWidgetStoriesApi(storiesInfo, metadata.name as string);
+      await createWidgetApi(rootStoryInfo, dependencies, true);
     } else {
-      await createWidgetApi(rootStoryInfo, dependencies, library.name, false);
+      await createWidgetApi(rootStoryInfo, dependencies, false);
     }
 
     setIsCreatingWidget(false);
