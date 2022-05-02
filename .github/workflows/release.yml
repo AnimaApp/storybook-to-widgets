@@ -23,7 +23,8 @@ jobs:
           curl https://www.npmjs.com/install.sh | sudo bash && \
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc && \
           echo "@anima:registry=https://npm.animaapp.com/" >> ~/.npmrc && \
-          echo "//npm.animaapp.com/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc
+          echo "//npm.animaapp.com/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc && \
+          npm install
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
