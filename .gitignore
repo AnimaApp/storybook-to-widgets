@@ -5,6 +5,4 @@ build-storybook.log
 .DS_Store
 .env
 .history
-yarn-error.log
-yarn.lock
 .vscode
