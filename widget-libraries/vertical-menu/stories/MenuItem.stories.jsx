@@ -1,6 +1,7 @@
 import * as Antd from "antd";
 import React from "react";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
+import withIconMapped from "../decorators/withIconMapped";
 
 const options = ["None", ...Object.keys(AntDesignIcons)];
 const iconTransform = "<% if (param !== 'None') { %><AntDesignIcons.<%= param %> /><% } else { %> '' <% } %>";
@@ -36,7 +37,8 @@ export default {
     includeDivider: {
       description: "Divider",
     }
-  }
+  },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {

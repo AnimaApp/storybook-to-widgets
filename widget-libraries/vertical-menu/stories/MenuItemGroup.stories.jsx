@@ -1,5 +1,6 @@
 import * as Antd from "antd";
 import { SimpleMenuItem } from "./MenuItem.stories";
+import withIconMapped from "../decorators/withIconMapped";
 
 const keyTransform = "<%- `\"g${(Math.floor(Math.random() * 1000) + 1).toString()}\"` %>";
 
@@ -38,6 +39,7 @@ export default {
       storyInfo: SimpleMenuItem.storyInfo,
     },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {

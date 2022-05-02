@@ -3,6 +3,7 @@ import * as Antd from "antd";
 import "antd/dist/antd.css";
 import { SimpleMenuItem } from "./MenuItem.stories";
 import { SimpleMenuItemGroup } from "./MenuItemGroup.stories";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Vertical menu/Menu",
@@ -45,6 +46,7 @@ export default {
       options: ["dark", "light"],
     },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {

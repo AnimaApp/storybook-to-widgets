@@ -1,10 +1,13 @@
 import React from 'react';
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
+import { withArgsMapping } from "../../../src/decorators";
 
 const nameToIcon = (name: string) => {
-  // @ts-expect-error
   const Icon = AntDesignIcons[name];
   return Icon ? <Icon /> : <></>;
 };
 
-export const argsMapping = {iconName: nameToIcon};
+const argsMapping = { iconName: nameToIcon };
+const withIconMapped = withArgsMapping(argsMapping);
+
+export default withIconMapped;

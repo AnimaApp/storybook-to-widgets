@@ -8,7 +8,6 @@
  *
  * https://storybook.js.org/docs/react/writing-stories/decorators#gatsby-focus-wrapper
  */
-import { withStoryContainer, withArgsMapping } from "../decorators";
-import { argsMapping} from  "../argsMapping";
+import { withStoryContainer } from "../decorators";
 
-export const decorators = [withStoryContainer, withArgsMapping(argsMapping)];
+export const decorators = [withStoryContainer];

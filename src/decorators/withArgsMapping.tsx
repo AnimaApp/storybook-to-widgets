@@ -1,37 +1,36 @@
 import { DecoratorFunction } from "@storybook/addons";
-import React from "react";
 
-export type MappingFunction = (value: any) => any;
+export type MappingFunction = (value: any) => React.ReactChild;
+
+const deepApplyMap = (
+  object: { [key: string]: any },
+  mapping: { [key: string]: MappingFunction }
+): { [key: string]: any } => {
+  return Object.fromEntries(
+    Object.entries(object).map(([key, value]) => {
+      const mappingFunc = mapping[key];
+      if (mappingFunc) {
+        return [key, mappingFunc(value)];
+      }
+
+      if (typeof value === "object") {
+        return [key, deepApplyMap(value, mapping)];
+      }
+
+      return [key, value];
+    })
+  );
+};
 
 export const withArgsMapping = (mapping: {
   [key: string]: MappingFunction;
 }): DecoratorFunction => {
   return (story, context) => {
-    if (!mapping) {
-      return <>{story()}</>;
-    }
-
-    const applyMapping = (
-      object: { [key: string]: any },
-      mapping: { [key: string]: MappingFunction }
-    ): { [key: string]: any } => {
-      return Object.fromEntries(
-        Object.entries(object).map(([key, value]) => {
-          const mappingFunc = mapping[key];
-          if (mappingFunc) {
-            return [key, mappingFunc(value)];
-          }
-
-          return [key, value];
-        })
-      );
+    const updatedContext = {
+      ...context,
+      args: deepApplyMap(context.args, mapping),
     };
 
-    let args = { ...context?.args };
-    args = applyMapping(args, mapping);
-
-    console.log(args);
-    const updatedContext = { ...context, args };
-    return <>{story(updatedContext)}</>;
+    return story(updatedContext);
   };
 };
