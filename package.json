@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/AnimaApp/storybook-addon-internal"
   },
-  "author": "Adi Mor",
+  "author": "Anima App, Inc.",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
