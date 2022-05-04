@@ -19,12 +19,14 @@ const createWidgetStoriesApi = async (
   libraryName: string
 ) => {
   const stories = Object.values(storiesInfo).map((story) => {
+    const widgetName = story.title.split("/")[1];
+
     return {
       story_id: story?.id,
       name: story?.name,
       description: story?.description,
       title_arg: story?.titleArg,
-      default_arg_name: story?.title?.toLowerCase(),
+      default_arg_name: widgetName.toLowerCase(),
       source_type: "react",
       source: story?.source,
       sub_stories_ids: story?.subStoriesIds,
