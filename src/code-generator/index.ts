@@ -1,2 +1,2 @@
-export { generateStoriesInfo, retreiveAllStoriesFromArgs } from './codeGenerator';
-export type { StoryInfo } from './codeGenerator';
+export { generateStoriesInfo, retreiveAllStoriesFromArgs } from './storyInfo';
+export type { StoryInfo } from './storyInfo';
