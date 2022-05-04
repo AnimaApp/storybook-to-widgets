@@ -61,5 +61,5 @@ SimpleMenuItem.args = {
 
 SimpleMenuItem.storyInfo = {
   name: "SimpleMenuItem",
-  kind: "MenuItem",
+  kind: "Vertical menu/MenuItem",
 };

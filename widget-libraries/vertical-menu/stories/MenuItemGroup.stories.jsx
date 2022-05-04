@@ -64,5 +64,5 @@ SimpleMenuItemGroup.args = {
 };
 SimpleMenuItemGroup.storyInfo = {
   name: "SimpleMenuItemGroup",
-  kind: "MenuItemGroup",
+  kind: "Vertical menu/MenuItemGroup",
 };

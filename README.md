@@ -139,7 +139,7 @@ SimpleTestMenuItem.args = {
 };
 SimpleTestMenuItem.storyInfo = {
   name: "SimpleTestMenuItem",
-  kind: "TestMenuItem",
+  kind: "Vertical menu/TestMenuItem",
 };
 ```
 
