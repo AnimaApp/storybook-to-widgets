@@ -14,6 +14,10 @@ const deepApplyMap = (
       }
 
       if (typeof value === "object") {
+        if (Array.isArray(value)) {
+          return [key, value.map((item) => deepApplyMap(item, mapping))];
+        }
+
         return [key, deepApplyMap(value, mapping)];
       }
 
