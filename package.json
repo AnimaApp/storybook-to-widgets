@@ -39,10 +39,12 @@
     "release": "npm run build && auto shipit"
   },
   "dependencies": {
+    "@codemirror/lang-javascript": "^0.20.0",
+    "@uiw/react-codemirror": "^4.7.0",
     "lodash.startcase": "^4.4.0"
   },
   "devDependencies": {
-    "@anima/story-code-parser": "^1.0.15",
+    "@anima/story-code-parser": "1.0.25",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
