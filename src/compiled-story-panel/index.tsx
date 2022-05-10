@@ -1,13 +1,14 @@
 import React from "react";
-import ArgumentsTable from "./ArgumentsTable";
-import StoryCode from "./StoryCode";
+import useStoryCompiledCode from "../hooks/useStoryCompiledCode";
+import SandpackWrapper from "./SandpackWrapper";
 
 const CompiledStoryPanel = () => {
+  const storyCompiledCode = useStoryCompiledCode();
+
   return (
-    <div>
-      <ArgumentsTable />
-      <StoryCode />
-    </div>
+    <SandpackWrapper
+      storyCode={storyCompiledCode}
+    />
   );
 };
 

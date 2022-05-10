@@ -19,12 +19,18 @@ A **widget library** is a colection of widgets. For example, `Vertical Menu` and
 git clone git@github.com:AnimaApp/storybook-addon-internal.git
 ```
 
-2. Start the storybook server
+2. Install the dependencies (requires NPM version >= 8.3.0)
+
+```sh
+npm install
+```
+
+3. Start the storybook server
 ```sh
 npm start
 ```
 
-3. All widget libraries are a project present in the folder [`./widget-libraries`](./widget-libraries). Let's create a new one:
+4. All widget libraries are a project present in the folder [`./widget-libraries`](./widget-libraries). Let's create a new one:
 
 ```sh
 mkdir widget-libraries/sample
@@ -58,7 +64,7 @@ You can later add dependencies on `package.json`. For instance, if your story re
 
 The file `metadata.js` is used to configure how the widget library will be displayed and handled by Figma Plugin.
 
-4. The storybook stories are the widgets component itself available on Figma Plugin. All stories should be present in the folder `./widget-libraries/{library-name}/stories`. Let's create our first story:
+5. The storybook stories are the widgets component itself available on Figma Plugin. All stories should be present in the folder `./widget-libraries/{library-name}/stories`. Let's create our first story:
 
 ```sh
 mkdir widget-libraries/sample/stories

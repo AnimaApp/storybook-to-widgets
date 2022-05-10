@@ -1,8 +1,29 @@
 import { capitalize } from "../utils";
 
+export const createImports = (dependencies: string[]) => {
+  const code = dependencies
+    .map((dependency) => {
+      if (dependency.includes(".css")) {
+        return `import "${dependency}";`;
+      }
+
+      const dependencyImport =
+        "import * as " +
+        capitalize(dependency) +
+        ' from "' +
+        dependency +
+        '";';
+
+      return dependencyImport;
+    })
+    .join("\n");
+
+  return code;
+}
+
 export const createCodeTemplate = (
   storySource: any,
-  dependencies: any
+  dependencies: { [dependency: string]: unknown },
 ): any => {
   const importDependencyArray = Object.keys(dependencies);
   let codePrefix =
@@ -23,7 +44,7 @@ export const createCodeTemplate = (
   return codeTemplate;
 };
 
-export const createCodeTemplateCompound = (dependencies: any): any => {
+export const createCodeTemplateCompound = (dependencies: { [dependency: string]: unknown }): any => {
   const importDependencyArray = Object.keys(dependencies);
   let codePrefix =
     'import React from "react";\r\nimport ReactDOM from "react-dom";\r\n';

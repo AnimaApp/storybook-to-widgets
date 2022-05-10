@@ -1,13 +1,11 @@
-import React from "react";
 import { Story, useStorybookApi } from "@storybook/api";
 import {
   createStoryCode,
   StoryCompiler,
 } from "@anima/story-code-parser";
 import { generateStoriesInfo } from "../code-generator";
-import SyntaxHighlighting from "./SyntaxHighlighting";
 
-const StoryCode = () => {
+const useStoryCompiledCode = () => {
   const sbApi = useStorybookApi();
 
   const currentStoryData = sbApi.getCurrentStoryData() as Story;
@@ -37,11 +35,7 @@ const StoryCode = () => {
 
   const code = storyCompiler.evaluate(currentStoryData.args);
 
-  return (
-    <SyntaxHighlighting
-      code={code}
-    />
-  )
+  return code;
 };
 
-export default StoryCode;
+export default useStoryCompiledCode;
