@@ -26,8 +26,7 @@ const Template = (args) => (
     checked={args.checked}
     indeterminate={args.indeterminate}
     disabled={args.disabled}
-  >
-  </Antd.Checkbox>
+  ></Antd.Checkbox>
 );
 
 export const Simple = Template.bind({});

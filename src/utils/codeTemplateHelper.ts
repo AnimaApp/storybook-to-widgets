@@ -8,22 +8,18 @@ export const createImports = (dependencies: string[]) => {
       }
 
       const dependencyImport =
-        "import * as " +
-        capitalize(dependency) +
-        ' from "' +
-        dependency +
-        '";';
+        "import * as " + capitalize(dependency) + ' from "' + dependency + '";';
 
       return dependencyImport;
     })
     .join("\n");
 
   return code;
-}
+};
 
 export const createCodeTemplate = (
   storySource: any,
-  dependencies: { [dependency: string]: unknown },
+  dependencies: { [dependency: string]: unknown }
 ): any => {
   const importDependencyArray = Object.keys(dependencies);
   let codePrefix =
@@ -44,7 +40,9 @@ export const createCodeTemplate = (
   return codeTemplate;
 };
 
-export const createCodeTemplateCompound = (dependencies: { [dependency: string]: unknown }): any => {
+export const createCodeTemplateCompound = (dependencies: {
+  [dependency: string]: unknown;
+}): any => {
   const importDependencyArray = Object.keys(dependencies);
   let codePrefix =
     'import React from "react";\r\nimport ReactDOM from "react-dom";\r\n';

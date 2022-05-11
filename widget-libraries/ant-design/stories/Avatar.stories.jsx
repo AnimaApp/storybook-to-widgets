@@ -16,19 +16,19 @@ export default {
     },
     image: {
       description: "Image",
-      infotip: "Remove the URL to use Letter avatar"
+      infotip: "Remove the URL to use Letter avatar",
     },
     letterColor: {
       description: "Letter color",
-      infotip: "Remove image URL to use Letter avatar and adjust color"
+      infotip: "Remove image URL to use Letter avatar and adjust color",
     },
     backgroundColor: {
-      description: "Background"
+      description: "Background",
     },
     letter: {
       description: "Letter",
-      infotip: "Remove image URL to switch to Letter avatar"
-    }
+      infotip: "Remove image URL to switch to Letter avatar",
+    },
   },
 };
 

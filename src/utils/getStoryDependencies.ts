@@ -3,7 +3,9 @@ import getMetadataFromStory from "./getMetadataFromStory";
 import getPackageJsonFromStory from "./getPackageJsonFromStory";
 
 const getStoryDependencies = async (story: Story) => {
-  const { dependencies: allDependencies } = await getPackageJsonFromStory(story);
+  const { dependencies: allDependencies } = await getPackageJsonFromStory(
+    story
+  );
 
   const { excluded_packages = [] } = await getMetadataFromStory(story);
 

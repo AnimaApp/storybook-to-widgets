@@ -58,7 +58,7 @@ const createWidgetApi = async (
       code_template = createCodeTemplate(widgetStory, dependencies);
     }
 
-    const [libraryName, widgetName] = widgetStory.title.split("/")
+    const [libraryName, widgetName] = widgetStory.title.split("/");
 
     let body = {
       source_type: "react",

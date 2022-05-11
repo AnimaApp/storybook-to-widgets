@@ -18,7 +18,10 @@ const deepApplyMap = (
       // https://app.asana.com/0/1202114683897430/1202109279133823/f
       if (typeof value === "object" && deep < 1) {
         if (Array.isArray(value)) {
-          return [key, value.map((item) => deepApplyMap(item, mapping, deep + 1))];
+          return [
+            key,
+            value.map((item) => deepApplyMap(item, mapping, deep + 1)),
+          ];
         }
 
         return [key, deepApplyMap(value, mapping, deep + 1)];

@@ -5,11 +5,9 @@ import getPackageJsonFromStory from "../src/utils/getPackageJsonFromStory";
 describe(".getPackageJsonFromStory", () => {
   it("returns the package.json from the given story", async () => {
     // arrange
-    jest.mock(
-      "../../widget-libraries/dummy-library/package.json",
-      () => 42,
-      { virtual: true },
-    );
+    jest.mock("../../widget-libraries/dummy-library/package.json", () => 42, {
+      virtual: true,
+    });
     const mockStory = mock<Story>({
       parameters: {
         fileName: "dummy-library/stories/DummyWidget.stories.jsx",

@@ -16,14 +16,14 @@ describe(".getStoryDependencies", () => {
         () => ({
           dependencies,
         }),
-        { virtual: true },
+        { virtual: true }
       );
       jest.mock(
         "../../widget-libraries/dummy-library-1/metadata.js",
         () => ({
           excluded_packages: [],
         }),
-        { virtual: true },
+        { virtual: true }
       );
 
       const mockStory = mock<Story>({

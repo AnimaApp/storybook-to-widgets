@@ -4,8 +4,10 @@ import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import withIconMapped from "../decorators/withIconMapped";
 
 const options = ["None", ...Object.keys(AntDesignIcons)];
-const iconTransform = "<% if (param !== 'None') { %><AntDesignIcons.<%= param %> /><% } else { %> '' <% } %>";
-const keyTransform = "<%- `\"${(Math.floor(Math.random() * 1000) + 1).toString()}\"` %>";
+const iconTransform =
+  "<% if (param !== 'None') { %><AntDesignIcons.<%= param %> /><% } else { %> '' <% } %>";
+const keyTransform =
+  '<%- `"${(Math.floor(Math.random() * 1000) + 1).toString()}"` %>';
 
 export default {
   title: "Vertical menu/MenuItem",
@@ -17,14 +19,14 @@ export default {
       },
     },
     container: Antd.Menu,
-    titleArg: "itemTitle"
+    titleArg: "itemTitle",
   },
   argTypes: {
     iconName: {
       type: "options",
       options: options,
       description: "Icon",
-      transform: iconTransform
+      transform: iconTransform,
     },
     itemTitle: {
       description: "Title",
@@ -32,11 +34,11 @@ export default {
     itemKey: {
       description: "Key",
       hidden: true,
-      transform: keyTransform
+      transform: keyTransform,
     },
     includeDivider: {
       description: "Divider",
-    }
+    },
   },
   decorators: [withIconMapped],
 };

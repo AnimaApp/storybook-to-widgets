@@ -1,96 +1,94 @@
 import React from "react";
 import * as Recharts from "recharts";
 
-
-
 export default {
-    title: "Charts/PieChartInnerNumbers",
-    component: Recharts.PieChart,
-    parameters: {
-        docs: {
-            description: {
-                component: "",
-            },
-        },
+  title: "Charts/PieChartInnerNumbers",
+  component: Recharts.PieChart,
+  parameters: {
+    docs: {
+      description: {
+        component: "",
+      },
     },
-    argTypes: {
-        ShowLegend: { description: 'Show Legend' },
-        ShowTooltip: { description: 'Show Tooltip' },
-        dataFillColor: { description: 'Fill Color' },
-        dataKey: { description: 'Data Key' },
-        align: { description: 'Align' },
-        verticalAlign: { description: 'Vertical Align' },
-    },
+  },
+  argTypes: {
+    ShowLegend: { description: "Show Legend" },
+    ShowTooltip: { description: "Show Tooltip" },
+    dataFillColor: { description: "Fill Color" },
+    dataKey: { description: "Data Key" },
+    align: { description: "Align" },
+    verticalAlign: { description: "Vertical Align" },
+  },
 };
 
 const Template = (args) => (
-    <Recharts.PieChart {...args}>
-        <Recharts.Pie
-            data={args.data}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={({
-                cx,
-                cy,
-                midAngle,
-                innerRadius,
-                outerRadius,
-                percent,
-                index
-            }) => {
-                const RADIAN = Math.PI / 180;
+  <Recharts.PieChart {...args}>
+    <Recharts.Pie
+      data={args.data}
+      cx="50%"
+      cy="50%"
+      labelLine={false}
+      label={({
+        cx,
+        cy,
+        midAngle,
+        innerRadius,
+        outerRadius,
+        percent,
+        index,
+      }) => {
+        const RADIAN = Math.PI / 180;
 
-                const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
-                const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                const y = cy + radius * Math.sin(-midAngle * RADIAN);
+        const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+        const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-                return (
-                    <text
-                        x={x}
-                        y={y}
-                        fill="white"
-                        textAnchor={x > cx ? "start" : "end"}
-                        dominantBaseline="central"
-                    >
-                        {`${(percent * 100).toFixed(0)}%`}
-                    </text>
-                );
-            }}
-            outerRadius={80}
-            fill={args.dataFillColor}
-            dataKey={args.dataKey}
-            outerRadius={args.dataOuterRadius}
-        >
-            {args.data.map((entry, index) => (
-                <Recharts.Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-        </Recharts.Pie>
-    </Recharts.PieChart>
+        return (
+          <text
+            x={x}
+            y={y}
+            fill="white"
+            textAnchor={x > cx ? "start" : "end"}
+            dominantBaseline="central"
+          >
+            {`${(percent * 100).toFixed(0)}%`}
+          </text>
+        );
+      }}
+      outerRadius={80}
+      fill={args.dataFillColor}
+      dataKey={args.dataKey}
+      outerRadius={args.dataOuterRadius}
+    >
+      {args.data.map((entry, index) => (
+        <Recharts.Cell key={`cell-${index}`} fill={entry.color} />
+      ))}
+    </Recharts.Pie>
+  </Recharts.PieChart>
 );
 
 export const SinglePie = Template.bind({});
 SinglePie.args = {
-    width: 450,
-    height: 170,
-    margin: {
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5,
-    },
-    dataFillColor: "#3366FF",
-    dataOuterRadius: 60,
-    dataKey: "value",
+  width: 450,
+  height: 170,
+  margin: {
+    top: 5,
+    right: 30,
+    left: 20,
+    bottom: 5,
+  },
+  dataFillColor: "#3366FF",
+  dataOuterRadius: 60,
+  dataKey: "value",
 
-    data: [
-        { name: "Group A", value: 400, color: "#3366FF" },
-        { name: "Group B", value: 300, color: "#009379" },
-        { name: "Group C", value: 300, color: "#FF6250" },
-        { name: "Group D", value: 200, color: "#FFDF90" },
-    ],
-    align: "center",
-    verticalAlign: "top",
-    ShowTooltip: false,
-    ShowLegend: false,
+  data: [
+    { name: "Group A", value: 400, color: "#3366FF" },
+    { name: "Group B", value: 300, color: "#009379" },
+    { name: "Group C", value: 300, color: "#FF6250" },
+    { name: "Group D", value: 200, color: "#FFDF90" },
+  ],
+  align: "center",
+  verticalAlign: "top",
+  ShowTooltip: false,
+  ShowLegend: false,
 };

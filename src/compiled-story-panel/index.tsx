@@ -5,11 +5,7 @@ import SandpackWrapper from "./SandpackWrapper";
 const CompiledStoryPanel = () => {
   const storyCompiledCode = useStoryCompiledCode();
 
-  return (
-    <SandpackWrapper
-      storyCode={storyCompiledCode}
-    />
-  );
+  return <SandpackWrapper storyCode={storyCompiledCode} />;
 };
 
 export default CompiledStoryPanel;
