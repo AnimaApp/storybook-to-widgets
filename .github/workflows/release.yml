@@ -19,8 +19,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          curl -sSL "https://nodejs.org/dist/v16.13.0/node-v16.13.0-linux-x64.tar.xz" | sudo tar --strip-components=2 -xJ -C /usr/local/bin/ node-v16.13.0-linux-x64/bin/node && \ 
-          curl https://www.npmjs.com/install.sh | sudo bash && \
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc && \
           echo "@anima:registry=https://npm.animaapp.com/" >> ~/.npmrc && \
           echo "//npm.animaapp.com/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc && \
