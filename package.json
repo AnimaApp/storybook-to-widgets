@@ -1,5 +1,5 @@
 {
-  "name": "@anima/storybook-addon-anima-internal",
+  "name": "@anima/storybook-anima-addon",
   "version": "1.0.14",
   "description": "convert storybook to anima widgets",
   "keywords": [
