@@ -2,7 +2,8 @@ import * as Antd from "antd";
 import { SimpleMenuItem } from "./MenuItem.stories";
 import withIconMapped from "../decorators/withIconMapped";
 
-const keyTransform = "<%- `\"g${(Math.floor(Math.random() * 1000) + 1).toString()}\"` %>";
+const keyTransform =
+  '<%- `"g${(Math.floor(Math.random() * 1000) + 1).toString()}"` %>';
 
 export default {
   title: "Vertical menu/MenuItemGroup",
@@ -14,19 +15,19 @@ export default {
       },
     },
     container: Antd.Menu,
-    titleArg: "itemGroupTitle"
+    titleArg: "itemGroupTitle",
   },
   argTypes: {
-    includeDivider: { 
-      description: "Divider"
+    includeDivider: {
+      description: "Divider",
     },
-    itemGroupTitle: { 
-      description: "Title"
+    itemGroupTitle: {
+      description: "Title",
     },
-    groupKey: { 
+    groupKey: {
       description: "Key",
       hidden: true,
-      transform: keyTransform
+      transform: keyTransform,
     },
     menuitem: {
       type: "story",
@@ -59,8 +60,16 @@ SimpleMenuItemGroup.args = {
   itemGroupTitle: "Group",
   includeDivider: false,
   groupKey: "g1",
-  menuitem: { ...SimpleMenuItem.args, itemTitle: "Item 1", includeDivider: false},
-  menuitem2: { ...SimpleMenuItem.args, itemTitle: "Item 2", iconName:"NotificationOutlined"}
+  menuitem: {
+    ...SimpleMenuItem.args,
+    itemTitle: "Item 1",
+    includeDivider: false,
+  },
+  menuitem2: {
+    ...SimpleMenuItem.args,
+    itemTitle: "Item 2",
+    iconName: "NotificationOutlined",
+  },
 };
 SimpleMenuItemGroup.storyInfo = {
   name: "SimpleMenuItemGroup",

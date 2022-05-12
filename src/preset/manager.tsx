@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { addons, types } from "@storybook/addons";
 import { AddonPanel } from "@storybook/components";
 import { ADDON_ID, TOOL_ID, PANEL_ID } from "../constants";

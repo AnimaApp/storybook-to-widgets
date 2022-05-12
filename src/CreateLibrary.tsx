@@ -23,7 +23,7 @@ const createLibraryApi = async (library: any, dependencies: any) => {
       dependencies: dependenciesArray,
       external_dependencies: filteredDependencies,
     };
-    AnimaAPI.POST("/widget-library/create",body);    
+    AnimaAPI.POST("/widget-library/create", body);
   } catch (error) {
     console.log(error);
   } finally {

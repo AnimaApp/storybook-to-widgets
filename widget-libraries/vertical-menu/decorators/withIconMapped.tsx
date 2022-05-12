@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import { withArgsMapping } from "../../../src/decorators";
 

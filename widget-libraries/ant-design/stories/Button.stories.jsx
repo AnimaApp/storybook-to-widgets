@@ -9,7 +9,15 @@ export default {
     type: {
       description: "Type",
       type: "options",
-      options: ["primary", "default", "dashed", "text", "link", "ghost", "danger"],
+      options: [
+        "primary",
+        "default",
+        "dashed",
+        "text",
+        "link",
+        "ghost",
+        "danger",
+      ],
     },
     shape: {
       description: "Shape",

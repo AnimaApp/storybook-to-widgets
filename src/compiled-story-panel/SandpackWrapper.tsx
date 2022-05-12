@@ -8,13 +8,13 @@ import { createImports } from "../utils/codeTemplateHelper";
 
 type Props = {
   storyCode: string;
-}
+};
 
 const SandpackWrapper: FunctionComponent<Props> = ({ storyCode }) => {
   const sbApi = useStorybookApi();
   const [stylesImport, setStylesImport] = useState([]);
   const [dependencies, setDependencies] = useState(null);
-  const [args, setArgs] = useState({})
+  const [args, setArgs] = useState({});
 
   const currentStory = sbApi.getCurrentStoryData() as Story;
 
@@ -34,7 +34,7 @@ const SandpackWrapper: FunctionComponent<Props> = ({ storyCode }) => {
   }, [storyCode]);
 
   if (dependencies === null) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   const importsCode = createImports([
@@ -46,10 +46,11 @@ const SandpackWrapper: FunctionComponent<Props> = ({ storyCode }) => {
     ? `${importsCode}\n\nexport default ${storyCode}`
     : `export default ${storyCode}`;
 
-  const customCssCode = currentStory.parameters?.custom_css?.replace(/.\${nodeClass}/g, '#root');
-  const customCssFile = customCssCode
-    ? { "/styles.css": customCssCode }
-    : {};
+  const customCssCode = currentStory.parameters?.custom_css?.replace(
+    /.\${nodeClass}/g,
+    "#root"
+  );
+  const customCssFile = customCssCode ? { "/styles.css": customCssCode } : {};
 
   return (
     <Sandpack

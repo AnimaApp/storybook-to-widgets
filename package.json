@@ -22,11 +22,12 @@
     "*.js",
     "*.d.ts"
   ],
-  "engines" : {
-    "npm" : ">=8.3.0"
+  "engines": {
+    "npm": ">=8.3.0"
   },
   "scripts": {
     "clean": "rimraf ./dist",
+    "format": "prettier --write 'src/**/*' 'widget-libraries/**/*' 'tests/**/*'",
     "buildBabel": "concurrently \"npm run buildBabel:cjs\" \"npm run buildBabel:esm\"",
     "buildBabel:cjs": "babel ./src -d ./dist/cjs --extensions \".js,.jsx,.ts,.tsx,.json\"",
     "buildBabel:esm": "babel ./src -d ./dist/esm --env-name esm --extensions \".js,.jsx,.ts,.tsx\"",
@@ -65,7 +66,7 @@
     "dedent": "^0.7.0",
     "jest": "^28.1.0",
     "jest-mock-extended": "^2.0.6",
-    "prettier": "^2.3.1",
+    "prettier": "^2.6.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

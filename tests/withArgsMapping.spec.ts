@@ -1,5 +1,5 @@
-import type { StoryContext } from '@storybook/addons';
-import { mock } from 'jest-mock-extended';
+import type { StoryContext } from "@storybook/addons";
+import { mock } from "jest-mock-extended";
 import { withArgsMapping } from "../src/decorators/withArgsMapping";
 
 describe(".withArgsMapping", () => {
@@ -18,9 +18,11 @@ describe(".withArgsMapping", () => {
       mapper(storyMock, contextMock);
 
       // assert
-      expect(storyMock).toBeCalledWith(expect.objectContaining({
-        args: { notMapped: 0 },
-      }));
+      expect(storyMock).toBeCalledWith(
+        expect.objectContaining({
+          args: { notMapped: 0 },
+        })
+      );
     });
   });
 
@@ -39,9 +41,11 @@ describe(".withArgsMapping", () => {
       mapper(storyMock, contextMock);
 
       // assert
-      expect(storyMock).toBeCalledWith(expect.objectContaining({
-        args: { mapped: 1 },
-      }));
+      expect(storyMock).toBeCalledWith(
+        expect.objectContaining({
+          args: { mapped: 1 },
+        })
+      );
     });
   });
 });

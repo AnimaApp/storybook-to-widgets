@@ -23,7 +23,9 @@ describe(".createImports", () => {
       const result = createImports(imports);
 
       // assert
-      expect(result).toBe('import * as AntDesignIcons from "@ant-design/icons";');
+      expect(result).toBe(
+        'import * as AntDesignIcons from "@ant-design/icons";'
+      );
     });
   });
 
@@ -49,7 +51,9 @@ describe(".createImports", () => {
       const result = createImports(imports);
 
       // assert
-      expect(result).toBe('import * as AntDesignIcons from "@ant-design/icons";\nimport "antd/dist/antd.css";');
+      expect(result).toBe(
+        'import * as AntDesignIcons from "@ant-design/icons";\nimport "antd/dist/antd.css";'
+      );
     });
   });
 });
