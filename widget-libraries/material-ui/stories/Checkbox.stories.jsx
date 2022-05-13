@@ -27,6 +27,10 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
+    checked: {
+      description: "Checked",
+      type: "boolean",
+    },
   },
 };
 
