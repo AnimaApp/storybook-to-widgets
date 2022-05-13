@@ -1,9 +1,9 @@
 import React from "react";
-import Button from "@mui/material/Button";
+import * as MuiMaterial from "@mui/material";
 
 export default {
   title: "Material UI/Button",
-  component: Button,
+  component: MuiMaterial.Button,
   argTypes: {
     color: {
       description: "Color",
@@ -43,13 +43,12 @@ export default {
     disableRipple: {
       description: "Disable Ripple",
       type: "boolean",
-      infotip: "Remove image URL to switch to Letter avatar",
     },
   },
 };
 
 const Template = (args) => (
-  <Button
+  <MuiMaterial.Button
     color={args.color}
     variant={args.variant}
     size={args.size}
@@ -57,7 +56,7 @@ const Template = (args) => (
     disableElevation={args.disableElevation}
   >
     {args.label}
-  </Button>
+  </MuiMaterial.Button>
 );
 
 export const SimpleButton = Template.bind({});
