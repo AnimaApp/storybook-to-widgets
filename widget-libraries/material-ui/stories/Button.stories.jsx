@@ -1,5 +1,10 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
+import * as MuiIconsMaterial from "@mui/icons-material";
+
+const options = ["None", ...Object.keys(MuiIconsMaterial)];
+const iconTransform =
+  "<% if (param !== 'None') { %><MuiIconsMaterial.<%= param %> /><% } else { %> '' <% } %>";
 
 export default {
   title: "Material UI/Button",
@@ -17,6 +22,18 @@ export default {
         "info",
         "warning",
       ],
+    },
+    startIcon: {
+      type: "options",
+      options: options,
+      description: "Icon",
+      transform: iconTransform,
+    },
+    endIcon: {
+      type: "options",
+      options: options,
+      description: "Icon",
+      transform: iconTransform,
     },
     variant: {
       description: "Variant",
@@ -47,17 +64,24 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <MuiMaterial.Button
-    color={args.color}
-    variant={args.variant}
-    size={args.size}
-    disabled={args.disabled}
-    disableElevation={args.disableElevation}
-  >
-    {args.label}
-  </MuiMaterial.Button>
-);
+const Template = (args) => {
+  const StartIcon = MuiIconsMaterial[args.startIcon];
+  const EndIcon = MuiIconsMaterial[args.endIcon];
+
+  return (
+    <MuiMaterial.Button
+      color={args.color}
+      variant={args.variant}
+      size={args.size}
+      disabled={args.disabled}
+      disableElevation={args.disableElevation}
+      startIcon={args.startIcon ? <StartIcon /> : null}
+      endIcon={args.endIcon ? <EndIcon /> : null}
+    >
+      {args.label}
+    </MuiMaterial.Button>
+  );
+};
 
 export const SimpleButton = Template.bind({});
 SimpleButton.args = {
