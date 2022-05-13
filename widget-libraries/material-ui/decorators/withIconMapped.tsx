@@ -7,7 +7,9 @@ const nameToIcon = (name: string) => {
   return Icon ? <Icon /> : <></>;
 };
 
-const argsMapping = { iconName: nameToIcon };
-const withIconMapped = withArgsMapping(argsMapping);
+const argsMapping = (name: string) => ({
+  [name]: nameToIcon,
+});
+const withIconMapped = (name: string) => withArgsMapping(argsMapping(name));
 
 export default withIconMapped;

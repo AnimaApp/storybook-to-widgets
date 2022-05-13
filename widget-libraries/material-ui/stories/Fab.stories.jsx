@@ -1,16 +1,13 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import * as MuiIconsMaterial from "@mui/icons-material";
 import withIconMapped from "../decorators/withIconMapped";
-
-const options = ["None", ...Object.keys(MuiIconsMaterial)];
-const iconTransform =
-  "<% if (param !== 'None') { %><MuiIconsMaterial.<%= param %> /><% } else { %> '' <% } %>";
+import { options, iconTransform } from "../utils";
 
 export default {
   title: "Material UI/Fab",
   component: MuiMaterial.Fab,
-  decorators: [withIconMapped],
+  decorators: [withIconMapped("iconName")],
+
   argTypes: {
     color: {
       description: "Color",
