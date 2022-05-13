@@ -20,6 +20,7 @@ export default {
         "warning",
       ],
     },
+
     startIcon: {
       type: "options",
       options: options,
@@ -60,7 +61,7 @@ export default {
       type: "boolean",
     },
   },
-  decorators: [withIconMapped("startIcon"), withIconMapped("endIcon")],
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {

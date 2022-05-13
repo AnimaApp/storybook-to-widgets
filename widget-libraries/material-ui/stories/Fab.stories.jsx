@@ -6,7 +6,7 @@ import { options, iconTransform } from "../utils";
 export default {
   title: "Material UI/Fab",
   component: MuiMaterial.Fab,
-  decorators: [withIconMapped("iconName")],
+  decorators: [withIconMapped],
 
   argTypes: {
     color: {
