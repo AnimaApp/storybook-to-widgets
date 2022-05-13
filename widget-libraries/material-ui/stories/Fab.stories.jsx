@@ -1,6 +1,7 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
 import * as MuiIconsMaterial from "@mui/icons-material";
+import withIconMapped from "../decorators/withIconMapped";
 
 const options = ["None", ...Object.keys(MuiIconsMaterial)];
 const iconTransform =
@@ -9,6 +10,7 @@ const iconTransform =
 export default {
   title: "Material UI/Fab",
   component: MuiMaterial.Fab,
+  decorators: [withIconMapped],
   argTypes: {
     color: {
       description: "Color",
@@ -56,8 +58,6 @@ export default {
 };
 
 const Template = (args) => {
-  const Icon = MuiIconsMaterial[args.iconName];
-
   return (
     <MuiMaterial.Fab
       color={args.color}
@@ -67,7 +67,7 @@ const Template = (args) => {
       disableRipple={args.disableRipple}
     >
       {args.label && args.label}
-      {args.iconName && <Icon />}
+      {args.iconName}
     </MuiMaterial.Fab>
   );
 };
