@@ -48,17 +48,13 @@ const createWidgetStoriesApi = async (
 const createWidgetApi = async (
   widgetStory: StoryInfo,
   dependencies: any,
-  isCompoundStory: boolean
+  libraryName: string
 ) => {
   try {
     let code_template;
-    if (isCompoundStory) {
-      code_template = createCodeTemplateCompound(dependencies);
-    } else {
-      code_template = createCodeTemplate(widgetStory, dependencies);
-    }
+    code_template = createCodeTemplateCompound(dependencies);
 
-    const [libraryName, widgetName] = widgetStory.title.split("/");
+    const widgetName = widgetStory.title.split("/")[1];
 
     let body = {
       source_type: "react",
@@ -74,10 +70,8 @@ const createWidgetApi = async (
       widget_library_name: libraryName,
     };
 
-    if (isCompoundStory) {
-      // @ts-expect-error
-      body.root_story = widgetStory?.id;
-    }
+    // @ts-expect-error
+    body.root_story = widgetStory?.id;
 
     await AnimaAPI.POST("/widgets/create", body);
   } catch (error) {
@@ -117,12 +111,8 @@ const CreateWidget = () => {
       (value) => value?.root
     );
 
-    if (isCompoundStory) {
-      await createWidgetStoriesApi(storiesInfo, metadata.name as string);
-      await createWidgetApi(rootStoryInfo, dependencies, true);
-    } else {
-      await createWidgetApi(rootStoryInfo, dependencies, false);
-    }
+    await createWidgetStoriesApi(storiesInfo, metadata.name as string);
+    await createWidgetApi(rootStoryInfo, dependencies, metadata.name as string);
 
     setIsCreatingWidget(false);
   };
