@@ -51,8 +51,7 @@ const createWidgetApi = async (
   libraryName: string
 ) => {
   try {
-    let code_template;
-    code_template = createCodeTemplateCompound(dependencies);
+    const code_template = createCodeTemplateCompound(dependencies);
 
     const widgetName = widgetStory.title.split("/")[1];
 
@@ -68,10 +67,8 @@ const createWidgetApi = async (
       name: widgetName,
       description: widgetStory.description,
       widget_library_name: libraryName,
+      root_story: widgetStory?.id
     };
-
-    // @ts-expect-error
-    body.root_story = widgetStory?.id;
 
     await AnimaAPI.POST("/widgets/create", body);
   } catch (error) {
@@ -103,9 +100,6 @@ const CreateWidget = () => {
     emit(EVENTS.ANALYZE_STORY_REQUEST);
 
     const storiesInfo = generateStoriesInfo(sbApi, currentStoryData);
-    console.log(storiesInfo);
-
-    const isCompoundStory = Object.keys(storiesInfo).length > 1;
 
     const rootStoryInfo = Object.values(storiesInfo).find(
       (value) => value?.root
