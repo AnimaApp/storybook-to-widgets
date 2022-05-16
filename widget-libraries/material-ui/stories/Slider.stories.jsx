@@ -75,8 +75,8 @@ const Template = (args) => {
   );
 };
 
-export const SimpleButton = Template.bind({});
-SimpleButton.args = {
+export const SimpleSlider = Template.bind({});
+SimpleSlider.args = {
   color: "primary",
   size: "medium",
   disabled: false,
