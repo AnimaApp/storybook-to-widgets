@@ -24,6 +24,10 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
+    label: {
+      description: "Label",
+      type: "string",
+    },
   },
 };
 

@@ -55,19 +55,8 @@ const Template = (args) => {
 };
 
 const CustomSwitchTemplate = (args) => {
-  const CustomSwitch = MuiMaterial.styled((props) => (
-    <MuiMaterial.Switch disableRipple {...props} />
-  ))(({ theme }) => ({
-    "& .MuiSwitch-switchBase": {
-      "&.Mui-checked": {
-        marginTop: "-2px",
-        marginLeft: "-2px",
-      },
-    },
-  }));
-
   return (
-    <CustomSwitch
+    <MuiMaterial.Switch
       color={args.color}
       disabled={args.disabled}
       size={args.size}
