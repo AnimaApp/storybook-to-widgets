@@ -50,7 +50,6 @@ const Template = (args) => {
       defaultValue={2}
       size={args.size}
       precision={args.precision}
-      icon={args.iconName}
       max={args.max}
     />
   );
