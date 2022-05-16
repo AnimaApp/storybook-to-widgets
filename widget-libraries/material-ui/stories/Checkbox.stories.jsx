@@ -27,7 +27,7 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
-    checked: {
+    defaultChecked: {
       description: "Checked",
       type: "boolean",
     },
@@ -38,7 +38,7 @@ const Template = (args) => (
   <MuiMaterial.Checkbox
     color={args.color}
     disabled={args.disabled}
-    checked={args.checked}
+    defaultChecked={args.defaultChecked}
     size={args.size}
   />
 );
@@ -48,5 +48,5 @@ SimpleCheckbox.args = {
   color: "primary",
   size: "medium",
   disabled: false,
-  checked: true,
+  defaultChecked: true,
 };

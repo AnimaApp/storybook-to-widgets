@@ -11,6 +11,7 @@ const argsMapping = {
   startIcon: nameToIcon,
   endIcon: nameToIcon,
   iconName: nameToIcon,
+  emptyIcon: nameToIcon,
 };
 const withIconMapped = withArgsMapping(argsMapping);
 

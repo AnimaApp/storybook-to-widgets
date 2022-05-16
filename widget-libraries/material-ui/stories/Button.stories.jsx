@@ -89,6 +89,4 @@ SimpleButton.args = {
   disabled: false,
   disableElevation: false,
   disableRipple: false,
-  startIcon: "ArrowLeft",
-  endIcon: "ArrowRight",
 };
