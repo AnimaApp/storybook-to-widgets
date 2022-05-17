@@ -51,32 +51,53 @@ export default {
   },
 };
 
-const Template = (args) => {
+const ContinousSliderTemplate = (args) => {
   return (
-    <MuiMaterial.Box sx={{ mt: 3, height: 300, width: 300 }}>
-      <MuiMaterial.Slider
-        sx={{
-          '& input[type="range"]': {
-            WebkitAppearance: "slider-vertical",
-          },
-        }}
-        color={args.color}
-        disabled={args.disabled}
-        defaultValue={args.defaultValue}
-        step={args.step}
-        marks={args.marks}
-        min={args.min}
-        max={args.max}
-        valueLabelDisplay={args.valueLabelDisplay}
-        orientation={args.orientation}
-        size={args.size}
-      />
-    </MuiMaterial.Box>
+    <MuiMaterial.Slider
+      sx={{
+        '& input[type="range"]': {
+          WebkitAppearance: "slider-vertical",
+        },
+      }}
+      color={args.color}
+      disabled={args.disabled}
+      orientation={args.orientation}
+    />
   );
 };
 
-export const SimpleSlider = Template.bind({});
-SimpleSlider.args = {
+const Template = (args) => {
+  return (
+    <MuiMaterial.Slider
+      sx={{
+        '& input[type="range"]': {
+          WebkitAppearance: "slider-vertical",
+        },
+      }}
+      color={args.color}
+      disabled={args.disabled}
+      defaultValue={args.defaultValue}
+      step={args.step}
+      marks={args.marks}
+      min={args.min}
+      max={args.max}
+      valueLabelDisplay={args.valueLabelDisplay}
+      orientation={args.orientation}
+      size={args.size}
+    />
+  );
+};
+
+export const ContinuousSlider = ContinousSliderTemplate.bind({});
+ContinuousSlider.args = {
+  color: "primary",
+  size: "medium",
+  disabled: false,
+  defaultValue: 15,
+};
+
+export const DiscreteSlider = Template.bind({});
+DiscreteSlider.args = {
   color: "primary",
   size: "medium",
   disabled: false,
