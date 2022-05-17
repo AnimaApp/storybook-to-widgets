@@ -14,32 +14,33 @@ export default {
       description: "Content",
       type: "string",
     },
-    showArrow: {
-      description: "Show arrow",
+    arrowPointAtCenter: {
+      description: "Arrow point at center",
       type: "boolean",
     },
     placement: {
       description: "Placement",
       type: "options",
       options: [
-        "auto",
-        "bottom-end",
-        "bottom-start",
-        "bottom",
-        "left-end",
-        "left-start",
-        "left",
-        "right-end",
-        "right-start",
-        "right",
-        "top-end",
-        "top-start",
         "top",
+        "left",
+        "right",
+        "bottom",
+        "topLeft",
+        "topRight",
+        "bottomLeft",
+        "bottomRight",
+        "leftTop",
+        "leftBottom",
+        "rightTop",
+        "rightBottom",
       ],
     },
     color: {
       description: "Color",
-      type: "string",
+      control: {
+        type: "color",
+      }
     },
   },
 };
@@ -47,7 +48,7 @@ export default {
 const Template = (args) => (
   <Antd.Tooltip
     title={args.title}
-    showArrow={args.showArrow}
+    arrowPointAtCenter={args.arrowPointAtCenter}
     placement={args.placement}
     color={args.color}
   >
@@ -57,8 +58,7 @@ const Template = (args) => (
 
 export const Simple = Template.bind({});
 Simple.args = {
-  title: 'Prompt text',
-  showArrow: true,
-  placement: "bottom",
-  content: "Text content",
+  title: "Prompt text",
+  arrowPointAtCenter: true,
+  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 };

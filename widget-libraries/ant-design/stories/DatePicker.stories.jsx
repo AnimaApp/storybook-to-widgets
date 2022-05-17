@@ -78,7 +78,7 @@ export default {
 
 const Template = (args) => (
   <Antd.DatePicker
-    type={args.type}
+    picker={args.type}
     size={args.size}
     placeholder={args.placeholder}
     status={args.status}

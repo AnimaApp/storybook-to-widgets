@@ -31,7 +31,7 @@ export default {
     },
     defaultValue: {
       description: "Default value",
-      type: "string",
+      type: "number",
     },
     minValue: {
       description: "min value",

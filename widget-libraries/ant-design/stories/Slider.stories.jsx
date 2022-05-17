@@ -26,6 +26,10 @@ export default {
       description: "Range",
       type: "boolean",
     },
+    reverse: {
+      description: "Reversed",
+      type: "boolean",
+    },
     tooltipVisible: {
       description: "Tooltip visible",
       type: "boolean",
@@ -52,17 +56,17 @@ const Template = (args) => (
     tooltipVisible={args.tooltipVisible}
     orientation={args.orientation}
     disabled={args.disabled}
+    reverse={args.reverse}
+    vertical={args.orientation === "vertical"}
   ></Antd.Slider>
 );
 
 export const Simple = Template.bind({});
 Simple.args = {
-  min: 0,
-  max: 100,
-  defaultValue: 50,
-  step: 20,
+  minValue: 0,
+  maxValue: 10,
+  defaultValue: 3,
   range: true,
   tooltipVisible: true,
   orientation: "horizontal",
-  disabled: false,
 };

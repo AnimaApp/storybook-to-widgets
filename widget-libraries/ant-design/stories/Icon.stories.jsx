@@ -3,7 +3,6 @@ import "antd/dist/antd.css";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 
 const options = [
-  "None",
   ...Object.keys(AntDesignIcons).map((key) =>
     key
       .replace(/Filled$/, "")
@@ -42,7 +41,7 @@ export default {
 };
 
 const Template = (args) => {
-  const AntDIconElement = AntDesignIcons[args.iconName + args.style];
+  const AntDIconElement = AntDesignIcons[`${args.iconName ?? "Star"}${args.style ?? "Filled"}`];
   const style = {
     ...(args.color ? { color: args.color } : {}),
     ...(args.size ? { fontSize: args.size } : {}),
