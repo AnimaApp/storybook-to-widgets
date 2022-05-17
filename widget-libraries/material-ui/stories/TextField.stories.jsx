@@ -28,12 +28,18 @@ export default {
       description: "Label",
       type: "string",
     },
+    width: {
+      description: "Width",
+      type: "string",
+      defaultValue: "50%",
+    },
   },
 };
 
 const Template = (args) => {
   return (
     <MuiMaterial.TextField
+      sx={{ width: args.width }}
       color={args.color}
       disabled={args.disabled}
       size={args.size}
@@ -50,4 +56,5 @@ SimpleTextField.args = {
   disabled: false,
   variant: "outlined",
   label: "Username",
+  width: "250px",
 };

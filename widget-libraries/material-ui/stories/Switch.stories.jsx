@@ -29,7 +29,7 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
-    checked: {
+    defaultChecked: {
       description: "Checked",
       type: "boolean",
     },
@@ -49,7 +49,7 @@ const Template = (args) => {
       color={args.color}
       disabled={args.disabled}
       size={args.size}
-      checked={args.checked}
+      defaultChecked={args.defaultChecked}
     />
   );
 };
@@ -60,7 +60,7 @@ const CustomSwitchTemplate = (args) => {
       color={args.color}
       disabled={args.disabled}
       size={args.size}
-      checked={args.checked}
+      defa={args.defaultChecked}
       checkedIcon={args.iconName}
     />
   );
@@ -71,7 +71,7 @@ SimpleSwitch.args = {
   color: "primary",
   size: "medium",
   disabled: false,
-  checked: true,
+  defaultChecked: true,
 };
 
 export const SwitchWithCustomIcon = CustomSwitchTemplate.bind({});
@@ -79,6 +79,6 @@ SwitchWithCustomIcon.args = {
   color: "primary",
   size: "medium",
   disabled: false,
-  checked: true,
+  defaultChecked: true,
   iconName: "AddOutlined",
 };
