@@ -1,6 +1,6 @@
 {
   "name": "@anima/storybook-to-widgets",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "convert storybook to anima widgets",
   "keywords": [
     "storybook-addons",
