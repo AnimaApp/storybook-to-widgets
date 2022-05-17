@@ -22,7 +22,7 @@ jobs:
           echo "registry=https://registry.npmjs.org/" >> ~/.npmrc && \
           echo "@anima:registry=https://npm.animaapp.com/" >> ~/.npmrc && \
           echo "//npm.animaapp.com/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc && \
-          npm install
+          npm ci
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 

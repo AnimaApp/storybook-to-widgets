@@ -1,3 +1,57 @@
+# v1.0.16 (Mon May 16 2022)
+
+#### 🐛 Bug Fix
+
+- single way widget [#4](https://github.com/AnimaApp/storybook-anima-addon/pull/4) ([@adinu](https://github.com/adinu))
+- feat: support format code [#2](https://github.com/AnimaApp/storybook-anima-addon/pull/2) ([@marton987](https://github.com/marton987))
+
+#### ⚠️ Pushed to `main`
+
+- fix: update name of package ([@orarbel](https://github.com/orarbel))
+- chore: add missing changelog and version ([@macabeus](https://github.com/macabeus))
+- chore: fix github workflow release ([@macabeus](https://github.com/macabeus))
+- fix(ant-design): add missing styles_import ([@macabeus](https://github.com/macabeus))
+- feat(compiled-story): refac to use code sandbox ([@macabeus](https://github.com/macabeus))
+- chore: fix mismatch dependencies ([@macabeus](https://github.com/macabeus))
+- feat: add tab `Compiled Story` ([@macabeus](https://github.com/macabeus))
+- fix(withArgsMapping): avoid crash on docs tab and when updating an arg ([@macabeus](https://github.com/macabeus))
+- fix(withArgsMapping): not cast array into object ([@macabeus](https://github.com/macabeus))
+- chore: rename codeGenerator.ts to storyInfo.ts ([@macabeus](https://github.com/macabeus))
+- fix(create-widget): split story title to get only the widget name ([@macabeus](https://github.com/macabeus))
+- fix(vertical-menu): update storyInfo.kind ([@macabeus](https://github.com/macabeus))
+- feat(charts): remove unnecesary widgets ([@macabeus](https://github.com/macabeus))
+- doc: rewritten readme ([@macabeus](https://github.com/macabeus))
+- chore: add tests ([@macabeus](https://github.com/macabeus))
+- chore: add Ant Design widget library ([@macabeus](https://github.com/macabeus))
+- chore: fix author ([@orarbel](https://github.com/orarbel))
+- fix: NPM_TOKEN name ([@orarbel](https://github.com/orarbel))
+- chore: make withArgsMapping generic ([@macabeus](https://github.com/macabeus))
+- chore: added omitted npm install ([@Leke-Ariyo](https://github.com/Leke-Ariyo))
+- chore: removed .npmrc and implemented privare repo login as in circleci ([@Leke-Ariyo](https://github.com/Leke-Ariyo))
+- feat: add npmrc file so no need to run commands separately ([@Leke-Ariyo](https://github.com/Leke-Ariyo))
+- chore: fix ci failure in github action due to using global repo instead of private repo ([@Leke-Ariyo](https://github.com/Leke-Ariyo))
+- chore: replace yarn with npm ([@macabeus](https://github.com/macabeus))
+- chore: refac structure to a monorepo ([@macabeus](https://github.com/macabeus))
+- chore: remove unused code ([@macabeus](https://github.com/macabeus))
+- chore: remove nonused decoretors ([@macabeus](https://github.com/macabeus))
+- chore(package): update lock file ([@macabeus](https://github.com/macabeus))
+- chore(tsconfig): remove old paths ([@macabeus](https://github.com/macabeus))
+- chore(scripts): remove eject-typescript ([@macabeus](https://github.com/macabeus))
+- chore(package.json): move dependencies to before devDependencies ([@macabeus](https://github.com/macabeus))
+- chore(api): move host url to .env ([@macabeus](https://github.com/macabeus))
+- chore(api): small code quality improvement ([@macabeus](https://github.com/macabeus))
+- Make repository public ([@macabeus](https://github.com/macabeus))
+
+#### Authors: 5
+
+- [@adinu](https://github.com/adinu)
+- Bruno Macabeus ([@macabeus](https://github.com/macabeus))
+- Leke Ariyo ([@Leke-Ariyo](https://github.com/Leke-Ariyo))
+- Martin Freytes ([@marton987](https://github.com/marton987))
+- Or Arbel ([@orarbel](https://github.com/orarbel))
+
+---
+
 # v1.0.14 (Tue May 03 2022)
 
 #### 🐛 Bug Fix
