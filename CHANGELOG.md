@@ -1,3 +1,15 @@
+# v1.0.17 (Tue May 17 2022)
+
+#### 🐛 Bug Fix
+
+- chore: rename project [#5](https://github.com/AnimaApp/storybook-to-widgets/pull/5) ([@macabeus](https://github.com/macabeus))
+
+#### Authors: 1
+
+- Bruno Macabeus ([@macabeus](https://github.com/macabeus))
+
+---
+
 # v1.0.16 (Mon May 16 2022)
 
 #### 🐛 Bug Fix
