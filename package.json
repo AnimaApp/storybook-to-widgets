@@ -1,5 +1,5 @@
 {
-  "name": "@anima/storybook-anima-addon",
+  "name": "@anima/storybook-to-widgets",
   "version": "1.0.16",
   "description": "convert storybook to anima widgets",
   "keywords": [
@@ -9,7 +9,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/AnimaApp/storybook-addon-internal"
+    "url": "https://github.com/AnimaApp/storybook-to-widgets"
   },
   "author": "Anima App, Inc.",
   "license": "MIT",
