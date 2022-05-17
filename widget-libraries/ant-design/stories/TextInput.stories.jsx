@@ -86,6 +86,5 @@ Simple.args = {
   showCount: true,
   prefixIconName: "UserOutlined",
   suffixIconName: "InfoOutlined",
-  status: "error",
   disabled: false,
 };

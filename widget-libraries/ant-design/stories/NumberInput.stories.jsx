@@ -89,6 +89,5 @@ Simple.args = {
   maxValue: 120,
   minValue: 18,
   prefixIconName: "UserOutlined",
-  status: "warning",
   disabled: false,
 };
