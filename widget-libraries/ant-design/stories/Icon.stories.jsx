@@ -2,7 +2,6 @@ import "antd/dist/antd.css";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import React from "react";
 import { iconOptions } from "./data";
-import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Icon",
@@ -29,13 +28,13 @@ export default {
 };
 
 const Template = (args) => {
+  const AntDIconElement = AntDesignIcons[args.iconName];
   const style = {
     ...(args.color ? { color: args.color } : {}),
     ...(args.size ? { fontSize: args.size } : {}),
   };
   return (
     <AntDIconElement
-      iconName={args.iconName}
       spin={args.spin}
       rotate={args.rotate}
       style={style}

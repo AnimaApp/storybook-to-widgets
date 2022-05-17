@@ -1,8 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
+import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import { iconOptions } from "./data";
-import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Rate",
@@ -41,18 +41,13 @@ export default {
 };
 
 const Template = (args) => {
+  const AntDIconElement = args.iconName ? AntDesignIcons[args.iconName] : <></>;
   const style = {
     ...(args.color ? { color: args.color } : {}),
   };
   return (
     <Antd.Rate
-      character={
-        args.iconName && (
-          <AntDIconElement
-            iconName={args.iconName}
-          />
-        )
-      }
+      character={args.iconName && <AntDIconElement />}
       style={style}
       count={args.count}
       defaultValue={args.defaultValue}
@@ -66,6 +61,7 @@ const Template = (args) => {
 export const Simple = Template.bind({});
 Simple.args = {
   count: 5,
+  iconName: 'StarFilled',
   defaultValue: 3.5,
   allowClear: true,
   allowHalf: true,

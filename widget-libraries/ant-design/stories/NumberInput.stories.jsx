@@ -1,8 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
+import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import { iconOptions } from "./data";
-import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Number Input",
@@ -58,27 +58,28 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Antd.InputNumber
-    controls={args.controls}
-    size={args.size}
-    bordered={args.bordered}
-    defaultValue={args.defaultValue}
-    placeholder={args.placeholder}
-    min={args.minValue}
-    max={args.maxValue}
-    step={args.step}
-    prefix={
-      args.prefixIconName && (
-        <AntDIconElement
-          iconName={args.prefixIconName}
-        />
-      )
-    }
-    status={args.status}
-    disabled={args.disabled}
-  ></Antd.InputNumber>
-);
+const Template = (args) => {
+  const AntDIconElement = args.prefixIconName ? (
+    AntDesignIcons[args.prefixIconName]
+  ) : (
+    <></>
+  );
+  return (
+    <Antd.InputNumber
+      controls={args.controls}
+      size={args.size}
+      bordered={args.bordered}
+      defaultValue={args.defaultValue}
+      placeholder={args.placeholder}
+      min={args.minValue}
+      max={args.maxValue}
+      step={args.step}
+      prefix={<AntDIconElement />}
+      status={args.status}
+      disabled={args.disabled}
+    ></Antd.InputNumber>
+  );
+};
 
 export const Simple = Template.bind({});
 Simple.args = {

@@ -1,8 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
+import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import { iconOptions } from "./data";
-import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Button",
@@ -47,17 +47,20 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Antd.Button
-    type={args.type}
-    shape={args.shape}
-    size={args.size}
-    disabled={args.disabled}
-  >
-    {args.iconName && <AntDIconElement iconName={args.iconName} />}
-    {args.label}
-  </Antd.Button>
-);
+const Template = (args) => {
+  const AntDIconElement = args.iconName ? AntDesignIcons[args.iconName] : <></>;
+  return (
+    <Antd.Button
+      type={args.type}
+      shape={args.shape}
+      size={args.size}
+      disabled={args.disabled}
+    >
+      <AntDIconElement />
+      {args.label}
+    </Antd.Button>
+  );
+};
 
 export const Simple = Template.bind({});
 Simple.args = {
