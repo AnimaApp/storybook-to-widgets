@@ -18,7 +18,10 @@ export default {
 };
 
 const Template = (args) => (
-  <Antd.Radio checked={args.checked} disabled={args.disabled}></Antd.Radio>
+  <Antd.Radio
+    {...(args.checked && { checked: args.checked })}
+    disabled={args.disabled}
+  ></Antd.Radio>
 );
 
 export const Simple = Template.bind({});

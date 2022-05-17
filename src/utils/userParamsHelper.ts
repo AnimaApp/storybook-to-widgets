@@ -43,7 +43,7 @@ export const createUserParams = (
 
     if (
       key.toLowerCase().includes("color") ||
-      (userParam.type == "string" && story.initialArgs[key].includes("#"))
+      (userParam.type == "string" && story.initialArgs[key]?.includes("#"))
     ) {
       userParam.type = "color";
     }

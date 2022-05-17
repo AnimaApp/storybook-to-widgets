@@ -1,7 +1,8 @@
 import "antd/dist/antd.css";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import React from "react";
-import { iconOptions } from "./data";
+
+const iconOptions = [...Object.keys(AntDesignIcons)];
 
 export default {
   title: "Ant Design/Icon",

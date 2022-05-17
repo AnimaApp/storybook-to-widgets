@@ -2,7 +2,11 @@ import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
-import { iconOptions } from "./data";
+import withIconMapped from "../decorators/withIconMapped";
+
+const options = ["None", ...Object.keys(AntDesignIcons)];
+const iconTransform =
+  "<% if (param !== 'None') { %><AntDesignIcons.<%= param %> /><% } else { %> '' <% } %>";
 
 export default {
   title: "Ant Design/Text Input",
@@ -35,13 +39,15 @@ export default {
     },
     prefixIconName: {
       type: "options",
-      options: iconOptions,
+      options: options,
       description: "Prefix Icon Name",
+      transform: iconTransform,
     },
     suffixIconName: {
       type: "options",
-      options: iconOptions,
+      options: options,
       description: "Suffix Icon Name",
+      transform: iconTransform,
     },
     status: {
       description: "Status",
@@ -53,34 +59,23 @@ export default {
       type: "boolean",
     },
   },
+  decorators: [withIconMapped(["prefixIconName", "suffixIconName"])],
 };
 
-const Template = (args) => {
-  const AntDIconElementPrefix = args.prefixIconName ? (
-    AntDesignIcons[args.prefixIconName]
-  ) : (
-    <></>
-  );
-  const AntDIconElementSuffix = args.suffixIconName ? (
-    AntDesignIcons[args.suffixIconName]
-  ) : (
-    <></>
-  );
-  return (
-    <Antd.Input
-      size={args.size}
-      bordered={args.bordered}
-      defaultValue={args.defaultValue}
-      placeholder={args.placeholder}
-      maxLength={args.maxChar}
-      showCount={args.showCharCount}
-      prefix={args.prefixIconName && <AntDIconElementPrefix />}
-      suffix={args.suffixIconName && <AntDIconElementSuffix />}
-      status={args.status}
-      disabled={args.disabled}
-    ></Antd.Input>
-  );
-};
+const Template = (args) => (
+  <Antd.Input
+    size={args.size}
+    bordered={args.bordered}
+    defaultValue={args.defaultValue}
+    placeholder={args.placeholder}
+    maxLength={args.maxChar}
+    showCount={args.showCharCount}
+    prefix={args.prefixIconName}
+    suffix={args.suffixIconName}
+    status={args.status}
+    disabled={args.disabled}
+  ></Antd.Input>
+);
 
 export const Simple = Template.bind({});
 Simple.args = {

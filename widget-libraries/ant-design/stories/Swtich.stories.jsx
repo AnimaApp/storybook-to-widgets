@@ -32,7 +32,7 @@ export default {
 
 const Template = (args) => (
   <Antd.Switch
-    checked={args.checked}
+    {...(args.checked && { checked: args.checked })}
     disabled={args.disabled}
     size={args.size}
     checkedChildren={args.checkedLabel}
