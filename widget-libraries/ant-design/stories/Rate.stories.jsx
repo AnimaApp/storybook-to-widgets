@@ -20,7 +20,7 @@ export default {
     },
     color: {
       description: "Icon color",
-      type: "string",
+      control: { type: "color" },
     },
     count: {
       description: "Count",
@@ -31,7 +31,7 @@ export default {
       type: "number",
     },
     allowClear: {
-      description: "Allow clear={args.allowHalf}",
+      description: "Allow clear",
       type: "boolean",
     },
     allowHalf: {
@@ -52,7 +52,7 @@ const Template = (args) => {
   };
   return (
     <Antd.Rate
-      character={args.iconName}
+      {...(args.iconName && { character: args.iconName })}
       style={style}
       count={args.count}
       defaultValue={args.defaultValue}
@@ -66,6 +66,7 @@ const Template = (args) => {
 export const Simple = Template.bind({});
 Simple.args = {
   count: 5,
+  color: '#fadb14',
   iconName: "StarFilled",
   defaultValue: 3.5,
   allowClear: true,

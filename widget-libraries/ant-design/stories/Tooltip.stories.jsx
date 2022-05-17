@@ -59,6 +59,7 @@ const Template = (args) => (
 export const Simple = Template.bind({});
 Simple.args = {
   title: "Prompt text",
+  color: "#1e0404",
   arrowPointAtCenter: true,
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 };

@@ -12,6 +12,10 @@ export default {
       description: "Rotate",
       type: "number",
     },
+    color: {
+      description: "Color",
+      control: { type: "color" },
+    },
     size: {
       description: "Size",
       type: "string",
@@ -47,7 +51,7 @@ export const Simple = Template.bind({});
 Simple.args = {
   iconName: "SearchOutlined",
   size: "12px",
-  color: "blue",
+  color: "#0000ff",
   spin: false,
   rotate: 0,
 };
