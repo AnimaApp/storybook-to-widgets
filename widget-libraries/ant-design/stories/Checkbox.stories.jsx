@@ -23,7 +23,7 @@ export default {
 
 const Template = (args) => (
   <Antd.Checkbox
-    {...(args.checked && { checked: args.checked })}
+    defaultChecked={args.checked}
     indeterminate={args.indeterminate}
     disabled={args.disabled}
   ></Antd.Checkbox>

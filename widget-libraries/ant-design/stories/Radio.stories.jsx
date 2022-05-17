@@ -19,7 +19,7 @@ export default {
 
 const Template = (args) => (
   <Antd.Radio
-    {...(args.checked && { checked: args.checked })}
+    defaultChecked={args.checked}
     disabled={args.disabled}
   ></Antd.Radio>
 );

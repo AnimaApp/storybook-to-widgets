@@ -53,6 +53,7 @@ export default {
 
 const Template = (args) => (
   <Antd.Select
+    style={{ minWidth: '100px' }}
     bordered={args.bordered}
     checked={args.checked}
     showArrow={args.showArrow}

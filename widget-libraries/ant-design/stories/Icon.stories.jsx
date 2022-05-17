@@ -33,13 +33,15 @@ export default {
 };
 
 const Template = (args) => {
-  const AntDIconElement = AntDesignIcons[args.iconName];
+  const iconName = args.iconName || "SearchOutlined";
+  const AntDIconElement = AntDesignIcons[iconName];
   const style = {
     ...(args.color ? { color: args.color } : {}),
     ...(args.size ? { fontSize: args.size } : {}),
   };
   return (
     <AntDIconElement
+      defaultValue={iconName}
       spin={args.spin}
       rotate={args.rotate}
       style={style}
