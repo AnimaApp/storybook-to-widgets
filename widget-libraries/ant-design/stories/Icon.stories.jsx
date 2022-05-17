@@ -1,24 +1,17 @@
-import React from "react";
 import "antd/dist/antd.css";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
-
-const options = [
-  ...Object.keys(AntDesignIcons).map((key) =>
-    key
-      .replace(/Filled$/, "")
-      .replace(/Outlined$/, "")
-      .replace(/TwoTone$/, "")
-  ),
-];
+import React from "react";
+import { iconNameOptions, iconStyleOptions } from "./data";
+import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Icon",
   component: AntDesignIcons,
   argTypes: {
-    style: {
+    iconStyle: {
       description: "Style",
       type: "options",
-      options: ["Filled", "Outlined", "TwoTone"],
+      options: iconStyleOptions,
     },
     rotate: {
       description: "Rotate",
@@ -30,7 +23,7 @@ export default {
     },
     iconName: {
       type: "options",
-      options: options,
+      options: iconNameOptions,
       description: "Icon",
     },
     spin: {
@@ -41,13 +34,14 @@ export default {
 };
 
 const Template = (args) => {
-  const AntDIconElement = AntDesignIcons[`${args.iconName ?? "Star"}${args.style ?? "Filled"}`];
   const style = {
     ...(args.color ? { color: args.color } : {}),
     ...(args.size ? { fontSize: args.size } : {}),
   };
   return (
     <AntDIconElement
+      iconName={args.iconName}
+      iconStyle={args.iconStyle}
       spin={args.spin}
       rotate={args.rotate}
       style={style}
@@ -58,7 +52,7 @@ const Template = (args) => {
 export const Simple = Template.bind({});
 Simple.args = {
   iconName: "Search",
-  style: "Outlined",
+  iconStyle: "Outlined",
   size: "12px",
   color: "blue",
   spin: false,

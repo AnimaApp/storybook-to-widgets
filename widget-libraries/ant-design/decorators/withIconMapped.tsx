@@ -9,8 +9,6 @@ const nameToIcon = (name: string) => {
 
 const argsMapping = {
   iconName: nameToIcon,
-  prefixIconName: nameToIcon,
-  suffixIconName: nameToIcon,
 };
 const withIconMapped = withArgsMapping(argsMapping);
 

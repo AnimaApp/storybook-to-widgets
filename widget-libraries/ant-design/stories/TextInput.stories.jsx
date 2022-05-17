@@ -1,12 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
-import * as AntDesignIcons from "@ant-design/icons/lib/icons";
-import withIconMapped from "../decorators/withIconMapped";
-
-const options = ["None", ...Object.keys(AntDesignIcons)];
-const iconTransform =
-  "<% if (param !== 'None') { %><AntDesignIcons.<%= param %> /><% } else { %> '' <% } %>";
+import { iconNameOptions, iconStyleOptions } from "./data";
+import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Text Input",
@@ -39,9 +35,23 @@ export default {
     },
     prefixIconName: {
       type: "options",
-      options: options,
-      description: "Icon",
-      transform: iconTransform,
+      options: iconNameOptions,
+      description: "Prefix Icon Name",
+    },
+    prefixIconStyle: {
+      type: "options",
+      options: iconStyleOptions,
+      description: "Prefix Icon Style",
+    },
+    suffixIconName: {
+      type: "options",
+      options: iconNameOptions,
+      description: "Suffix Icon Name",
+    },
+    suffixIconStyle: {
+      type: "options",
+      options: iconStyleOptions,
+      description: "Suffix Icon Style",
     },
     status: {
       description: "Status",
@@ -53,7 +63,6 @@ export default {
       type: "boolean",
     },
   },
-  decorators: [withIconMapped],
 };
 
 const Template = (args) => (
@@ -64,7 +73,22 @@ const Template = (args) => (
     placeholder={args.placeholder}
     maxLength={args.maxChar}
     showCount={args.showCharCount}
-    prefix={args.prefixIconName}
+    prefix={
+      args.prefixIconName && (
+        <AntDIconElement
+          iconName={args.prefixIconName}
+          iconStyle={args.prefixIconStyle}
+        />
+      )
+    }
+    suffix={
+      args.suffixIconName && (
+        <AntDIconElement
+          iconName={args.suffixIconName}
+          iconStyle={args.suffixIconStyle}
+        />
+      )
+    }
     status={args.status}
     disabled={args.disabled}
   ></Antd.Input>
@@ -77,8 +101,8 @@ Simple.args = {
   placeholder: "Please fill your username",
   maxLength: 40,
   showCount: true,
-  iconName: "UserOutlined",
-  prefixIconName: "UserOutlined",
+  prefixIconName: "User",
+  suffixIconName: "Info",
   status: "error",
   disabled: false,
 };

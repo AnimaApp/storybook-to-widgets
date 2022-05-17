@@ -1,12 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
-import * as AntDesignIcons from "@ant-design/icons/lib/icons";
-import withIconMapped from "../decorators/withIconMapped";
-
-const options = ["None", ...Object.keys(AntDesignIcons)];
-const iconTransform =
-  "<% if (param !== 'None') { %><AntDesignIcons.<%= param %> /><% } else { %> '' <% } %>";
+import { iconNameOptions, iconStyleOptions } from "./data";
+import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Rate",
@@ -14,9 +10,13 @@ export default {
   argTypes: {
     iconName: {
       type: "options",
-      options: options,
-      description: "Icon",
-      transform: iconTransform,
+      options: iconNameOptions,
+      description: "Icon Name",
+    },
+    iconStyle: {
+      type: "options",
+      options: iconStyleOptions,
+      description: "Icon Style",
     },
     color: {
       description: "Icon color",
@@ -43,7 +43,6 @@ export default {
       type: "boolean",
     },
   },
-  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -52,7 +51,14 @@ const Template = (args) => {
   };
   return (
     <Antd.Rate
-      character={args.iconName}
+      character={
+        args.iconName && (
+          <AntDIconElement
+            iconName={args.iconName}
+            iconStyle={args.iconStyle}
+          />
+        )
+      }
       style={style}
       count={args.count}
       defaultValue={args.defaultValue}
