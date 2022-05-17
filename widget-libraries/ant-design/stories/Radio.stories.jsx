@@ -22,6 +22,4 @@ const Template = (args) => (
 );
 
 export const Simple = Template.bind({});
-Simple.args = {
-  checked: false,
-};
+Simple.args = {};
