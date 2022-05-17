@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
-import { iconNameOptions, iconStyleOptions } from "./data";
+import { iconOptions } from "./data";
 import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
@@ -43,13 +43,8 @@ export default {
     },
     prefixIconName: {
       type: "options",
-      options: iconNameOptions,
+      options: iconOptions,
       description: "Prefix Icon Name",
-    },
-    prefixIconStyle: {
-      type: "options",
-      options: iconStyleOptions,
-      description: "Prefix Icon Style",
     },
     status: {
       description: "Status",
@@ -77,7 +72,6 @@ const Template = (args) => (
       args.prefixIconName && (
         <AntDIconElement
           iconName={args.prefixIconName}
-          iconStyle={args.prefixIconStyle}
         />
       )
     }
@@ -94,7 +88,7 @@ Simple.args = {
   placeholder: "Age",
   maxValue: 120,
   minValue: 18,
-  prefixIconName: "User",
+  prefixIconName: "UserOutlined",
   status: "warning",
   disabled: false,
 };

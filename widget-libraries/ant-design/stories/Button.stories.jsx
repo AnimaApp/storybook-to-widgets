@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
-import { iconNameOptions, iconStyleOptions } from "./data";
+import { iconOptions } from "./data";
 import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
@@ -37,13 +37,8 @@ export default {
     },
     iconName: {
       type: "options",
-      options: iconNameOptions,
+      options: iconOptions,
       description: "Icon Name",
-    },
-    iconStyle: {
-      type: "options",
-      options: iconStyleOptions,
-      description: "Icon Style",
     },
     disabled: {
       description: "Disabled",
@@ -59,9 +54,7 @@ const Template = (args) => (
     size={args.size}
     disabled={args.disabled}
   >
-    {args.iconName && (
-      <AntDIconElement iconName={args.iconName} iconStyle={args.iconStyle} />
-    )}
+    {args.iconName && <AntDIconElement iconName={args.iconName} />}
     {args.label}
   </Antd.Button>
 );
@@ -72,5 +65,5 @@ Simple.args = {
   shape: "round",
   size: "large",
   label: "Search",
-  iconName: "Search",
+  iconName: "SearchOutlined",
 };

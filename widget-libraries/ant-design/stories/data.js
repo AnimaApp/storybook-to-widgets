@@ -1,5 +1,7 @@
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 
+export const iconOptions = [...Object.keys(AntDesignIcons)];
+
 export const iconNameOptions = [
   ...Object.keys(AntDesignIcons).map((key) =>
     key

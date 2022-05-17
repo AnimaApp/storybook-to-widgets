@@ -1,18 +1,13 @@
 import "antd/dist/antd.css";
 import * as AntDesignIcons from "@ant-design/icons/lib/icons";
 import React from "react";
-import { iconNameOptions, iconStyleOptions } from "./data";
+import { iconOptions } from "./data";
 import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
   title: "Ant Design/Icon",
   component: AntDesignIcons,
   argTypes: {
-    iconStyle: {
-      description: "Style",
-      type: "options",
-      options: iconStyleOptions,
-    },
     rotate: {
       description: "Rotate",
       type: "number",
@@ -23,7 +18,7 @@ export default {
     },
     iconName: {
       type: "options",
-      options: iconNameOptions,
+      options: iconOptions,
       description: "Icon",
     },
     spin: {
@@ -41,7 +36,6 @@ const Template = (args) => {
   return (
     <AntDIconElement
       iconName={args.iconName}
-      iconStyle={args.iconStyle}
       spin={args.spin}
       rotate={args.rotate}
       style={style}
@@ -51,8 +45,7 @@ const Template = (args) => {
 
 export const Simple = Template.bind({});
 Simple.args = {
-  iconName: "Search",
-  iconStyle: "Outlined",
+  iconName: "SearchOutlined",
   size: "12px",
   color: "blue",
   spin: false,

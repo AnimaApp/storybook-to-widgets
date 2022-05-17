@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
-import { iconNameOptions, iconStyleOptions } from "./data";
+import { iconOptions } from "./data";
 import { AntDIconElement } from "../components/AntDIconElement";
 
 export default {
@@ -10,13 +10,8 @@ export default {
   argTypes: {
     iconName: {
       type: "options",
-      options: iconNameOptions,
+      options: iconOptions,
       description: "Icon Name",
-    },
-    iconStyle: {
-      type: "options",
-      options: iconStyleOptions,
-      description: "Icon Style",
     },
     color: {
       description: "Icon color",
@@ -55,7 +50,6 @@ const Template = (args) => {
         args.iconName && (
           <AntDIconElement
             iconName={args.iconName}
-            iconStyle={args.iconStyle}
           />
         )
       }
