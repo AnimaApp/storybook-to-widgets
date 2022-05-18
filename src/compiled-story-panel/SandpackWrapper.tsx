@@ -40,6 +40,7 @@ const SandpackWrapper: FunctionComponent<Props> = ({ storyCode }) => {
   const importsCode = createImports([
     ...Object.keys(dependencies),
     ...stylesImport,
+    'react'
   ]);
 
   const fullCode = importsCode

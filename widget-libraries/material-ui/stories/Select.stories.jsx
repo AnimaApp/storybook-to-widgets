@@ -49,13 +49,21 @@ export default {
 };
 
 const Template = (args) => {
+  const [state, setState] = React.useState(1);
+
+  const handleChange = (event) => {
+    console.log('change');
+    setState(event.target.value);
+  };
+
   return (
     <MuiMaterial.Select
       sx={{ width: args.width }}
       disabled={args.disabled}
       variant={args.variant}
       label={args.label}
-      value={args.value}
+      value={state}
+      onChange={handleChange}
     >
       <SimpleMenuItem {...args.menuitem} />
       <SimpleMenuItem {...args.menuitem2} />

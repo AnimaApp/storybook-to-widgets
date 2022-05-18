@@ -5,25 +5,9 @@ export default {
   title: "Material UI/MenuItem",
   component: MuiMaterial.MenuItem,
   argTypes: {
-    autoFocus: {
-      description: "Autofocus",
-      type: "boolean",
-      defaultValue: false,
-    },
-    dense: {
-      description: "Dense",
-      type: "boolean",
-      defaultValue: false,
-    },
-    divider: {
-      description: "Divider",
-      type: "boolean",
-      defaultValue: false,
-    },
-    disableGutters: {
-      description: "Disable Gutters",
-      type: "boolean",
-      defaultValue: false,
+    label: {
+      description: "Label",
+      type: "string",
     },
     value: {
       description: "Value",
@@ -34,7 +18,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <MuiMaterial.MenuItem key={args.itemKey} value={args.value}>
+    <MuiMaterial.MenuItem value={args.value}>
       {args.label}
     </MuiMaterial.MenuItem>
   );
@@ -44,8 +28,7 @@ export const SimpleMenuItem = Template.bind({});
 
 SimpleMenuItem.args = {
   value: 1,
-  label: "User 1",
-  itemKey: "1",
+  label: "User 1"
 };
 
 SimpleMenuItem.storyInfo = {
