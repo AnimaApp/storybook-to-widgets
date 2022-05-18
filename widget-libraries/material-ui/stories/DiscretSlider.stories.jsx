@@ -2,7 +2,7 @@ import React from "react";
 import * as MuiMaterial from "@mui/material";
 
 export default {
-  title: "Material UI/Slider",
+  title: "Material UI/Discret Slider",
   component: MuiMaterial.Slider,
   argTypes: {
     color: {
@@ -51,21 +51,6 @@ export default {
   },
 };
 
-const ContinousSliderTemplate = (args) => {
-  return (
-    <MuiMaterial.Slider
-      sx={{
-        '& input[type="range"]': {
-          WebkitAppearance: "slider-vertical",
-        },
-      }}
-      color={args.color}
-      disabled={args.disabled}
-      orientation={args.orientation}
-    />
-  );
-};
-
 const Template = (args) => {
   return (
     <MuiMaterial.Slider
@@ -86,14 +71,6 @@ const Template = (args) => {
       size={args.size}
     />
   );
-};
-
-export const ContinuousSlider = ContinousSliderTemplate.bind({});
-ContinuousSlider.args = {
-  color: "primary",
-  size: "medium",
-  disabled: false,
-  defaultValue: 15,
 };
 
 export const DiscreteSlider = Template.bind({});
