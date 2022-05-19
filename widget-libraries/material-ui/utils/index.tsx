@@ -6,3 +6,6 @@ export const iconTransform =
 
 export const iconTransformSnakeCase =
   "<% if (param !== 'None') { %>'<%= param.split(/(?=[A-Z])/).join('_').toLowerCase()%>'<% } else { %> '' <% } %>";
+
+const keyTransform =
+  '<%- `"${(Math.floor(Math.random() * 1000) + 1).toString()}"` %>';

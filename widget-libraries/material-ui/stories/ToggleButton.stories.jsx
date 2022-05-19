@@ -1,6 +1,6 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { options, iconTransform } from "../utils";
+import { options, iconTransform, keyTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
@@ -36,6 +36,11 @@ export default {
       description: "Icon",
       transform: iconTransform,
     },
+    itemKey: {
+      description: "Key",
+      hidden: true,
+      transform: keyTransform,
+    },
   },
   decorators: [withIconMapped],
 };
@@ -43,11 +48,13 @@ export default {
 const Template = (args) => {
   return (
     <MuiMaterial.ToggleButton
+      value={args.value}
       color={args.color}
       size={args.size}
       disabled={args.disabled}
       selected={args.selected}
       disableRipple={args.disableRipple}
+      key={args.itemKey}
     >
       {args.iconName}
     </MuiMaterial.ToggleButton>
@@ -55,6 +62,7 @@ const Template = (args) => {
 };
 
 export const SimpleToggleButton = Template.bind({});
+
 SimpleToggleButton.args = {
   color: "primary",
   size: "medium",
@@ -62,4 +70,10 @@ SimpleToggleButton.args = {
   disabled: false,
   selected: false,
   disableRipple: false,
+  itemKey: "1",
+};
+
+SimpleToggleButton.storyInfo = {
+  name: "SimpleToggleButton",
+  kind: "Material UI/ToggleButton",
 };
