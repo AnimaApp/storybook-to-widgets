@@ -90,3 +90,8 @@ SimpleButton.args = {
   disableElevation: false,
   disableRipple: false,
 };
+
+SimpleButton.storyInfo = {
+  name: "SimpleButton",
+  kind: "Material UI/Button",
+};

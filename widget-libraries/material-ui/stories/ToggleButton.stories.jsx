@@ -60,5 +60,6 @@ SimpleToggleButton.args = {
   size: "medium",
   iconName: "ArrowUp",
   disabled: false,
+  selected: false,
   disableRipple: false,
 };
