@@ -50,5 +50,5 @@ export const SimpleIcon = Template.bind({});
 SimpleIcon.args = {
   color: "primary",
   fontSize: "medium",
-  iconName: "ArrowUp",
+  iconName: "Build",
 };

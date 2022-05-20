@@ -47,7 +47,7 @@ const TemplateImage = (args) => {
 export const IconAvatar = TemplateIcon.bind({});
 IconAvatar.args = {
   variant: "square",
-  iconName: "ArrowUp",
+  iconName: "Build",
 };
 
 export const LetterAvatar = Template.bind({});

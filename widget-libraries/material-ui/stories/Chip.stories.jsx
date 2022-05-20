@@ -67,5 +67,5 @@ SimpleChip.args = {
   clickable: true,
   variant: "outlined",
   label: "Chip Label",
-  iconName: "ArrowUp",
+  iconName: "Build",
 };

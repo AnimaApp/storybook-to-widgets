@@ -66,7 +66,7 @@ export const SimpleToggleButton = Template.bind({});
 SimpleToggleButton.args = {
   color: "primary",
   size: "medium",
-  iconName: "ArrowUp",
+  iconName: "Build",
   disabled: false,
   selected: false,
   disableRipple: false,
