@@ -1,6 +1,7 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
 import { SimpleToggleButton } from "./ToggleButton.stories";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Material UI/ToggleButtonGroup",
@@ -56,6 +57,7 @@ export default {
       storyInfo: SimpleToggleButton.storyInfo,
     },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -99,7 +101,7 @@ SimpleToggleButtonGroup.args = {
     color: SimpleToggleButtonGroup.color,
     variant: SimpleToggleButtonGroup.variant,
     size: SimpleToggleButtonGroup.size,
-    iconName: "FormatAlignLeftIcon",
+    iconName: "FormatAlignLeftOutlined",
     value: "left",
     itemKey: "1",
   },
@@ -108,7 +110,7 @@ SimpleToggleButtonGroup.args = {
     color: SimpleToggleButtonGroup.color,
     variant: SimpleToggleButtonGroup.variant,
     size: SimpleToggleButtonGroup.size,
-    iconName: "FormatAlignCenterIcon",
+    iconName: "FormatAlignCenterOutlined",
     value: "middle",
     itemKey: "2",
   },
@@ -117,7 +119,7 @@ SimpleToggleButtonGroup.args = {
     color: SimpleToggleButtonGroup.color,
     variant: SimpleToggleButtonGroup.variant,
     size: SimpleToggleButtonGroup.size,
-    iconName: "FormatAlignRightIcon",
+    iconName: "FormatAlignRightOutlined",
     value: "right",
     itemKey: "3",
   },
