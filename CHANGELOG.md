@@ -1,3 +1,15 @@
+# v1.0.19 (Mon May 23 2022)
+
+#### 🐛 Bug Fix
+
+- fix: :bug: font family on button [#6](https://github.com/AnimaApp/storybook-to-widgets/pull/6) ([@marton987](https://github.com/marton987))
+
+#### Authors: 1
+
+- Martin Freytes ([@marton987](https://github.com/marton987))
+
+---
+
 # v1.0.18 (Mon May 23 2022)
 
 #### 🐛 Bug Fix
