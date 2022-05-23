@@ -23,13 +23,11 @@ export default {
 
 const Template = (args) => (
   <Antd.Checkbox
-    checked={args.checked}
+    defaultChecked={args.checked}
     indeterminate={args.indeterminate}
     disabled={args.disabled}
   ></Antd.Checkbox>
 );
 
 export const Simple = Template.bind({});
-Simple.args = {
-  checked: true,
-};
+Simple.args = {};
