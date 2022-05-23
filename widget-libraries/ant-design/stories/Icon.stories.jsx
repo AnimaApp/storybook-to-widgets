@@ -52,7 +52,7 @@ const Template = (args) => {
 export const Simple = Template.bind({});
 Simple.args = {
   iconName: "SearchOutlined",
-  size: "12px",
+  size: "40px",
   color: "#0000ff",
   spin: false,
   rotate: 0,
