@@ -24,6 +24,10 @@ export default {
       description: "Label",
       type: "string",
     },
+    value: {
+      description: "Default Value",
+      type: "string",
+    },
     width: {
       description: "Width",
       type: "string",
@@ -76,22 +80,22 @@ SimpleSelect.args = {
   variant: "outlined",
   label: "Username",
   width: "250px",
-  value: 1,
+  value: "1",
   menuitem: {
     ...SimpleMenuItem.args,
-    value: 1,
+    value: "1",
     label: "User1",
     itemKey: 1,
   },
   menuitem2: {
     ...SimpleMenuItem.args,
-    value: 2,
+    value: "2",
     label: "User2",
     itemKey: 2,
   },
   menuitem3: {
     ...SimpleMenuItem.args,
-    value: 3,
+    value: "3",
     label: "User3",
     itemKey: 3,
   },

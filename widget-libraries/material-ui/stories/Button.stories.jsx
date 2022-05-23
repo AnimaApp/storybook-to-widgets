@@ -23,13 +23,13 @@ export default {
     startIcon: {
       type: "options",
       options: iconOptions,
-      description: "Icon",
+      description: "Start Icon",
       transform: iconTransform,
     },
     endIcon: {
       type: "options",
       options: iconOptions,
-      description: "Icon",
+      description: "End Icon",
       transform: iconTransform,
     },
     variant: {

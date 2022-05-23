@@ -25,7 +25,7 @@ const Template = (args) => {
 export const SimpleMenuItem = Template.bind({});
 
 SimpleMenuItem.args = {
-  value: 1,
+  value: "1",
   label: "User 1",
 };
 
