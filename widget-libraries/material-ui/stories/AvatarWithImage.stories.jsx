@@ -1,10 +1,10 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { options, iconTransform } from "../utils";
+import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Material UI/Avatar",
+  title: "Material UI/Avatar With Image",
   component: MuiMaterial.Avatar,
   argTypes: {
     variant: {
@@ -12,10 +12,9 @@ export default {
       type: "options",
       options: ["circular", "rounded", "square"],
     },
-
     iconName: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
       required: false,
@@ -25,38 +24,10 @@ export default {
 };
 
 const Template = (args) => {
-  return (
-    <MuiMaterial.Avatar variant={args.variant}>
-      {args.letter}
-    </MuiMaterial.Avatar>
-  );
-};
-
-const TemplateIcon = (args) => {
-  return (
-    <MuiMaterial.Avatar variant={args.variant}>
-      {args.iconName}
-    </MuiMaterial.Avatar>
-  );
-};
-
-const TemplateImage = (args) => {
   return <MuiMaterial.Avatar variant={args.variant} src={args.src} />;
 };
 
-export const IconAvatar = TemplateIcon.bind({});
-IconAvatar.args = {
-  variant: "square",
-  iconName: "Build",
-};
-
-export const LetterAvatar = Template.bind({});
-LetterAvatar.args = {
-  variant: "square",
-  letter: "P9",
-};
-
-export const ImageAvatar = TemplateImage.bind({});
+export const ImageAvatar = Template.bind({});
 
 ImageAvatar.args = {
   variant: "square",
@@ -65,5 +36,5 @@ ImageAvatar.args = {
 
 ImageAvatar.storyInfo = {
   name: "ImageAvatar",
-  kind: "Material UI/Avatar",
+  kind: "Material UI/Avatar With Image",
 };
