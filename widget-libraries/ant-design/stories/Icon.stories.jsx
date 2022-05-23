@@ -7,6 +7,10 @@ const iconOptions = [...Object.keys(AntDesignIcons)];
 export default {
   title: "Ant Design/Icon",
   component: AntDesignIcons,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     rotate: {
       description: "Rotate",

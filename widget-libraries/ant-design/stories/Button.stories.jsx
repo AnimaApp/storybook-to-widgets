@@ -11,6 +11,10 @@ const iconTransform =
 export default {
   title: "Ant Design/Button",
   component: Antd.Button,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     type: {
       description: "Type",
@@ -72,4 +76,5 @@ Simple.args = {
   size: "large",
   label: "Search",
   iconName: "SearchOutlined",
+  disabled: false,
 };

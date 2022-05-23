@@ -11,6 +11,10 @@ const iconTransform =
 export default {
   title: "Ant Design/Number Input",
   component: Antd.InputNumber,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     controls: {
       description: "Controls",
@@ -84,10 +88,13 @@ export const Simple = Template.bind({});
 Simple.args = {
   controls: true,
   size: "middle",
+  status: "default",
   bordered: true,
   placeholder: "Age",
   maxValue: 120,
   minValue: 18,
+  defaultValue: 20,
+  step: 1,
   prefixIconName: "UserOutlined",
   disabled: false,
 };

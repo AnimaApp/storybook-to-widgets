@@ -5,6 +5,10 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/Slider",
   component: Antd.Slider,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     minValue: {
       description: "Min value",
@@ -54,7 +58,6 @@ const Template = (args) => (
     step={args.step}
     range={args.range}
     tooltipVisible={args.tooltipVisible}
-    orientation={args.orientation}
     disabled={args.disabled}
     reverse={args.reverse}
     vertical={args.orientation === "vertical"}
@@ -66,7 +69,10 @@ Simple.args = {
   minValue: 0,
   maxValue: 10,
   defaultValue: 3,
+  step: 1,
   range: true,
   tooltipVisible: true,
   orientation: "horizontal",
+  disabled: false,
+  reverse: false,
 };

@@ -5,6 +5,10 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/TimePicker",
   component: Antd.TimePicker,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     size: {
       description: "Size",
@@ -18,7 +22,7 @@ export default {
     status: {
       description: "Status",
       type: "options",
-      options: ["error", "warning"],
+      options: ["error", "default", "warning"],
     },
     disabled: {
       description: "Disabled",
@@ -59,8 +63,11 @@ const Template = (args) => (
 export const Simple = Template.bind({});
 Simple.args = {
   allowClear: true,
-  size: "default",
+  size: "middle",
   placeholder: "Select time",
   bordered: true,
   showNow: true,
+  disabled: false,
+  use12Hours: false,
+  status: "default",
 };

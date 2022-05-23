@@ -11,6 +11,10 @@ const iconTransform =
 export default {
   title: "Ant Design/Text Input",
   component: Antd.Input,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     size: {
       description: "Size",
@@ -81,10 +85,12 @@ export const Simple = Template.bind({});
 Simple.args = {
   size: "middle",
   bordered: true,
+  defaultValue: "",
   placeholder: "Please fill your username",
   maxChar: 40,
   showCharCount: true,
   prefixIconName: "UserOutlined",
   suffixIconName: "InfoOutlined",
   disabled: false,
+  status: "default",
 };

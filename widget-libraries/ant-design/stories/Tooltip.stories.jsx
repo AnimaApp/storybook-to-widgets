@@ -5,6 +5,10 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/Tooltip",
   component: Antd.Tooltip,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     title: {
       description: "Title",
@@ -62,4 +66,5 @@ Simple.args = {
   color: "#1e0404",
   arrowPointAtCenter: true,
   content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  placement: "bottom",
 };

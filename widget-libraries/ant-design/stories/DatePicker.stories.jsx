@@ -5,6 +5,10 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/DatePicker",
   component: Antd.DatePicker,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     type: {
       description: "Type",
@@ -94,7 +98,11 @@ export const Simple = Template.bind({});
 Simple.args = {
   allowClear: true,
   placeholder: "Select date",
-  size: "default",
+  type: "date",
+  status: "default",
+  size: "middle",
+  format: "MM/DD/YY",
   bordered: true,
   showToday: true,
+  disabled: false,
 };
