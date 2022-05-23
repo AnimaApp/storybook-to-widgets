@@ -1,6 +1,6 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { iconOptions, iconTransformSnakeCase } from "../utils";
+import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
@@ -31,7 +31,7 @@ export default {
       type: "options",
       options: iconOptions,
       description: "Icon",
-      transform: iconTransformSnakeCase,
+      transform: iconTransform,
     },
   },
   decorators: [withIconMapped],
