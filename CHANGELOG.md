@@ -1,3 +1,15 @@
+# v1.0.18 (Mon May 23 2022)
+
+#### 🐛 Bug Fix
+
+- feat: add antd components [#1](https://github.com/AnimaApp/storybook-to-widgets/pull/1) ([@marton987](https://github.com/marton987))
+
+#### Authors: 1
+
+- Martin Freytes ([@marton987](https://github.com/marton987))
+
+---
+
 # v1.0.17 (Tue May 17 2022)
 
 #### 🐛 Bug Fix
