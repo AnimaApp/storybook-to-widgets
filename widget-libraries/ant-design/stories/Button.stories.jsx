@@ -76,4 +76,5 @@ Simple.args = {
   size: "large",
   label: "Search",
   iconName: "SearchOutlined",
+  disabled: false,
 };

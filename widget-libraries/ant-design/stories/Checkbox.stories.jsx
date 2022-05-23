@@ -5,6 +5,10 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/Checkbox",
   component: Antd.Checkbox,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     checked: {
       description: "Checked",
@@ -30,4 +34,8 @@ const Template = (args) => (
 );
 
 export const Simple = Template.bind({});
-Simple.args = {};
+Simple.args = {
+  checked: false,
+  indeterminate: false,
+  disabled: false,
+};

@@ -5,6 +5,10 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/Select",
   component: Antd.Select,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     bordered: {
       description: "Bordered",
@@ -31,7 +35,7 @@ export default {
     status: {
       description: "Status",
       type: "options",
-      options: ["error", "warning"],
+      options: ["error", "default", "warning"],
     },
     items: {
       description: "Items",
@@ -76,4 +80,7 @@ Simple.args = {
   size: "middle",
   bordered: true,
   showClear: true,
+  showArrow: false,
+  disabled: false,
+  status: "default",
 };

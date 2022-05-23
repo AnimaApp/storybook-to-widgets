@@ -11,6 +11,10 @@ const iconTransform =
 export default {
   title: "Ant Design/Rate",
   component: Antd.Rate,
+  parameters: {
+    custom_css:
+      '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+  },
   argTypes: {
     iconName: {
       type: "options",
@@ -71,4 +75,5 @@ Simple.args = {
   defaultValue: 3.5,
   allowClear: true,
   allowHalf: true,
+  readOnly: false,
 };
