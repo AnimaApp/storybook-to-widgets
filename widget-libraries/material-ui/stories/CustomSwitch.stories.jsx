@@ -1,8 +1,10 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
+import withIconMapped from "../decorators/withIconMapped";
+import { iconOptions, iconTransform } from "../utils";
 
 export default {
-  title: "Material UI/Switch",
+  title: "Material UI/Custom Switch",
   component: MuiMaterial.Switch,
   argTypes: {
     color: {
@@ -31,7 +33,14 @@ export default {
       description: "Checked",
       type: "boolean",
     },
+    iconName: {
+      type: "options",
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+    },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -40,15 +49,17 @@ const Template = (args) => {
       color={args.color}
       disabled={args.disabled}
       size={args.size}
-      defaultChecked={args.defaultChecked}
+      defa={args.defaultChecked}
+      checkedIcon={args.iconName}
     />
   );
 };
 
-export const SimpleSwitch = Template.bind({});
-SimpleSwitch.args = {
+export const SwitchWithCustomIcon = Template.bind({});
+SwitchWithCustomIcon.args = {
   color: "primary",
   size: "medium",
   disabled: false,
   defaultChecked: true,
+  iconName: "AddOutlined",
 };

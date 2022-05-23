@@ -1,8 +1,8 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { options, iconTransform } from "../utils";
+import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
-import { ImageAvatar } from "./Avatar.stories";
+import { ImageAvatar } from "./AvatarWithImage.stories";
 
 export default {
   title: "Material UI/Chip With Avatar",
@@ -35,10 +35,9 @@ export default {
       description: "Label",
       type: "string",
     },
-
     iconName: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },

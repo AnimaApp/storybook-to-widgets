@@ -1,7 +1,7 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
 import withIconMapped from "../decorators/withIconMapped";
-import { options, iconTransform } from "../utils";
+import { iconOptions, iconTransform } from "../utils";
 
 export default {
   title: "Material UI/Button",
@@ -20,16 +20,15 @@ export default {
         "warning",
       ],
     },
-
     startIcon: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
     endIcon: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },

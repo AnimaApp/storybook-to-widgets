@@ -11,16 +11,14 @@ export default {
     },
     value: {
       description: "Value",
-      type: "string" | "number",
+      type: "string",
     },
   },
 };
 
 const Template = (args) => {
   return (
-    <MuiMaterial.MenuItem value={args.value}>
-      {args.label}
-    </MuiMaterial.MenuItem>
+    <MuiMaterial.MenuItem value={args.value}>{args.label}</MuiMaterial.MenuItem>
   );
 };
 
@@ -28,7 +26,7 @@ export const SimpleMenuItem = Template.bind({});
 
 SimpleMenuItem.args = {
   value: 1,
-  label: "User 1"
+  label: "User 1",
 };
 
 SimpleMenuItem.storyInfo = {

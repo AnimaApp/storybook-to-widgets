@@ -14,7 +14,7 @@ export default {
     variant: {
       description: "Variant",
       type: "options",
-      options: ["filled", "outlined", "standard"],
+      options: ["text", "outlined", "contained"],
     },
     size: {
       description: "Size",
@@ -33,7 +33,6 @@ export default {
       description: "Disable Elevation",
       type: "boolean",
     },
-
     orientation: {
       description: "Orientation",
       type: "options",
@@ -102,7 +101,7 @@ SimpleButtonGroup.args = {
     ...SimpleButton.args,
     color: SimpleButtonGroup.color,
     variant: SimpleButtonGroup.variant,
-    label: SimpleButtonGroup.variant,
+    label: "Button 3",
     size: SimpleButtonGroup.size,
   },
 };

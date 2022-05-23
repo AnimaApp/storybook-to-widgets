@@ -15,13 +15,17 @@ export default {
       type: "options",
       options: ["always", "hover", "none"],
     },
+    label: {
+      description: "Label",
+      type: "string",
+    },
   },
 };
 
 const Template = (args) => {
   return (
     <MuiMaterial.Link color={args.color} underline={args.underline}>
-      Link
+      {args.label}
     </MuiMaterial.Link>
   );
 };
@@ -30,4 +34,5 @@ export const SimpleLink = Template.bind({});
 SimpleLink.args = {
   color: "primary",
   underline: "always",
+  label: "Link",
 };

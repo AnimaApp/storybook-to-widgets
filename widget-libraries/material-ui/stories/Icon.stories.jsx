@@ -1,6 +1,6 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { options, iconTransformSnakeCase } from "../utils";
+import { iconOptions, iconTransformSnakeCase } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
@@ -27,10 +27,9 @@ export default {
       type: "options",
       options: ["inherit", "large", "medium", "small"],
     },
-
     iconName: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransformSnakeCase,
     },
@@ -50,5 +49,5 @@ export const SimpleIcon = Template.bind({});
 SimpleIcon.args = {
   color: "primary",
   fontSize: "medium",
-  iconName: "Build",
+  iconName: "AddCircleOutline",
 };

@@ -26,21 +26,12 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
-    disableRipple: {
-      description: "Disable Ripple",
-      type: "boolean",
-    },
-    disableElevation: {
-      description: "Disable Elevation",
-      type: "boolean",
-    },
     orientation: {
       description: "Orientation",
       type: "options",
       options: ["vertical", "horizontal"],
       defaultValue: "horizontal",
     },
-
     menuitem: {
       type: "story",
       description: "menuitem",
@@ -73,11 +64,10 @@ const Template = (args) => {
       color={args.color}
       variant={args.variant}
       disabled={args.disabled}
-      disableElevation={args.disableElevation}
-      disableRipple={args.disableRipple}
       orientation={args.orientation}
       size={args.size}
       onChange={handleValue}
+      exclusive
     >
       <SimpleToggleButton {...args.menuitem} />
       <SimpleToggleButton {...args.menuitem2} />
@@ -92,8 +82,6 @@ SimpleToggleButtonGroup.args = {
   color: "primary",
   variant: "outlined",
   disabled: false,
-  disableRipple: false,
-  disableElevation: false,
   size: "large",
   orientation: "horizontal",
   menuitem: {

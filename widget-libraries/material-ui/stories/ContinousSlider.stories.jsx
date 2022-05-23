@@ -26,6 +26,13 @@ export default {
       defaultValue: "horizontal",
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ marginTop: "2em", marginLeft: "1em" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const ContinousSliderTemplate = (args) => {

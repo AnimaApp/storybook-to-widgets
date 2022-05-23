@@ -16,7 +16,6 @@ export default {
       type: "options",
       options: ["filled", "outlined", "standard"],
     },
-
     disabled: {
       description: "Disabled",
       type: "boolean",
@@ -52,7 +51,6 @@ const Template = (args) => {
   const [state, setState] = React.useState(1);
 
   const handleChange = (event) => {
-    console.log('change');
     setState(event.target.value);
   };
 

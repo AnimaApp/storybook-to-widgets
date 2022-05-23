@@ -24,6 +24,10 @@ export default {
       description: "Precision",
       type: "number",
     },
+    defaultValue: {
+      description: "Default Value",
+      type: "number",
+    },
   },
   decorators: [withIconMapped],
 };
@@ -31,11 +35,11 @@ export default {
 const Template = (args) => {
   return (
     <MuiMaterial.Rating
-      name="size-small"
-      defaultValue={2}
+      defaultValue={args.defaultValue}
       size={args.size}
       precision={args.precision}
       max={args.max}
+      disabled={args.disabled}
     />
   );
 };
@@ -45,7 +49,7 @@ export const SimpleRating = Template.bind({});
 SimpleRating.args = {
   size: "medium",
   disabled: false,
-  label: "Username",
   precision: 0.5,
   max: 5,
+  defaultValue: 2,
 };

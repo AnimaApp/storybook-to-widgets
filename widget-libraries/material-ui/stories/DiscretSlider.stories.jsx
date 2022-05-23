@@ -31,7 +31,6 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
-
     marks: {
       description: "Marks",
       type: "boolean",
@@ -49,6 +48,13 @@ export default {
       defaultValue: "auto",
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ marginTop: "2em", marginLeft: "1em" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => {

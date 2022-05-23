@@ -1,13 +1,11 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
 import withIconMapped from "../decorators/withIconMapped";
-import { options, iconTransform } from "../utils";
+import { iconOptions, iconTransform } from "../utils";
 
 export default {
   title: "Material UI/Fab",
   component: MuiMaterial.Fab,
-  decorators: [withIconMapped],
-
   argTypes: {
     color: {
       description: "Color",
@@ -25,7 +23,7 @@ export default {
     },
     iconName: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
@@ -52,6 +50,7 @@ export default {
       type: "string",
     },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {

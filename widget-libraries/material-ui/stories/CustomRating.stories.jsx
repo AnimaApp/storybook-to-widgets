@@ -1,7 +1,7 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
 import withIconMapped from "../decorators/withIconMapped";
-import { options, iconTransform } from "../utils";
+import { iconOptions, iconTransform } from "../utils";
 
 export default {
   title: "Material UI/Custom Rating",
@@ -27,18 +27,22 @@ export default {
     },
     iconName: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
     emptyIcon: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
-    iconColor: { control: "color" },
-    rateColor: { control: "color" },
+    defaultValue: {
+      description: "Default Value",
+      type: "number",
+    },
+    iconFilledColor: { control: "color" },
+    iconHoverColor: { control: "color" },
   },
   decorators: [withIconMapped],
 };
@@ -48,14 +52,13 @@ const CustomTemplate = (args) => {
     <MuiMaterial.Rating
       sx={{
         "& .MuiRating-iconFilled": {
-          color: args.iconColor,
+          color: args.iconFilledColor,
         },
         "& .MuiRating-iconHover": {
-          color: args.rateColor,
+          color: args.iconHoverColor,
         },
       }}
-      name="size-small"
-      defaultValue={2}
+      defaultValue={args.defaultValue}
       size={args.size}
       precision={args.precision}
       emptyIcon={args.emptyIcon}
@@ -71,11 +74,11 @@ export const RatingWithCustomIcons = CustomTemplate.bind({});
 RatingWithCustomIcons.args = {
   size: "medium",
   disabled: false,
-  label: "Username",
   emptyIcon: "Alarm",
   iconName: "AlarmAdd",
+  defaultValue: 2,
   precision: 0.5,
   max: 5,
-  rateColor: "#0ecfcf",
-  iconColor: "#21c51e",
+  iconHoverColor: "#0ecfcf",
+  iconFilledColor: "#21c51e",
 };

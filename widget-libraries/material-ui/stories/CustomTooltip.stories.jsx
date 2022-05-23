@@ -4,9 +4,11 @@ import withIconMapped from "../decorators/withIconMapped";
 import { iconOptions, iconTransform } from "../utils";
 
 export default {
-  title: "Material UI/Tooltip",
+  title: "Material UI/Custom Tooltip",
   component: MuiMaterial.Tooltip,
   argTypes: {
+    bgColor: { control: "color" },
+    color: { control: "color" },
     title: {
       description: "Title",
       type: "string",
@@ -56,16 +58,29 @@ const Template = (args) => {
       title={args.title}
       arrow={args.arrow}
       placement={args.placement}
+      componentsProps={{
+        tooltip: {
+          sx: {
+            bgcolor: args.bgColor,
+            "& .MuiTooltip-arrow": {
+              color: args.bgColor,
+            },
+            color: args.color,
+          },
+        },
+      }}
     >
       <MuiMaterial.IconButton>{args.iconName}</MuiMaterial.IconButton>
     </MuiMaterial.Tooltip>
   );
 };
 
-export const SimpleTooltip = Template.bind({});
-SimpleTooltip.args = {
+export const CustomColorTooltip = Template.bind({});
+CustomColorTooltip.args = {
   title: "This is the tooltip title",
   placement: "bottom",
-  arrow: true,
+  arrow: false,
   iconName: "AddOutlined",
+  bgColor: "#167f9b",
+  color: "white",
 };

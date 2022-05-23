@@ -1,6 +1,6 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { options, iconTransform, keyTransform } from "../utils";
+import { iconOptions, iconTransform, keyTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
@@ -12,7 +12,6 @@ export default {
       type: "options",
       options: ["primary", "secondary", "success", "error", "info", "warning"],
     },
-
     size: {
       description: "Size",
       type: "options",
@@ -32,7 +31,7 @@ export default {
     },
     iconName: {
       type: "options",
-      options: options,
+      options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
@@ -52,7 +51,6 @@ const Template = (args) => {
       color={args.color}
       size={args.size}
       disabled={args.disabled}
-      selected={args.selected}
       disableRipple={args.disableRipple}
       key={args.itemKey}
     >
@@ -68,7 +66,6 @@ SimpleToggleButton.args = {
   size: "medium",
   iconName: "Build",
   disabled: false,
-  selected: false,
   disableRipple: false,
   itemKey: "1",
 };
