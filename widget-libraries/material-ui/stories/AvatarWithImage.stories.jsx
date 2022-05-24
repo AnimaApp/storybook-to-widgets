@@ -1,7 +1,5 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { iconOptions, iconTransform } from "../utils";
-import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Material UI/Avatar With Image",
@@ -12,15 +10,11 @@ export default {
       type: "options",
       options: ["circular", "rounded", "square"],
     },
-    iconName: {
-      type: "options",
-      options: iconOptions,
-      description: "Icon",
-      transform: iconTransform,
-      required: false,
+    src: {
+      description: "Src",
+      type: "string",
     },
   },
-  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
