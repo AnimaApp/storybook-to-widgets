@@ -1,3 +1,15 @@
+# v1.0.20 (Tue May 24 2022)
+
+#### 🐛 Bug Fix
+
+- Feature/add material UI components [#3](https://github.com/AnimaApp/storybook-to-widgets/pull/3) ([@besartmarku](https://github.com/besartmarku) haimonline@gmail.com)
+
+#### Authors: 1
+
+- Besart Marku ([@besartmarku](https://github.com/besartmarku))
+
+---
+
 # v1.0.19 (Mon May 23 2022)
 
 #### 🐛 Bug Fix
