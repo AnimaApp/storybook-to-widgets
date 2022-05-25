@@ -4,6 +4,9 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/MenuItem",
   component: MuiMaterial.MenuItem,
+  parameters: {
+    titleArg: "label",
+  },
   argTypes: {
     label: {
       description: "Label",

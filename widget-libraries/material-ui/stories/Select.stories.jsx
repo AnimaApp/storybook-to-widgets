@@ -6,11 +6,6 @@ export default {
   title: "Material UI/Select",
   component: MuiMaterial.Select,
   argTypes: {
-    color: {
-      description: "Color",
-      type: "options",
-      options: ["primary", "secondary", "error", "info", "success", "warning"],
-    },
     variant: {
       description: "Variant",
       type: "options",
