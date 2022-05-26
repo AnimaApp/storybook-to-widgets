@@ -2,7 +2,7 @@ import React from "react";
 import * as MuiMaterial from "@mui/material";
 
 export default {
-  title: "Material UI/CircularProgress",
+  title: "Material UI/Circular progress",
   component: MuiMaterial.CircularProgress,
   argTypes: {
     color: {
@@ -20,11 +20,11 @@ export default {
       type: "string",
     },
     thickness: {
-      thickness: "Thickness",
+      description: "Thickness",
       type: "number",
     },
     value: {
-      thickness: "Value",
+      description: "Value",
       type: "number",
     },
     disableShrink: {

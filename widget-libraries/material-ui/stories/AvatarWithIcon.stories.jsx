@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Material UI/Avatar With Icon",
+  title: "Material UI/Avatar with icon",
   component: MuiMaterial.Avatar,
   argTypes: {
     variant: {
