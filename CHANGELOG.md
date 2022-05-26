@@ -1,3 +1,17 @@
+# v1.0.21 (Thu May 26 2022)
+
+#### 🐛 Bug Fix
+
+- fix(storybook): support deps with .mjs files [#7](https://github.com/AnimaApp/storybook-to-widgets/pull/7) ([@fathyb](https://github.com/fathyb))
+- fix: mui fixes [#8](https://github.com/AnimaApp/storybook-to-widgets/pull/8) (haimonline@gmail.com [@Haimonline](https://github.com/Haimonline))
+
+#### Authors: 2
+
+- Fathy Boundjadj ([@fathyb](https://github.com/fathyb))
+- Haim Ben Chimol ([@Haimonline](https://github.com/Haimonline))
+
+---
+
 # v1.0.20 (Tue May 24 2022)
 
 #### 🐛 Bug Fix
