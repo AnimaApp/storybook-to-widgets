@@ -47,7 +47,7 @@ export default {
 };
 
 const Template = (args) => {
-  const [state, setState] = React.useState(1);
+  const [state, setState] = React.useState("1");
 
   const handleChange = (event) => {
     setState(event.target.value);
