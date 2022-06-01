@@ -66,6 +66,6 @@ SimpleChipWithAvatar.args = {
   clickable: true,
   variant: "outlined",
   label: "Chip Label",
-  imageVariant: "rounded",
+  imageVariant: "circular",
   imageSrc: "https://joeschmoe.io/api/v1/random"
 };
