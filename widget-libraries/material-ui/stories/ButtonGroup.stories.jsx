@@ -1,9 +1,9 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { SimpleButton } from "./Button.stories";
+import { SimpleButtonInGroup } from "./ButtonInGroup.stories";
 
 export default {
-  title: "Material UI/ButtonGroup",
+  title: "Material UI/Button group",
   component: MuiMaterial.ButtonGroup,
   argTypes: {
     color: {
@@ -42,17 +42,17 @@ export default {
     button: {
       type: "story",
       description: "button",
-      storyInfo: SimpleButton.storyInfo,
+      storyInfo: SimpleButtonInGroup.storyInfo,
     },
     button2: {
       type: "story",
       description: "button",
-      storyInfo: SimpleButton.storyInfo,
+      storyInfo: SimpleButtonInGroup.storyInfo,
     },
     button3: {
       type: "story",
       description: "button",
-      storyInfo: SimpleButton.storyInfo,
+      storyInfo: SimpleButtonInGroup.storyInfo,
     },
   },
 };
@@ -68,9 +68,9 @@ const Template = (args) => {
       orientation={args.orientation}
       size={args.size}
     >
-      <SimpleButton {...args.button} />
-      <SimpleButton {...args.button2} />
-      <SimpleButton {...args.button3} />
+      <SimpleButtonInGroup {...args.button} />
+      <SimpleButtonInGroup {...args.button2} />
+      <SimpleButtonInGroup {...args.button3} />
     </MuiMaterial.ButtonGroup>
   );
 };
@@ -82,26 +82,17 @@ SimpleButtonGroup.args = {
   disabled: false,
   disableRipple: false,
   disableElevation: false,
-  size: "large",
+  size: "small",
   button: {
-    ...SimpleButton.args,
-    color: SimpleButtonGroup.color,
-    variant: SimpleButtonGroup.variant,
+    ...SimpleButtonInGroup.args,
     label: "Button 1",
-    size: SimpleButtonGroup.size,
   },
   button2: {
-    ...SimpleButton.args,
-    color: SimpleButtonGroup.color,
-    variant: SimpleButtonGroup.variant,
+    ...SimpleButtonInGroup.args,
     label: "Button 2",
-    size: SimpleButtonGroup.size,
   },
   button3: {
-    ...SimpleButton.args,
-    color: SimpleButtonGroup.color,
-    variant: SimpleButtonGroup.variant,
+    ...SimpleButtonInGroup.args,
     label: "Button 3",
-    size: SimpleButtonGroup.size,
   },
 };

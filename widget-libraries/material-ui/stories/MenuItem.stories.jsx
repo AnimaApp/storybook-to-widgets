@@ -5,6 +5,11 @@ export default {
   title: "Material UI/MenuItem",
   component: MuiMaterial.MenuItem,
   parameters: {
+    docs: {
+      description: {
+        component: "Menu item",
+      }
+    },
     titleArg: "label",
   },
   argTypes: {
