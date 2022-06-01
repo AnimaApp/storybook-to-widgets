@@ -88,6 +88,8 @@ SimpleButton.args = {
   disabled: false,
   disableElevation: false,
   disableRipple: false,
+  startIcon: "None",
+  endIcon: "None"
 };
 
 SimpleButton.storyInfo = {

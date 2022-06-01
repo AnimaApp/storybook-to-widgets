@@ -30,37 +30,35 @@ export default {
       type: "boolean",
     },
     count: {
-      description: "The total number of pages",
+      description: "Total pages",
       type: "number",
     },
     boundaryCount: {
-      description: "Number of always visible pages at the beginning and end",
+      description: "Visible pages beginning & end",
       type: "number",
     },
     siblingCount: {
-      description:
-        "Number of always visible pages before and after the current page",
+      description: "Visible pages before & after current page",
       type: "number",
     },
     defaultPage: {
-      description:
-        "The page selected by default when the component is uncontrolled",
+      description: "Selected page",
       type: "number",
     },
     hideNextButton: {
-      description: "If true, hide the next-page button",
+      description: "Hide next-page button",
       type: "boolean",
     },
     hidePrevButton: {
-      description: "If true, hide the previous-page button",
+      description: "Hide previous-page button",
       type: "boolean",
     },
     showFirstButton: {
-      description: "If true, show the first-page button",
+      description: "Show first-page button",
       type: "boolean",
     },
     showLastButton: {
-      description: "If true, show the last-page button",
+      description: "Show last-page button",
       type: "boolean",
     },
   },
