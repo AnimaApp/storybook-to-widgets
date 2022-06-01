@@ -1,3 +1,15 @@
+# v1.0.22 (Wed Jun 01 2022)
+
+#### 🐛 Bug Fix
+
+- fix: add default values [#9](https://github.com/AnimaApp/storybook-to-widgets/pull/9) (haimonline@gmail.com [@Haimonline](https://github.com/Haimonline))
+
+#### Authors: 1
+
+- Haim Ben Chimol ([@Haimonline](https://github.com/Haimonline))
+
+---
+
 # v1.0.21 (Thu May 26 2022)
 
 #### 🐛 Bug Fix
