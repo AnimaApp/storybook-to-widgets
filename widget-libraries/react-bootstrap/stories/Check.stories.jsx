@@ -3,7 +3,7 @@ import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  title: "React Bootstrap/Checkbox",
+  title: "React Bootstrap/Check",
   component: ReactBootstrap.Form.Check,
   argTypes: {
     disabled: { description: "Disabled", type: "boolean" },
@@ -13,14 +13,8 @@ export default {
       type: "options",
       options: ["radio", "checkbox", "switch"],
     },
-  },
-  decorators: [
-    (Story) => (
-      <div style={{ width: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
+    defaultChecked: { description: "Default checked", type: "boolean" },
+  }
 };
 
 const Template = (args) => {
@@ -29,13 +23,15 @@ const Template = (args) => {
       disabled={args.disabled}
       label={args.label}
       type={args.type}
+      defaultChecked={args.defaultChecked}
     />
   );
 };
 
-export const SimpleCheckbox = Template.bind({});
-SimpleCheckbox.args = {
+export const SimpleCheck = Template.bind({});
+SimpleCheck.args = {
   disabled: false,
   label: "Label",
   type: "checkbox",
+  defaultChecked: false
 };
