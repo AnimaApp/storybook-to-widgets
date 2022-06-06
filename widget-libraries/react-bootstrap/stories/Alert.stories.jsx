@@ -33,6 +33,7 @@ export default {
       options: ["Fade", "None"],
     },
     message: { description: "Message", type: "string" },
+    heading: { description: "Heading", type: "string" },
   },
 };
 
@@ -44,6 +45,11 @@ const Template = (args) => {
       variant={args.variant}
       transition={args.transition}
     >
+      {args.heading && (
+        <ReactBootstrap.Alert.Heading>
+          {args.heading}
+        </ReactBootstrap.Alert.Heading>
+      )}
       {args.message}
     </ReactBootstrap.Alert>
   );
@@ -57,4 +63,5 @@ SimpleAlert.args = {
   variant: "primary",
   transition: "Fade",
   message: "This is an alert",
+  heading: null,
 };
