@@ -6,11 +6,11 @@ export default {
   title: "React Bootstrap/Placeholder",
   component: ReactBootstrap.Placeholder,
   argTypes: {
-    animation: {
-      description: "Animation",
-      type: "options",
-      options: ["glow", "wave"],
-    },
+    // animation: {
+    //   description: "Animation",
+    //   type: "options",
+    //   options: ["glow", "wave"],
+    // },
     bg: {
       description: "Bg",
       type: "options",
@@ -25,35 +25,30 @@ export default {
         "light",
       ],
     },
-    size: {
-      description: "Size",
-      type: "options",
-      options: ["xs", "sm", "lg"],
-    },
+    // size: {
+    //   description: "Size",
+    //   type: "options",
+    //   options: ["xs", "sm", "lg"],
+    // },
+    width: { description: "Width", type: "string" },
+    height: { description: "Height", type: "string" },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: "400px", height: "200px" }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 const Template = (args) => {
   return (
     <ReactBootstrap.Placeholder
-      animation={args.animation}
       bg={args.bg}
-      size={args.size}
-      xs={12}
+      style={{ width: args.width, height: args.height }}
     />
   );
 };
 
 export const SimplePlaceholder = Template.bind({});
 SimplePlaceholder.args = {
-  animation: "glow",
+  // animation: "wave",
   bg: "primary",
-  size: "sm",
+  // size: "sm",
+  width: "300px",
+  height: "90px",
 };

@@ -7,21 +7,21 @@ export default {
   component: ReactBootstrap.Form.Range,
   argTypes: {
     disabled: { description: "Disabled", type: "boolean" },
+    width: { description: "Width", type: "string" },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: 600 }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 const Template = (args) => {
-  return <ReactBootstrap.Form.Range disabled={args.disabled} />;
+  return (
+    <ReactBootstrap.Form.Range
+      disabled={args.disabled}
+      style={{ width: args.width }}
+    />
+  );
 };
 
 export const SimpleRange = Template.bind({});
 SimpleRange.args = {
   disabled: false,
+  width: "300px",
 };
