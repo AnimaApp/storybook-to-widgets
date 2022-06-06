@@ -37,6 +37,22 @@ export default {
       description: "Label",
       type: "string",
     },
+    hideNextButton: {
+      description: "Hide Next Button",
+      type: "boolean",
+    },
+    hidePrevButton: {
+      description: "Hide Prev Button",
+      type: "boolean",
+    },
+    showFirstButton: {
+      description: "Show First Button",
+      type: "boolean",
+    },
+    showLastButton: {
+      description: "Show Last Button",
+      type: "boolean",
+    },
     item1: {
       type: "story",
       storyInfo: SimplePaginationItem.storyInfo,
@@ -59,9 +75,13 @@ const Template = (args) => {
       size={args.size}
       variant={args.variant}
     >
+      {args.showFirstButton && <ReactBootstrap.Pagination.First />}
+      {!args.hidePrevButton && <ReactBootstrap.Pagination.Prev />}
       <SimplePaginationItem {...args.item1} />
       <SimplePaginationItem {...args.item2} />
       <SimplePaginationItem {...args.item3} />
+      {!args.hideNextButton && <ReactBootstrap.Pagination.Next />}
+      {args.showLastButton && <ReactBootstrap.Pagination.Last />}
     </ReactBootstrap.Pagination>
   );
 };
@@ -72,6 +92,10 @@ SimplePagination.args = {
   size: "lg",
   variant: "primary",
   label: "Click me",
+  hideNextButton: false,
+  hidePrevButton: false,
+  showFirstButton: false,
+  showLastButton: false,
   item1: {
     pageNumber: 1,
   },
