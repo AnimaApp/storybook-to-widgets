@@ -1,6 +1,7 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { SimplePaginationItem } from "./PaginationItem.stories";
 
 export default {
   title: "React Bootstrap/Pagination",
@@ -36,6 +37,18 @@ export default {
       description: "Label",
       type: "string",
     },
+    item1: {
+      type: "story",
+      storyInfo: SimplePaginationItem.storyInfo,
+    },
+    item2: {
+      type: "story",
+      storyInfo: SimplePaginationItem.storyInfo,
+    },
+    item3: {
+      type: "story",
+      storyInfo: SimplePaginationItem.storyInfo,
+    },
   },
 };
 
@@ -46,7 +59,9 @@ const Template = (args) => {
       size={args.size}
       variant={args.variant}
     >
-      <ReactBootstrap.Pagination.Item>1</ReactBootstrap.Pagination.Item>,
+      <SimplePaginationItem {...args.item1} />
+      <SimplePaginationItem {...args.item2} />
+      <SimplePaginationItem {...args.item3} />
     </ReactBootstrap.Pagination>
   );
 };
@@ -57,4 +72,13 @@ SimplePagination.args = {
   size: "lg",
   variant: "primary",
   label: "Click me",
+  item1: {
+    pageNumber: 1,
+  },
+  item2: {
+    pageNumber: 2,
+  },
+  item3: {
+    pageNumber: 3,
+  },
 };
