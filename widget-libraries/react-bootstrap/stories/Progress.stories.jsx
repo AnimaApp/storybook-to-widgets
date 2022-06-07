@@ -7,7 +7,6 @@ export default {
   component: ReactBootstrap.ProgressBar,
   argTypes: {
     animated: { description: "Animated", type: "boolean" },
-    isChild: { description: "Is child", type: "boolean" },
     max: { description: "Max", type: "number" },
     min: { description: "Min", type: "number" },
     now: { description: "Now", type: "number" },
@@ -17,20 +16,23 @@ export default {
       type: "options",
       options: ["success", "danger", "warning", "info"],
     },
-    visuallyHidden: { description: "Visually Hidden", type: "boolean" },
+    width: {
+      description: "Width",
+      type: "string",
+    },
   },
 };
 
 const Template = (args) => {
   return (
     <ReactBootstrap.ProgressBar
+      style={{ width: args.width }}
       animated={args.animated}
       now={args.now}
       max={args.max}
       min={args.min}
       striped={args.striped}
       variant={args.variant}
-      visuallyHidden={args.visuallyHidden}
     />
   );
 };
@@ -43,5 +45,5 @@ SimpleProgressBar.args = {
   now: 40,
   striped: false,
   variant: "success",
-  visuallyHidden: false,
+  width: "300px",
 };
