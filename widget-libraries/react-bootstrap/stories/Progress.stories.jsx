@@ -3,7 +3,7 @@ import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  title: "React Bootstrap/ProgressBar",
+  title: "React Bootstrap/Progress Bar",
   component: ReactBootstrap.ProgressBar,
   argTypes: {
     animated: { description: "Animated", type: "boolean" },
@@ -14,7 +14,17 @@ export default {
     variant: {
       description: "Variant",
       type: "options",
-      options: ["success", "danger", "warning", "info"],
+      options: [
+        "primary",
+        "secondary",
+        "success",
+        "danger",
+        "warning",
+        "info",
+        "dark",
+        "light",
+        "link",
+      ],
     },
     width: {
       description: "Width",
@@ -45,5 +55,5 @@ SimpleProgressBar.args = {
   now: 40,
   striped: false,
   variant: "success",
-  width: "300px",
+  width: "200px",
 };

@@ -49,7 +49,7 @@ const Template = (args) => {
 export const SimpleButton = Template.bind({});
 SimpleButton.args = {
   disabled: false,
-  size: "lg",
+  size: "sm",
   variant: "primary",
   label: "Click me",
 };
