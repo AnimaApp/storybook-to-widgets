@@ -18,25 +18,6 @@ export default {
       type: "options",
       options: ["sm", "lg"],
     },
-    variant: {
-      description: "Variant",
-      type: "options",
-      options: [
-        "primary",
-        "secondary",
-        "success",
-        "danger",
-        "warning",
-        "info",
-        "dark",
-        "light",
-        "link",
-      ],
-    },
-    label: {
-      description: "Label",
-      type: "string",
-    },
     hideNextButton: {
       description: "Hide Next Button",
       type: "boolean",
@@ -70,11 +51,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <ReactBootstrap.Pagination
-      disabled={args.disabled}
-      size={args.size}
-      variant={args.variant}
-    >
+    <ReactBootstrap.Pagination disabled={args.disabled} size={args.size}>
       {args.showFirstButton && <ReactBootstrap.Pagination.First />}
       {!args.hidePrevButton && <ReactBootstrap.Pagination.Prev />}
       <SimplePaginationItem {...args.item1} />
@@ -90,8 +67,6 @@ export const SimplePagination = Template.bind({});
 SimplePagination.args = {
   disabled: false,
   size: "sm",
-  variant: "primary",
-  label: "Click me",
   hideNextButton: false,
   hidePrevButton: false,
   showFirstButton: false,
