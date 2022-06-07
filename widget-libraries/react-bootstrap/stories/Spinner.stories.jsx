@@ -46,6 +46,6 @@ const Template = (args) => {
 export const SimpleSpinner = Template.bind({});
 SimpleSpinner.args = {
   animation: "border",
-  size: "sm",
+  size: "lg",
   variant: "primary",
 };

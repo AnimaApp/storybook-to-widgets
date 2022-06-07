@@ -26,13 +26,6 @@ export default {
       storyInfo: SimpleSelectOption.storyInfo,
     },
   },
-  decorators: [
-    (Story) => (
-      <div style={{ width: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 };
 
 const Template = (args) => {
@@ -55,7 +48,6 @@ SimpleSelect.args = {
   item2: {
     label: "Option 2",
   },
-  divider: {},
   item3: {
     label: "Option 3",
   },

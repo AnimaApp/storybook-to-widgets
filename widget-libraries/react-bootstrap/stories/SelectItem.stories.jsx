@@ -10,6 +10,7 @@ export default {
         component: "Item",
       },
     },
+    titleArg: "label"
   },
   argTypes: {
     label: {
