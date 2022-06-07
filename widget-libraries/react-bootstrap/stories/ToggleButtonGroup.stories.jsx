@@ -4,18 +4,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { SimpleToggleButton } from "./ToggleButton.stories";
 
 export default {
-  title: "React Bootstrap/Toggle Button Group",
+  title: "React Bootstrap/Toggle button group",
   component: ReactBootstrap.ToggleButtonGroup,
   argTypes: {
     size: {
       description: "Size",
       type: "options",
       options: ["sm", "lg"],
-    },
-    type: {
-      description: "Type",
-      type: "options",
-      options: ["checkbox", "radio"],
     },
     vertical: {
       description: "Vertical",
@@ -42,7 +37,6 @@ const Template = (args) => {
     <ReactBootstrap.ToggleButtonGroup
       name="options"
       size={args.size}
-      type={args.type}
       vertical={args.vertical}
     >
       <SimpleToggleButton {...args.item1} />
@@ -54,8 +48,7 @@ const Template = (args) => {
 
 export const SimpleToggleButtonGroup = Template.bind({});
 SimpleToggleButtonGroup.args = {
-  size: "lg",
-  type: "radio",
+  size: "sm",
   vertical: false,
   item1: {
     label: "Label 1",

@@ -3,7 +3,7 @@ import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  title: "React Bootstrap/CloseButton",
+  title: "React Bootstrap/Close button",
   component: ReactBootstrap.CloseButton,
   argTypes: {
     disabled: { description: "Disabled", type: "boolean" },

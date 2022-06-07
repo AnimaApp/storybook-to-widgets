@@ -3,7 +3,7 @@ import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  title: "React Bootstrap/ToggleButton",
+  title: "React Bootstrap/Toggle button",
   component: ReactBootstrap.ToggleButton,
   parameters: {
     docs: {
@@ -11,6 +11,7 @@ export default {
         component: "ToggleButton",
       },
     },
+    titleArg: "label",
   },
   argTypes: {
     checked: {
@@ -20,11 +21,6 @@ export default {
     disabled: {
       description: "Disabled",
       type: "boolean",
-    },
-    type: {
-      description: "Type",
-      type: "options",
-      options: ["checkbox", "radio"],
     },
     label: {
       description: "Label",
@@ -38,7 +34,6 @@ const Template = (args) => {
     <ReactBootstrap.ToggleButton
       checked={args.checked}
       disabled={args.disabled}
-      type={args.type}
     >
       {args.label}
     </ReactBootstrap.ToggleButton>
@@ -53,5 +48,5 @@ SimpleToggleButton.args = {
 };
 SimpleToggleButton.storyInfo = {
   name: "SimpleToggleButton",
-  kind: "React Bootstrap/ToggleButton",
+  kind: "React Bootstrap/Toggle button",
 };
