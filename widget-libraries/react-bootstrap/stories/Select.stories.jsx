@@ -11,7 +11,8 @@ export default {
     size: {
       description: "Size",
       type: "options",
-      options: ["sm", "lg"],
+      options: ["Small", "Normal", "Large"],
+      mapping: { Small: "sm", Normal: "", Large: "lg" },
     },
     item1: {
       type: "story",
