@@ -6,11 +6,16 @@ import { SimplePaginationItem } from "./PaginationItem.stories";
 export default {
   title: "React Bootstrap/Pagination",
   component: ReactBootstrap.Pagination,
+  parameters: {
+    custom_css:
+      '.${nodeClass} a { display: inherit; }',
+  },
   argTypes: {
     size: {
       description: "Size",
       type: "options",
-      options: ["sm", "lg"],
+      options: ["Small", "Normal", "Large"],
+      mapping: { Small: "sm", Normal: "", Large: "lg" },
     },
     disabled: { description: "Disabled", type: "boolean" },
     size: {

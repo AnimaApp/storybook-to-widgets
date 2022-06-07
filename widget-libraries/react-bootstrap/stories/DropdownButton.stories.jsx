@@ -7,6 +7,10 @@ import { SimpleDropdownDivider } from "./DropdownDivider.stories";
 export default {
   title: "React Bootstrap/Dropdown button",
   component: ReactBootstrap.DropdownButton,
+  parameters: {
+    custom_css:
+      '.${nodeClass} a { display: inherit; }',
+  },
   argTypes: {
     title: {
       description: "Title",

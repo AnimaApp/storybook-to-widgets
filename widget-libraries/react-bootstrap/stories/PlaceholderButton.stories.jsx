@@ -28,7 +28,8 @@ export default {
     size: {
       description: "Size",
       type: "options",
-      options: ["xs", "sm", "lg"],
+      options: ["Extra Small", "Small", "Normal", "Large"],
+      mapping: { "Extra Small": "xs", Small: "sm", Normal: "", Large: "lg" },
     },
     xs: { description: "Columns number", type: "number" },
   },
