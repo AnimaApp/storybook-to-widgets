@@ -23,5 +23,5 @@ const Template = (args) => {
 export const SimpleRange = Template.bind({});
 SimpleRange.args = {
   disabled: false,
-  width: "300px",
+  width: "200px",
 };

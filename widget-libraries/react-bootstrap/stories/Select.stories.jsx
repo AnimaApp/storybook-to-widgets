@@ -41,7 +41,7 @@ const Template = (args) => {
 export const SimpleSelect = Template.bind({});
 SimpleSelect.args = {
   disabled: false,
-  size: "lg",
+  size: "sm",
   item1: {
     label: "Option 1",
   },

@@ -89,7 +89,7 @@ const Template = (args) => {
 export const SimplePagination = Template.bind({});
 SimplePagination.args = {
   disabled: false,
-  size: "lg",
+  size: "sm",
   variant: "primary",
   label: "Click me",
   hideNextButton: false,
