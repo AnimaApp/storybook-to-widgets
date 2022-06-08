@@ -1,7 +1,6 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import withSizesMapped from "../decorators/withSizesMapped";
 
 const sizesTransform =
   "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
@@ -14,7 +13,7 @@ export default {
     size: {
       description: "Size",
       type: "options",
-      options: ["Small", "Normal", "Large"],
+      options: [ "Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,
     },
@@ -38,7 +37,6 @@ export default {
       type: "string",
     },
   },
-  decorators: [withSizesMapped],
 };
 
 const Template = (args) => {
@@ -56,7 +54,7 @@ const Template = (args) => {
 export const SimpleButton = Template.bind({});
 SimpleButton.args = {
   disabled: false,
-  size: "sm",
+  size: "Normal",
   variant: "primary",
   label: "Click me",
 };

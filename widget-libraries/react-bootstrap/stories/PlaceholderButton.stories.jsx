@@ -1,7 +1,6 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import withSizesMapped from "../decorators/withSizesMapped";
 
 const sizesTransform =
   "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
@@ -37,8 +36,7 @@ export default {
       transform: sizesTransform,
     },
     xs: { description: "Columns number", type: "number" },
-  },
-  decorators: [withSizesMapped],
+  }
 };
 
 const Template = (args) => {
@@ -56,6 +54,6 @@ export const SimplePlaceholderButton = Template.bind({});
 SimplePlaceholderButton.args = {
   animation: "wave",
   variant: "primary",
-  size: "lg",
+  size: "Normal",
   xs: 2,
 };

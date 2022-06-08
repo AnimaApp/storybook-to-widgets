@@ -2,7 +2,6 @@ import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SimpleToggleButton } from "./ToggleButton.stories";
-import withSizesMapped from "../decorators/withSizesMapped";
 
 const sizesTransform =
   "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
@@ -14,7 +13,7 @@ export default {
     size: {
       description: "Size",
       type: "options",
-      options: ["Small", "Normal", "Large"],
+      options: [ "Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,
     },
@@ -35,8 +34,7 @@ export default {
       type: "story",
       storyInfo: SimpleToggleButton.storyInfo,
     },
-  },
-  decorators: [withSizesMapped],
+  }
 };
 
 const Template = (args) => {
@@ -55,7 +53,7 @@ const Template = (args) => {
 
 export const SimpleToggleButtonGroup = Template.bind({});
 SimpleToggleButtonGroup.args = {
-  size: "sm",
+  size: "Normal",
   vertical: false,
   item1: {
     label: "Label 1",

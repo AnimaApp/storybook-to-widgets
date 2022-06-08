@@ -1,4 +1,3 @@
-import React from "react";
 import { withArgsMapping } from "../../../src/decorators";
 
 const mappingSizes = {
@@ -19,6 +18,6 @@ const sizeToBootstrap = (sizeName: string) => {
 const argsMapping = {
   size: sizeToBootstrap,
 };
-const withIconMapped = withArgsMapping(argsMapping);
+const withSizeMapping = withArgsMapping(argsMapping);
 
-export default withIconMapped;
+export default withSizeMapping;

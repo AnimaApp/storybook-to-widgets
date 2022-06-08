@@ -2,7 +2,6 @@ import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SimplePaginationItem } from "./PaginationItem.stories";
-import withSizesMapped from "../decorators/withSizesMapped";
 
 const sizesTransform =
   "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
@@ -22,11 +21,6 @@ export default {
       transform: sizesTransform,
     },
     disabled: { description: "Disabled", type: "boolean" },
-    size: {
-      description: "Size",
-      type: "options",
-      options: ["sm", "lg"],
-    },
     hideNextButton: {
       description: "Hide Next Button",
       type: "boolean",
@@ -56,7 +50,6 @@ export default {
       storyInfo: SimplePaginationItem.storyInfo,
     },
   },
-  decorators: [withSizesMapped],
 };
 
 const Template = (args) => {
@@ -76,7 +69,7 @@ const Template = (args) => {
 export const SimplePagination = Template.bind({});
 SimplePagination.args = {
   disabled: false,
-  size: "sm",
+  size: "Normal",
   hideNextButton: false,
   hidePrevButton: false,
   showFirstButton: false,

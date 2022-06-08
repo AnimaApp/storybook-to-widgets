@@ -1,7 +1,6 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import withSizesMapped from "../decorators/withSizesMapped";
 
 const sizesTransform =
   "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
@@ -18,8 +17,8 @@ export default {
     size: {
       description: "Size",
       type: "options",
-      options: ["Small", "Normal", "Large"],
-      mapping: { Small: "sm", Normal: "", Large: "lg" },
+      options: ["Small", "Large"],
+      mapping: { Small: "sm", Large: "lg" },
       transform: sizesTransform,
     },
     variant: {
@@ -36,8 +35,7 @@ export default {
         "dark",
       ],
     },
-  },
-  decorators: [withSizesMapped],
+  }
 };
 
 const Template = (args) => {
@@ -53,6 +51,6 @@ const Template = (args) => {
 export const SimpleSpinner = Template.bind({});
 SimpleSpinner.args = {
   animation: "border",
-  size: "lg",
+  size: "Large",
   variant: "primary",
 };
