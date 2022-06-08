@@ -2,13 +2,16 @@ import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SimplePaginationItem } from "./PaginationItem.stories";
+import withSizesMapped from "../decorators/withSizesMapped";
+
+const sizesTransform =
+  "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
 
 export default {
   title: "React Bootstrap/Pagination",
   component: ReactBootstrap.Pagination,
   parameters: {
-    custom_css:
-      '.${nodeClass} a { display: inherit; }',
+    custom_css: ".${nodeClass} a { display: inherit; }",
   },
   argTypes: {
     size: {
@@ -16,6 +19,7 @@ export default {
       type: "options",
       options: ["Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
+      transform: sizesTransform,
     },
     disabled: { description: "Disabled", type: "boolean" },
     size: {
@@ -52,6 +56,7 @@ export default {
       storyInfo: SimplePaginationItem.storyInfo,
     },
   },
+  decorators: [withSizesMapped],
 };
 
 const Template = (args) => {

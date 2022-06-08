@@ -1,6 +1,10 @@
 import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import withSizesMapped from "../decorators/withSizesMapped";
+
+const sizesTransform =
+  "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
 
 export default {
   title: "React Bootstrap/Placeholder Button ",
@@ -30,9 +34,11 @@ export default {
       type: "options",
       options: ["Extra Small", "Small", "Normal", "Large"],
       mapping: { "Extra Small": "xs", Small: "sm", Normal: "", Large: "lg" },
+      transform: sizesTransform,
     },
     xs: { description: "Columns number", type: "number" },
   },
+  decorators: [withSizesMapped],
 };
 
 const Template = (args) => {

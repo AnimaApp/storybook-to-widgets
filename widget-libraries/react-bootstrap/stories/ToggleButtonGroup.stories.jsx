@@ -2,6 +2,10 @@ import React from "react";
 import * as ReactBootstrap from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { SimpleToggleButton } from "./ToggleButton.stories";
+import withSizesMapped from "../decorators/withSizesMapped";
+
+const sizesTransform =
+  "<% if (param === 'Extra Small') { %>'xs'<% }else if (param==='Small') { %>'sm'<% }  else if (param==='Large') { %>'lg'<% } else { %> '' <% } %>";
 
 export default {
   title: "React Bootstrap/Toggle button group",
@@ -12,6 +16,7 @@ export default {
       type: "options",
       options: ["Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
+      transform: sizesTransform,
     },
     vertical: {
       description: "Vertical",
@@ -31,6 +36,7 @@ export default {
       storyInfo: SimpleToggleButton.storyInfo,
     },
   },
+  decorators: [withSizesMapped],
 };
 
 const Template = (args) => {
