@@ -38,7 +38,7 @@ mkdir widget-libraries/sample
 
 ```sh
 echo "{
-  \"name\": \"@anima/widgets-sample\",
+  \"name\": \"@animaapp/widgets-sample\",
   \"version\": \"1.0.0\",
   \"private\": true,
   \"scripts\": {},
