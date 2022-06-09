@@ -96,7 +96,8 @@
     "@codemirror/state": "0.20.0"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
   },
   "storybook": {
     "displayName": "Anima Storybook Internal Addon",
