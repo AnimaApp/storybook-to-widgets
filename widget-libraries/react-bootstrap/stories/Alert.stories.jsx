@@ -32,9 +32,12 @@ export default {
 };
 
 const Template = (args) => {
-  return (
+  const [show, setShow] = React.useState(true);
+
+  return (show && 
     <div style={{ width: args.width }}>
       <ReactBootstrap.Alert
+        onClose={() => setShow(false)}
         dismissible={args.dismissible}
         variant={args.variant}
       >
@@ -55,5 +58,5 @@ SimpleAlert.args = {
   variant: "primary",
   message: "This is an alert",
   heading: "Heading",
-  width: "400px",
+  width: "280px",
 };
