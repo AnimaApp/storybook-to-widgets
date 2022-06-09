@@ -19,16 +19,16 @@ jobs:
 
       - name: Install dependencies
         run: |
-          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc && \
-          echo "@anima:registry=https://npm.animaapp.com/" >> ~/.npmrc && \
-          echo "//npm.animaapp.com/:_authToken=\${NPM_TOKEN}" >> ~/.npmrc && \
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+          echo "@animaapp:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}" >> ~/.npmrc
           npm ci
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PACKAGE_TOKEN }}
 
       - name: Create Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm run release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GH_PACKAGE_TOKEN }}

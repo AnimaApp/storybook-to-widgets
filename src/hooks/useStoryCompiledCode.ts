@@ -1,5 +1,5 @@
 import { Story, useStorybookApi } from "@storybook/api";
-import { createStoryCode, StoryCompiler } from "@anima/story-code-parser";
+import { createStoryCode, StoryCompiler } from "@animaapp/story-code-parser";
 import { generateStoriesInfo } from "../code-generator";
 
 const useStoryCompiledCode = () => {
