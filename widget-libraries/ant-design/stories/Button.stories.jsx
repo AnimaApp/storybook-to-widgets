@@ -12,6 +12,11 @@ export default {
   title: "Ant Design/Button",
   component: Antd.Button,
   parameters: {
+    docs: {
+      description: {
+        component: "Button",
+      },
+    },
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
@@ -69,12 +74,17 @@ const Template = (args) => (
   </Antd.Button>
 );
 
-export const Simple = Template.bind({});
-Simple.args = {
+export const SimpleButton = Template.bind({});
+SimpleButton.args = {
   type: "primary",
   shape: "round",
   size: "large",
   label: "Search",
   iconName: "SearchOutlined",
   disabled: false,
+};
+
+SimpleButton.storyInfo = {
+  name: "SimpleButton",
+  kind: "Ant Design/Button",
 };
