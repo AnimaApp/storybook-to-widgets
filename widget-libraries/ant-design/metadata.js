@@ -15,17 +15,27 @@ export default {
           "Primary color": {
             type: "css-color",
             name: "ant-primary-color",
-            default: "blue",
+            default: "#1890ff",
           },
-          "Secondary color": {
+          "Link color": {
             type: "css-color",
             name: "ant-secondary-color",
-            default: "purple",
+            default: "#1890ff",
+          },
+          "Success color": {
+            type: "css-color",
+            name: "ant-secondary-color",
+            default: "#1890ff",
+          },
+          "Warning color": {
+            type: "css-color",
+            name: "ant-secondary-color",
+            default: "#1890ff",
           },
           "Error color": {
             type: "css-color",
             name: "ant-error-color",
-            default: "red",
+            default: "#f5222d",
           },
         },
       },
@@ -48,7 +58,7 @@ export default {
           "Base color": {
             type: "css-length",
             name: "ant-border-color-base",
-            default: "#f4f946",
+            default: "#d9d9d9",
           },
         },
       },
@@ -57,7 +67,7 @@ export default {
           "Base shadow": {
             type: "css-shadow",
             name: "ant-box-shadow-base",
-            default: "0 3px 6px -4px grey",
+            default: "0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)",
           },
         },
       },
