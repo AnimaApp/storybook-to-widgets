@@ -10,57 +10,57 @@ export default {
   styles_import: ["antd/dist/antd.css", "antd/dist/antd.variable.css"],
   theme: {
     categories: {
-      "Colors": {
+      Colors: {
         params: {
           "Primary color": {
-            type: 'css-color',
-            name: 'ant-primary-color',
-            default: 'blue',
+            type: "css-color",
+            name: "ant-primary-color",
+            default: "blue",
           },
           "Secondary color": {
-            type: 'css-color',
-            name: 'ant-secondary-color',
-            default: 'purple',
+            type: "css-color",
+            name: "ant-secondary-color",
+            default: "purple",
           },
           "Error color": {
-            type: 'css-color',
-            name: 'ant-error-color',
-            default: 'red',
+            type: "css-color",
+            name: "ant-error-color",
+            default: "red",
           },
-        }
+        },
       },
-      "Typography": {
+      Typography: {
         params: {
           "Base font size": {
-            type: 'css-length',
-            name: 'ant-font-size-base',
+            type: "css-length",
+            name: "ant-font-size-base",
             default: 14,
           },
-        }
+        },
       },
-      "Border": {
+      Border: {
         params: {
           "Base radius": {
-            type: 'css-length',
-            name: 'ant-border-radius-base',
+            type: "css-length",
+            name: "ant-border-radius-base",
             default: 8,
           },
           "Base color": {
-            type: 'css-length',
-            name: 'ant-border-color-base',
-            default: '#f4f946',
+            type: "css-length",
+            name: "ant-border-color-base",
+            default: "#f4f946",
           },
-        }
+        },
       },
-      "Shadows": {
+      Shadows: {
         params: {
           "Base shadow": {
-            type: 'css-shadow',
-            name: 'ant-box-shadow-base',
-            default: '0 3px 6px -4px grey'
+            type: "css-shadow",
+            name: "ant-box-shadow-base",
+            default: "0 3px 6px -4px grey",
           },
-        }
+        },
       },
-    }
-  }
+    },
+  },
 };
