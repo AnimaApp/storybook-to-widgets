@@ -6,6 +6,11 @@ export default {
   title: "Ant Design/Image",
   component: Antd.Image,
   parameters: {
+    docs: {
+      description: {
+        component: "Item",
+      },
+    },
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
@@ -35,4 +40,9 @@ SimpleImage.args = {
   height: "200px",
   src: "https://joeschmoe.io/api/v1/random",
   preview: true,
+};
+
+SimpleImage.storyInfo = {
+  name: "SimpleImage",
+  kind: "Ant Design/Image",
 };
