@@ -59,5 +59,5 @@ SimpleAlert.args = {
   closable: false,
   banner: false,
   iconName: "SearchOutlined",
-  width: "500px",
+  width: "280px",
 };
