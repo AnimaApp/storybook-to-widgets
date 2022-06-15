@@ -41,19 +41,22 @@ export default {
   },
 };
 
-const Template = (args) => (
-  <Antd.Carousel
-    autoplay={args.autoplay}
-    dotPosition={args.dotPosition}
-    dots={args.dots}
-    effect={args.effect}
-    slidesToShow={1}
-  >
-    <SimpleImage {...args.item} />
-    <SimpleImage {...args.item2} />
-    <SimpleImage {...args.item3} />
-  </Antd.Carousel>
-);
+const Template = (args) => {
+  return (
+    <Antd.Carousel
+      autoplay={args.autoplay}
+      dotPosition={args.dotPosition}
+      dots={args.dots}
+      effect={args.effect}
+      slidesToShow={1}
+      style={{ width: args.width }}
+    >
+      <SimpleImage {...args.item} width={args.width} height={args.height} />
+      <SimpleImage {...args.item2} width={args.width} height={args.height} />
+      <SimpleImage {...args.item3} width={args.width} height={args.height} />
+    </Antd.Carousel>
+  );
+};
 
 export const SimpleCarousel = Template.bind({});
 SimpleCarousel.args = {
@@ -61,21 +64,20 @@ SimpleCarousel.args = {
   dotPosition: "bottom",
   dots: true,
   effect: "scrollx",
+  width: 300,
+  height: 200,
   item: {
-    width: "400px",
-    height: "400px",
+    ...SimpleImage.args,
     src: "https://images.unsplash.com/photo-1655212681194-fd1932c9b542?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     preview: false,
   },
   item2: {
-    width: "400px",
-    height: "400px",
+    ...SimpleImage.args,
     src: "https://images.unsplash.com/photo-1655147260029-75bfe22efc90?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
     preview: false,
   },
   item3: {
-    width: "400px",
-    height: "400px",
+    ...SimpleImage.args,
     src: "https://images.unsplash.com/photo-1655139735973-d551b781e9ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     preview: false,
   },
