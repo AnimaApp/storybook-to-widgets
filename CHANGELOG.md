@@ -1,3 +1,18 @@
+# v1.0.23 (Wed Jun 15 2022)
+
+#### 🐛 Bug Fix
+
+- fix: missing infotip [#16](https://github.com/AnimaApp/storybook-to-widgets/pull/16) (haimonline@gmail.com [@Haimonline](https://github.com/Haimonline))
+- Use GitHub Packages [#12](https://github.com/AnimaApp/storybook-to-widgets/pull/12) ([@Haimonline](https://github.com/Haimonline) haimonline@gmail.com)
+- Feature/react bootstrap components [#10](https://github.com/AnimaApp/storybook-to-widgets/pull/10) ([@besartmarku](https://github.com/besartmarku) haimonline@gmail.com)
+
+#### Authors: 2
+
+- Besart Marku ([@besartmarku](https://github.com/besartmarku))
+- Haim Ben Chimol ([@Haimonline](https://github.com/Haimonline))
+
+---
+
 # v1.0.22 (Wed Jun 01 2022)
 
 #### 🐛 Bug Fix
