@@ -10,6 +10,7 @@ export default {
         component: "X Axis",
       },
     },
+    onlyAddedOnce: true,
   },
   argTypes: {
     xAxisDataKey: { description: "X Axis Data Key" },

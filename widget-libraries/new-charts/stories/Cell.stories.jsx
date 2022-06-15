@@ -13,7 +13,6 @@ export default {
         component: "Cell",
       },
     },
-    titleArg: "color",
   },
   argTypes: {
     color: { description: "color" },

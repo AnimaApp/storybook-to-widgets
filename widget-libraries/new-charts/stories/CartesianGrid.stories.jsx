@@ -10,6 +10,7 @@ export default {
         component: "Cartesian Grid",
       },
     },
+    onlyAddedOnce: true,
   },
   argTypes: {
     strokeDasharray: { description: "stroke dash array" },

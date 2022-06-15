@@ -10,11 +10,12 @@ export default {
         component: "Y Axis",
       },
     },
+    onlyAddedOnce: true,
   },
   argTypes: {
     yAxisDataKey: { description: "Y Axis Data Key" },
   },
-};
+  onlyAddedOnce: true};
 
 const Template = (args) => {
   return <Recharts.YAxis />;

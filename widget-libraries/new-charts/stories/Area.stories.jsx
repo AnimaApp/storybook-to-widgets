@@ -10,6 +10,8 @@ export default {
         component: "Area",
       },
     },
+    titleArg: "areaKey",
+    
   },
   argTypes: {
     fillColor: { description: "Fill Color" },

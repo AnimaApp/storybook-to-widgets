@@ -10,6 +10,7 @@ export default {
         component: "Legend",
       },
     },
+    onlyAddedOnce: true,
   },
   argTypes: {
     align: { description: "Align" },

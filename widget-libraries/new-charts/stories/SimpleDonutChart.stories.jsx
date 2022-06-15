@@ -68,8 +68,8 @@ const Template = (args) => (
 
 export const SinglePie = Template.bind({});
 SinglePie.args = {
-  width: 450,
-  height: 170,
+  width: 280,
+  height: 150,
   margin: {
     top: 5,
     right: 30,

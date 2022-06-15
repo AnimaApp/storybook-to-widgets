@@ -17,8 +17,6 @@ export default {
   argTypes: {
     dataFillColor: { description: "Fill Color" },
     dataKey: { description: "Data Key" },
-    align: { description: "Align" },
-    verticalAlign: { description: "Vertical Align" },
     cell1: {
       type: "story",
       storyInfo: SimpleCell.storyInfo,
@@ -100,8 +98,8 @@ const Template = (args) => (
 
 export const SinglePie = Template.bind({});
 SinglePie.args = {
-  width: 450,
-  height: 170,
+  width: 280,
+  height: 150,
   margin: {
     top: 5,
     right: 30,
@@ -111,15 +109,12 @@ SinglePie.args = {
   dataFillColor: "#3366FF",
   dataOuterRadius: 60,
   dataKey: "value",
-
   data: [
     { name: "Group A", value: 400, color: "#3366FF" },
     { name: "Group B", value: 300, color: "#009379" },
     { name: "Group C", value: 300, color: "#FF6250" },
     { name: "Group D", value: 200, color: "#FFDF90" },
   ],
-  align: "center",
-  verticalAlign: "top",
   cell1: {
     color: "#3366FF",
     index: "1",

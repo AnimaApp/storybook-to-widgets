@@ -5,11 +5,11 @@ import { SimpleLegend } from "./Legend.stories";
 import { SimpleXAxis } from "./XAxis.stories";
 import { SimpleYAxis } from "./YAxis.stories";
 import { SimpleCartesianGrid } from "./CartesianGrid.stories";
-import { SimpleArea } from "./Area.stories";
+import { SimpleLine } from "./Line.stories";
 
 export default {
-  title: "New Charts/AreaChart",
-  component: Recharts.AreaChart,
+  title: "New Charts/SimpleLineChart",
+  component: Recharts.LineChart,
   parameters: {
     docs: {
       description: {
@@ -38,36 +38,31 @@ export default {
       type: "story",
       storyInfo: SimpleCartesianGrid.storyInfo,
     },
-    area1: {
+    line1: {
       type: "story",
-      storyInfo: SimpleArea.storyInfo,
+      storyInfo: SimpleLine.storyInfo,
     },
-    area2: {
+    line2: {
       type: "story",
-      storyInfo: SimpleArea.storyInfo,
+      storyInfo: SimpleLine.storyInfo,
     },
   },
 };
 
 const Template = (args) => (
-  <Recharts.AreaChart
-    width={args.width}
-    height={args.height}
-    margin={args.margin}
-    data={args.data}
-  >
+  <Recharts.LineChart {...args}>
     <SimpleCartesianGrid {...args.cartesiangrid} />
     <SimpleXAxis {...args.xaxis} />
     <SimpleYAxis {...args.yaxis} />
     <SimpleTooltip {...args.tooltip} />
     <SimpleLegend {...args.legend} />
-    <SimpleArea {...args.area1} />
-    <SimpleArea {...args.area2} />
-  </Recharts.AreaChart>
+    <SimpleLine {...args.line1} />
+    <SimpleLine {...args.line2} />
+  </Recharts.LineChart>
 );
 
-export const SingleAreaChart = Template.bind({});
-SingleAreaChart.args = {
+export const Simple = Template.bind({});
+Simple.args = {
   width: 280,
   height: 150,
   margin: {
@@ -79,35 +74,43 @@ SingleAreaChart.args = {
   data: [
     {
       name: "A",
-      blue: 250,
-      green: 140,
+      blue: 60,
+      green: 240,
     },
     {
       name: "B",
-      blue: 100,
-      green: 290,
+      blue: 200,
+      green: 139,
     },
     {
       name: "C",
-      blue: 200,
-      green: 400,
+      blue: 400,
+      green: 200,
     },
     {
       name: "D",
-      blue: 300,
-      green: 190,
+      blue: 208,
+      green: 390,
     },
     {
       name: "E",
       blue: 450,
-      green: 120,
+      green: 480,
     },
     {
       name: "F",
       blue: 0,
-      green: 280,
+      green: 380,
     },
   ],
+  line1: {
+    lineColor: "#3366FF",
+    lineKey: "blue",
+  },
+  line2: {
+    lineColor: "#009379",
+    lineKey: "green",
+  },
   legend: {
     align: "center",
     verticalAlign: "top",
@@ -121,17 +124,5 @@ SingleAreaChart.args = {
   yaxis: {},
   cartesiangrid: {
     strokeDasharray: "3 3",
-  },
-  area1: {
-    fillColor: "#3366FF",
-    fillOpacity: 0.5,
-    areaStrokeColor: "#3366FF",
-    areaKey: "blue",
-  },
-  area2: {
-    fillColor: "#009379",
-    fillOpacity: 0.5,
-    areaStrokeColor: "#009379",
-    areaKey: "green",
   },
 };

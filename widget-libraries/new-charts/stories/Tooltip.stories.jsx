@@ -10,6 +10,7 @@ export default {
         component: "Tooltip",
       },
     },
+    onlyAddedOnce: true,
   },
   argTypes: {
     offset: { description: "offset", type: "number" },
