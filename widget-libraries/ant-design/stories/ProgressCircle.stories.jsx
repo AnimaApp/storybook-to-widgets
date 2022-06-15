@@ -17,10 +17,7 @@ export default {
       type: "options",
       options: ["success", "exception", "normal", "active"],
     },
-    strokeColor: {
-      description: "Stroke Color",
-      control: "color",
-    },
+
     strokeWidth: { description: "Stroke width", type: "number" },
     strokeLinecap: {
       description: "Stroke style",
@@ -38,7 +35,6 @@ const Template = (args) => (
     strokeWidth={args.strokeWidth}
     strokeLinecap={args.strokeLinecap}
     showInfo={args.showInfo}
-    strokeColor={args.strokeColor}
     width={args.width}
     type="circle"
   />

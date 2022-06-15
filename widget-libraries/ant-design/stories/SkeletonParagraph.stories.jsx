@@ -11,19 +11,23 @@ export default {
   },
   argTypes: {
     active: { description: "Active", type: "boolean" },
+    width: { description: "Width", type: "number" },
+    rows: { description: "Nr of Rows", type: "number" },
   },
 };
 
 const Template = (args) => (
   <Antd.Skeleton
+    style={{ width: args.width }}
     active={args.active}
     title={false}
-    paragraph={args.paragraph}
+    paragraph={{ rows: args.rows }}
   />
 );
 
-export const SimpleSkeletonTitle = Template.bind({});
-SimpleSkeletonTitle.args = {
+export const SimpleSkeletonParagraph = Template.bind({});
+SimpleSkeletonParagraph.args = {
   active: true,
-  paragraph: { width: 500, rows: 4 },
+  rows: 4,
+  width: 300,
 };

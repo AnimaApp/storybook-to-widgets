@@ -23,10 +23,6 @@ export default {
       type: "options",
       options: ["top", "bottom", "left", "right"],
     },
-    strokeColor: {
-      description: "Stroke Color",
-      control: "color",
-    },
     strokeWidth: { description: "Stroke width", type: "number" },
     strokeStyle: {
       description: "Stroke style",
@@ -41,7 +37,6 @@ const Template = (args) => (
     percent={args.percent}
     status={args.status}
     strokeWidth={args.strokeWidth}
-    strokeColor={args.strokeColor}
     showInfo={args.showInfo}
     gapDegree={args.gapDegree}
     gapPosition={args.gapPosition}

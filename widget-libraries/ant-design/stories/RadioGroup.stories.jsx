@@ -77,12 +77,15 @@ SimpleRadioGroup.args = {
   disabled: false,
   size: "medium",
   item: {
+    ...SimpleRadio.args,
     value: 1,
   },
   item2: {
+    ...SimpleRadio.args,
     value: 2,
   },
   item3: {
+    ...SimpleRadio.args,
     value: 3,
   },
 };

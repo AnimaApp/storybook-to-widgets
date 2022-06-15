@@ -18,15 +18,16 @@ export default {
       type: "options",
       options: ["success", "exception", "normal", "active"],
     },
-    strokeColor: {
-      description: "Stroke Color",
-      control: "color",
-    },
     strokeWidth: { description: "Stroke width", type: "number" },
     strokeLinecap: {
       description: "Stroke style",
       type: "options",
       options: ["round", "butt", "square"],
+    },
+    size: {
+      description: "Size",
+      type: "options",
+      options: ["small", "middle", "large"],
     },
   },
 };
@@ -37,9 +38,9 @@ const Template = (args) => (
     status={args.status}
     strokeWidth={args.strokeWidth}
     strokeLinecap={args.strokeLinecap}
-    strokeColor={args.strokeColor}
     showInfo={args.showInfo}
     steps={args.steps}
+    size={args.size}
     type="line"
   />
 );
@@ -51,4 +52,5 @@ SimpleProgressBar.args = {
   status: "normal",
   strokeWidth: 10,
   strokeLinecap: "square",
+  size: "large",
 };

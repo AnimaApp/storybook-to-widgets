@@ -32,6 +32,7 @@ export default {
     },
     closable: { description: "Closable", type: "boolean" },
     banner: { description: "Banner", type: "boolean" },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped()],
 };
@@ -45,6 +46,7 @@ const Template = (args) => (
     closable={args.closable}
     banner={args.banner}
     icon={args.iconName}
+    style={{ width: args.width }}
   />
 );
 
@@ -57,4 +59,5 @@ SimpleAlert.args = {
   closable: false,
   banner: false,
   iconName: "SearchOutlined",
+  width: "500px",
 };
