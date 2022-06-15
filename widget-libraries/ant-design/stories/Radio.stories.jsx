@@ -19,6 +19,10 @@ export default {
       description: "Checked",
       type: "boolean",
     },
+    label: {
+      description: "Label",
+      type: "string",
+    },
     disabled: {
       description: "Disabled",
       type: "boolean",
@@ -31,13 +35,16 @@ const Template = (args) => (
     value={args.value}
     defaultChecked={args.checked}
     disabled={args.disabled}
-  ></Antd.Radio>
+  >
+    {args.label}
+  </Antd.Radio>
 );
 
 export const SimpleRadio = Template.bind({});
 SimpleRadio.args = {
   checked: false,
   disabled: false,
+  label: "Radio Label",
 };
 
 SimpleRadio.storyInfo = {
