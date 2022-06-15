@@ -10,6 +10,7 @@ export type UserParam = {
   storyId?: string;
   transform?: string;
   hidden?: boolean;
+  description?: string;
 };
 
 export const createUserParams = (
@@ -25,6 +26,7 @@ export const createUserParams = (
     userParam.defaultValue = JSON.stringify(story.initialArgs[key]);
     userParam.transform = value?.transform;
     userParam.hidden = value?.hidden;
+    userParam.description = value?.infotip;
 
     switch (value.type?.name) {
       case "number":
