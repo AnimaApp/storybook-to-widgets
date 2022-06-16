@@ -20,6 +20,7 @@ export default {
     },
     title: { description: "Title", type: "string" },
     body: { description: "Body", type: "string" },
+    width: { description: "Width", type: "number" },
   },
 };
 
@@ -30,6 +31,7 @@ const Template = (args) => (
     loading={args.loading}
     size={args.size}
     title={args.title}
+    style={{ wdith: args.width }}
   >
     {args.body}
   </Antd.Card>
@@ -43,4 +45,5 @@ SimpleCard.args = {
   size: "default",
   title: "Card title",
   body: "Body content",
+  width: 400,
 };
