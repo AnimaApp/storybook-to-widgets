@@ -28,7 +28,12 @@ export default {
 };
 
 const Template = (args) => (
-  <Recharts.PieChart {...args}>
+  <Recharts.PieChart
+    width={args.width}
+    height={args.height}
+    margin={args.margin}
+    data={args.data}
+  >
     <Recharts.Pie
       data={args.data}
       dataKey={args.dataKey}

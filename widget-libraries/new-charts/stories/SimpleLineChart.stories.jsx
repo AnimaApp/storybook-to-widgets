@@ -50,7 +50,12 @@ export default {
 };
 
 const Template = (args) => (
-  <Recharts.LineChart {...args}>
+  <Recharts.LineChart
+    width={args.width}
+    height={args.height}
+    margin={args.margin}
+    data={args.data}
+  >
     <SimpleCartesianGrid {...args.cartesiangrid} />
     <SimpleXAxis {...args.xaxis} />
     <SimpleYAxis {...args.yaxis} />
