@@ -11,10 +11,14 @@ export default {
         component: "Item",
       },
     },
+    titleArg: "label",
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
   argTypes: {
+    label: {
+      description: "Label",
+    },
     checked: {
       description: "Checked",
       type: "boolean",
@@ -27,6 +31,9 @@ export default {
       description: "Disabled",
       type: "boolean",
     },
+    value: {
+      description: "Value",
+    }
   },
 };
 
@@ -44,7 +51,8 @@ export const SimpleRadio = Template.bind({});
 SimpleRadio.args = {
   checked: false,
   disabled: false,
-  label: "Radio Label",
+  value: 1,
+  label: "Label"
 };
 
 SimpleRadio.storyInfo = {

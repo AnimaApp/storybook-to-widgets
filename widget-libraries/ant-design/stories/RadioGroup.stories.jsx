@@ -19,15 +19,22 @@ export default {
     buttonStyle: {
       description: "Button style",
       type: "options",
+      infotip: "Applicable only when 'Option Type' is button",
       options: ["outline", "solid"],
     },
     disabled: {
       description: "Disabled",
       type: "boolean",
     },
+    direction: {
+      description: "Direction",
+      type: "options",
+      options: ["horizontal", "vertical"],
+    },
     size: {
       description: "Size",
       type: "options",
+      infotip: "Applicable only when 'Option Type' is button",
       options: ["small", "medium", "large"],
     },
     item: {
@@ -64,14 +71,17 @@ const Template = (args) => {
       disabled={args.disabled}
       size={args.size}
     >
-      <SimpleRadio {...args.item} />
-      <SimpleRadio {...args.item2} />
-      <SimpleRadio {...args.item3} />
+      <Antd.Space direction={args.direction}>
+        <SimpleRadio {...args.item} />
+        <SimpleRadio {...args.item2} />
+        <SimpleRadio {...args.item3} />
+      </Antd.Space>
     </Antd.Radio.Group>
   );
 };
 export const SimpleRadioGroup = Template.bind({});
 SimpleRadioGroup.args = {
+  direction: "horizontal",
   optionType: "default",
   buttonStyle: "outline",
   disabled: false,
