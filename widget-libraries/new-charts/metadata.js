@@ -1,5 +1,5 @@
 export default {
-  name: "New Charts",
+  name: "Charts 2.0",
   description:
     "Recharts makes it easy to integrate charts into your React application.",
   short_description: "Based on Recharts React library.",
