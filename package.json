@@ -40,7 +40,8 @@
     "start": "concurrently \"npm run build:watch\" \"npm run storybook -- --no-manager-cache --quiet\"",
     "build-storybook": "build-storybook",
     "prerelease": "zx scripts/prepublish-checks.mjs",
-    "release": "npm run build && auto shipit"
+    "release": "npm run build && auto shipit",
+    "build:release": "npm run build && npm run build-storybook"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "0.19.6",
