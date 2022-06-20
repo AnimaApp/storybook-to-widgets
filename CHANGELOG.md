@@ -1,3 +1,21 @@
+# v1.0.23 (Mon Jun 20 2022)
+
+#### 🐛 Bug Fix
+
+- Charts v2 change icon [#18](https://github.com/AnimaApp/storybook-to-widgets/pull/18) ([@adinu](https://github.com/adinu))
+- Recharts version 2 [#15](https://github.com/AnimaApp/storybook-to-widgets/pull/15) ([@adinu](https://github.com/adinu))
+- fix: missing infotip [#16](https://github.com/AnimaApp/storybook-to-widgets/pull/16) (haimonline@gmail.com [@Haimonline](https://github.com/Haimonline))
+- Use GitHub Packages [#12](https://github.com/AnimaApp/storybook-to-widgets/pull/12) ([@Haimonline](https://github.com/Haimonline) haimonline@gmail.com)
+- Feature/react bootstrap components [#10](https://github.com/AnimaApp/storybook-to-widgets/pull/10) ([@besartmarku](https://github.com/besartmarku) haimonline@gmail.com)
+
+#### Authors: 3
+
+- [@adinu](https://github.com/adinu)
+- Besart Marku ([@besartmarku](https://github.com/besartmarku))
+- Haim Ben Chimol ([@Haimonline](https://github.com/Haimonline))
+
+---
+
 # v1.0.22 (Wed Jun 01 2022)
 
 #### 🐛 Bug Fix
