@@ -9,68 +9,70 @@ export default {
   sample_file_figma_url: "",
   styles_import: ["antd/dist/antd.css", "antd/dist/antd.variable.css"],
   theme: {
-    categories: {
-      Colors: {
-        params: {
-          "Primary color": {
+    categories: [
+      {
+        name: "Colors",
+        params: [
+          {
+            name: "Primary color",
             type: "css-color",
-            name: "ant-primary-color",
             default: "#1890ff",
+            variable: "ant-primary-color",
           },
-          "Link color": {
+          {
+            name: "Link color",
             type: "css-color",
-            name: "ant-secondary-color",
             default: "#1890ff",
+            variable: "ant-secondary-color",
           },
-          "Success color": {
+          {
+            name: "Success color",
             type: "css-color",
-            name: "ant-secondary-color",
             default: "#1890ff",
+            variable: "ant-secondary-color",
           },
-          "Warning color": {
+          {
+            name: "Warning color",
             type: "css-color",
-            name: "ant-secondary-color",
             default: "#1890ff",
+            variable: "ant-secondary-color",
           },
-          "Error color": {
+          {
+            name: "Error color",
             type: "css-color",
-            name: "ant-error-color",
             default: "#f5222d",
+            variable: "ant-error-color",
           },
-        },
+        ],
       },
-      Typography: {
-        params: {
-          "Base font size": {
+      {
+        name: "Typography",
+        params: [
+          {
+            name: "Base font size",
             type: "css-length",
-            name: "ant-font-size-base",
             default: 14,
+            variable: "ant-font-size-base",
           },
-        },
+        ],
       },
-      Border: {
-        params: {
-          "Base radius": {
+      {
+        name: "Border",
+        params: [
+          {
+            name: "Base radius",
             type: "css-length",
-            name: "ant-border-radius-base",
             default: 8,
+            variable: "ant-border-radius-base",
           },
-          "Base color": {
-            type: "css-length",
-            name: "ant-border-color-base",
+          {
+            name: "Base color",
+            type: "css-color",
             default: "#d9d9d9",
+            variable: "ant-border-color-base",
           },
-        },
+        ],
       },
-      Shadows: {
-        params: {
-          "Base shadow": {
-            type: "css-shadow",
-            name: "ant-box-shadow-base",
-            default: "0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05)",
-          },
-        },
-      },
-    },
+    ],
   },
 };
