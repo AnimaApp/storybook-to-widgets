@@ -8,7 +8,7 @@ import { SimpleCartesianGrid } from "./CartesianGrid.stories";
 import { SimpleBar } from "./Bar.stories";
 
 export default {
-  title: "New Charts/SimpleBarChart",
+  title: "New Charts/BarChart",
   component: Recharts.BarChart,
   argTypes: {
     tooltip: {
