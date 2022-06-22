@@ -17,10 +17,6 @@ export default {
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
   argTypes: {
-    color: {
-      description: "Color",
-      control: { type: "color" },
-    },
     closable: { description: "Closable", type: "boolean" },
     label: { description: "Label", type: "string" },
     icon: {
@@ -30,12 +26,12 @@ export default {
       transform: iconTransform,
     },
   },
-  decorators: [withIconMapped()],
+  decorators: [withIconMapped(["icon"])],
 };
 
 const Template = (args) => {
   return (
-    <Antd.Tag color={args.color} closable={args.closable} icon={args.icon}>
+    <Antd.Tag closable={args.closable} icon={args.icon}>
       {args.label}
     </Antd.Tag>
   );
@@ -43,7 +39,7 @@ const Template = (args) => {
 
 export const SimpleTag = Template.bind({});
 SimpleTag.args = {
-  color: "blue",
   closable: false,
   label: "Tag 1",
+  icon: "None"
 };

@@ -17,6 +17,7 @@ export default {
         component: "Step",
       },
     },
+    container: Antd.Steps
   },
   argTypes: {
     title: { description: "Title", type: "string" },
@@ -39,7 +40,7 @@ export default {
       transform: iconTransform,
     },
   },
-  decorators: [withIconMapped()],
+  decorators: [withIconMapped(["icon"])],
 };
 
 const Template = (args) => {
@@ -63,6 +64,7 @@ SimpleStep.args = {
   description: "description",
   disabled: false,
   status: "wait",
+  icon: "None"
 };
 
 SimpleStep.storyInfo = {

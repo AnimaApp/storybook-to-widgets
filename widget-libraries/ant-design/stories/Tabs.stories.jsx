@@ -26,7 +26,7 @@ export default {
     type: {
       description: "Type",
       type: "options",
-      options: ["line", "card", "editable-card"],
+      options: ["line", "card"],
     },
     width: { description: "Width", type: "number" },
     item: {
@@ -64,28 +64,28 @@ const Template = (args) => (
 
 export const SimpleTabs = Template.bind({});
 SimpleTabs.args = {
-  defaultActiveKey: 1,
+  defaultActiveKey: "1",
   centered: false,
   size: "default",
   tabPosition: "top",
   type: "line",
-  width: 400,
+  width: 260,
   item: {
     ...SimpleTabPane.args,
-    key: 1,
+    key: "1",
     body: "Body content",
     tab: "Tab 1",
   },
   item2: {
     ...SimpleTabPane.args,
-    key: 2,
+    key: "2",
     body: "Body content 2",
     tab: "Tab 2",
   },
   item3: {
     ...SimpleTabPane.args,
-    key: 3,
-    body: "Body content",
+    key: "3",
+    body: "Body content 3",
     tab: "Tab 3",
   },
 };

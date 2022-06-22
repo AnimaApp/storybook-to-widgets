@@ -11,13 +11,13 @@ export default {
         component: "Item",
       },
     },
-    titleArg: "label",
+    container: Antd.Tabs,
+    titleArg: "tab",
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
   argTypes: {
     key: { description: "Key", type: "number" },
-    forceRender: { description: "Force render", type: "boolean" },
     body: { description: "Body", type: "string" },
     tab: { description: "Tab title", type: "string" },
   },
@@ -27,7 +27,6 @@ const Template = (args) => {
   return (
     <Antd.Tabs.TabPane
       key={args.key}
-      forceRender={args.forceRender}
       tab={args.tab}
     >
       {args.body}
@@ -36,8 +35,7 @@ const Template = (args) => {
 };
 export const SimpleTabPane = Template.bind({});
 SimpleTabPane.args = {
-  key: 1,
-  forceRender: false,
+  key: "1",
   body: "Body content",
   tab: "Tab title",
 };

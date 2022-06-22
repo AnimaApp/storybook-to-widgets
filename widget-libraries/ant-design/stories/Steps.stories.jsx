@@ -47,19 +47,7 @@ export default {
       description: "step",
       storyInfo: SimpleStep.storyInfo,
     },
-  },
-  decorators: [
-    (Story) => (
-      <div
-        style={{
-          marginTop: "2em",
-          marginLeft: "1em",
-        }}
-      >
-        <Story />
-      </div>
-    ),
-  ],
+  }
 };
 
 const Template = (args) => {
@@ -89,14 +77,14 @@ SimpleSteps.args = {
     subTitle: "subtitle",
     description: "This is a description",
     disabled: false,
-    status: "wait",
+    status: "finish",
   },
   step2: {
     title: "In Progress",
     subTitle: "subtitle",
     description: "This is a description",
     disabled: false,
-    status: "wait",
+    status: "process",
   },
   step3: {
     title: "Waiting",
