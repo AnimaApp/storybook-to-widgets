@@ -17,6 +17,7 @@ export type StoryInfo = {
   subStoriesNames?: Array<string>;
   subStoriesIds?: Array<string>;
   titleArg?: string;
+  onlyAddedOnce?: boolean;
   layout?: string;
 };
 
@@ -65,6 +66,7 @@ const getStoryInfo = (story: Story, sbApi: API): StoryInfo => {
   const description = story?.parameters?.docs?.description?.component || "";
   const custom_css = story?.parameters?.custom_css || "";
   const titleArg = story?.parameters?.titleArg;
+  const onlyAddedOnce = story?.parameters?.onlyAddedOnce || false;
   const layout = story?.parameters?.layout;
 
   // @ts-expect-error
@@ -93,6 +95,7 @@ const getStoryInfo = (story: Story, sbApi: API): StoryInfo => {
     subStoriesIds: Array.from(subStoriesIds),
     titleArg,
     layout,
+    onlyAddedOnce,
   };
   return storyCodeInfo;
 };

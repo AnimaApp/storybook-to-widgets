@@ -1,0 +1,10 @@
+{
+  "name": "@animaapp/widgets-charts-v2",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "recharts": "^2.1.9"
+  },
+  "devDependencies": {}
+}

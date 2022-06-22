@@ -28,6 +28,7 @@ const createWidgetStoriesApi = async (
       title_arg: story?.titleArg,
       default_arg_name: widgetName.toLowerCase(),
       source_type: "react",
+      only_added_once: story?.onlyAddedOnce,
       source: story?.source,
       sub_stories_ids: story?.subStoriesIds,
       user_params: story?.userParams?.map((userParam) => {
@@ -67,7 +68,7 @@ const createWidgetApi = async (
       name: widgetName,
       description: widgetStory.description,
       widget_library_name: libraryName,
-      root_story: widgetStory?.id
+      root_story: widgetStory?.id,
     };
 
     await AnimaAPI.POST("/widgets/create", body);
