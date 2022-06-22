@@ -56,7 +56,7 @@ const Template = (args) => (
 
 export const SimpleCollapse = Template.bind({});
 SimpleCollapse.args = {
-  width: 400,
+  width: 260,
   accordion: true,
   activeKey: ["1"],
   bordered: true,
@@ -64,7 +64,6 @@ SimpleCollapse.args = {
   collapsible: "header",
   item: {
     ...SimpleCollapsePanel.args,
-    collapsible: "Collapsible",
     header: "Panel Title",
     key: "1",
     showArrow: true,
@@ -72,7 +71,6 @@ SimpleCollapse.args = {
   },
   item2: {
     ...SimpleCollapsePanel.args,
-    collapsible: "Collapsible",
     header: "Panel Title 2",
     key: "2",
     showArrow: true,
@@ -80,7 +78,6 @@ SimpleCollapse.args = {
   },
   item3: {
     ...SimpleCollapsePanel.args,
-    collapsible: "Collapsible",
     header: "Panel Title 3",
     key: "3",
     showArrow: true,

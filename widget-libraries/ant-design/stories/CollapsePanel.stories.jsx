@@ -11,7 +11,7 @@ export default {
         component: "Item",
       },
     },
-    titleArg: "label",
+    titleArg: "header",
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
@@ -36,7 +36,7 @@ const Template = (args) => {
 };
 export const SimpleCollapsePanel = Template.bind({});
 SimpleCollapsePanel.args = {
-  header: "Panel Title",
+  header: "Title",
   key: "1",
   showArrow: true,
   body: "Body content",

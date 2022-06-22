@@ -20,13 +20,14 @@ const createWidgetStoriesApi = async (
 ) => {
   const stories = Object.values(storiesInfo).map((story) => {
     const widgetName = story.title.split("/")[1];
+    const defaultArgName = (story.description ? story.description.toLowerCase() : widgetName.toLowerCase()).replace(/\s/g, '');
 
     return {
       story_id: story?.id,
       name: story?.name,
       description: story?.description,
       title_arg: story?.titleArg,
-      default_arg_name: widgetName.toLowerCase(),
+      default_arg_name: defaultArgName,
       source_type: "react",
       only_added_once: story?.onlyAddedOnce,
       source: story?.source,
