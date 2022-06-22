@@ -31,7 +31,7 @@ const Template = (args) => (
     loading={args.loading}
     size={args.size}
     title={args.title}
-    style={{ wdith: args.width }}
+    style={{ width: args.width }}
   >
     {args.body}
   </Antd.Card>
@@ -45,5 +45,5 @@ SimpleCard.args = {
   size: "default",
   title: "Card title",
   body: "Body content",
-  width: 400,
+  width: 280,
 };

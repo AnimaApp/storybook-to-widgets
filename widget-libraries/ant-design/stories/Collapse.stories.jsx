@@ -14,7 +14,7 @@ export default {
     accordion: { description: "Accordion", type: "boolean" },
     bordered: { description: "Bordered", type: "boolean" },
     ghost: { description: "Ghost", type: "boolean" },
-    activeKey: { description: "Active Key", type: "number" },
+    activeKey: { description: "Active Key" },
     width: { description: "Width", type: "number" },
     collapsible: {
       description: "Collapsible",
@@ -44,7 +44,7 @@ const Template = (args) => (
     style={{ width: args.width }}
     accordion={args.accordion}
     collapsible={args.collapsible}
-    activeKey={args.activeKey}
+    defaultActiveKey={args.activeKey}
     bordered={args.bordered}
     ghost={args.ghost}
   >
@@ -58,7 +58,7 @@ export const SimpleCollapse = Template.bind({});
 SimpleCollapse.args = {
   width: 400,
   accordion: true,
-  activeKey: 1,
+  activeKey: ["1"],
   bordered: true,
   ghost: false,
   collapsible: "header",
