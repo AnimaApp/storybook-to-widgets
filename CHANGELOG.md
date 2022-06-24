@@ -1,3 +1,28 @@
+# v1.0.23 (Fri Jun 24 2022)
+
+#### 🐛 Bug Fix
+
+- feat: add h2b dev tools to storybook [#20](https://github.com/AnimaApp/storybook-to-widgets/pull/20) ([@federico-terzi-anima](https://github.com/federico-terzi-anima))
+- Feature/additional antd d components [#14](https://github.com/AnimaApp/storybook-to-widgets/pull/14) ([@besartmarku](https://github.com/besartmarku) 34649952+besartmarku@users.noreply.github.com)
+- fix: change alert code template (failed in codegen regex) [#17](https://github.com/AnimaApp/storybook-to-widgets/pull/17) (haimonline@gmail.com [@Haimonline](https://github.com/Haimonline))
+- change naming charts [#19](https://github.com/AnimaApp/storybook-to-widgets/pull/19) ([@adinu](https://github.com/adinu))
+- feat(antd): add theming data [#13](https://github.com/AnimaApp/storybook-to-widgets/pull/13) ([@fathyb](https://github.com/fathyb))
+- Charts v2 change icon [#18](https://github.com/AnimaApp/storybook-to-widgets/pull/18) ([@adinu](https://github.com/adinu))
+- Recharts version 2 [#15](https://github.com/AnimaApp/storybook-to-widgets/pull/15) ([@adinu](https://github.com/adinu))
+- fix: missing infotip [#16](https://github.com/AnimaApp/storybook-to-widgets/pull/16) (haimonline@gmail.com [@Haimonline](https://github.com/Haimonline))
+- Use GitHub Packages [#12](https://github.com/AnimaApp/storybook-to-widgets/pull/12) ([@Haimonline](https://github.com/Haimonline) haimonline@gmail.com)
+- Feature/react bootstrap components [#10](https://github.com/AnimaApp/storybook-to-widgets/pull/10) ([@besartmarku](https://github.com/besartmarku) haimonline@gmail.com)
+
+#### Authors: 5
+
+- [@adinu](https://github.com/adinu)
+- Besart Marku ([@besartmarku](https://github.com/besartmarku))
+- Fathy Boundjadj ([@fathyb](https://github.com/fathyb))
+- Federico Terzi ([@federico-terzi-anima](https://github.com/federico-terzi-anima))
+- Haim Ben Chimol ([@Haimonline](https://github.com/Haimonline))
+
+---
+
 # v1.0.22 (Wed Jun 01 2022)
 
 #### 🐛 Bug Fix
