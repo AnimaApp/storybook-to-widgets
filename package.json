@@ -45,11 +45,12 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "0.19.6",
-    "lodash.startcase": "^4.4.0"
+    "lodash.startcase": "^4.4.0",
+    "storybook-anima": "^1.31.0"
   },
   "devDependencies": {
-    "@animaapp/storybook-blueprint-dev-tools": "^1.3.0",
     "@animaapp/story-code-parser": "^1.13.1",
+    "@animaapp/storybook-blueprint-dev-tools": "^1.3.0",
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
