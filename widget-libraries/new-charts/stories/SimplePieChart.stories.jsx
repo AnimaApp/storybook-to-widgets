@@ -4,7 +4,7 @@ import { SimpleTooltip } from "./Tooltip.stories";
 import { SimpleLegend } from "./Legend.stories";
 
 export default {
-  title: "New Charts/SimplePieChart",
+  title: "New Charts/PieChart",
   component: Recharts.PieChart,
   parameters: {
     docs: {

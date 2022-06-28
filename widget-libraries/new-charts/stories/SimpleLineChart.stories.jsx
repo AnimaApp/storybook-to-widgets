@@ -8,7 +8,7 @@ import { SimpleCartesianGrid } from "./CartesianGrid.stories";
 import { SimpleLine } from "./Line.stories";
 
 export default {
-  title: "New Charts/SimpleLineChart",
+  title: "New Charts/LineChart",
   component: Recharts.LineChart,
   parameters: {
     docs: {

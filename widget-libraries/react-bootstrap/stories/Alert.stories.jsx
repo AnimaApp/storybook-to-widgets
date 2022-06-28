@@ -34,20 +34,22 @@ export default {
 const Template = (args) => {
   const [show, setShow] = React.useState(true);
 
-  return (show && 
+  return (
     <div style={{ width: args.width }}>
-      <ReactBootstrap.Alert
-        onClose={() => setShow(false)}
-        dismissible={args.dismissible}
-        variant={args.variant}
-      >
-        {args.heading && (
-          <ReactBootstrap.Alert.Heading>
-            {args.heading}
-          </ReactBootstrap.Alert.Heading>
-        )}
-        {args.message}
-      </ReactBootstrap.Alert>
+      {show && (
+        <ReactBootstrap.Alert
+          onClose={() => setShow(false)}
+          dismissible={args.dismissible}
+          variant={args.variant}
+        >
+          {args.heading && (
+            <ReactBootstrap.Alert.Heading>
+              {args.heading}
+            </ReactBootstrap.Alert.Heading>
+          )}
+          {args.message}
+        </ReactBootstrap.Alert>
+      )}
     </div>
   );
 };

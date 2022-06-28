@@ -57,6 +57,7 @@ echo "export default {
   sample_file_figma_url: \"\",
   styles_import: [],
   excluded_packages: [],
+  theme: {},
 };" > widget-libraries/sample/metadata.js
 ```
 
