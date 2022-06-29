@@ -1,5 +1,5 @@
 export default {
-  name: "Ant Design - Fathy",
+  name: "Ant Design",
   description:
     "Ant Design is a design language for the web and mobile apps, based on Ant Motion.",
   short_description:
