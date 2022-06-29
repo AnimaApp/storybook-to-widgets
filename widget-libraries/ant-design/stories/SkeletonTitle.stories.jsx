@@ -18,8 +18,7 @@ export default {
 const Template = (args) => (
   <Antd.Skeleton
     active={args.active}
-    width={args.width}
-    title={args.title}
+    title={{width : args.width}}
     paragraph={false}
   />
 );
@@ -27,5 +26,5 @@ const Template = (args) => (
 export const SimpleSkeletonTitle = Template.bind({});
 SimpleSkeletonTitle.args = {
   active: true,
-  title: { width: 500 },
+  width: 280,
 };
