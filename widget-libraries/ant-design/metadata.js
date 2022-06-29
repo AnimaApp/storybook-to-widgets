@@ -28,14 +28,14 @@ export default {
           {
             name: "Success color",
             type: "css-color",
-            default: "#1890ff",
-            variable: "ant-secondary-color",
+            default: "#52c41a",
+            variable: "ant-success-color",
           },
           {
             name: "Warning color",
             type: "css-color",
-            default: "#1890ff",
-            variable: "ant-secondary-color",
+            default: "#faad14",
+            variable: "ant-warning-color",
           },
           {
             name: "Error color",
