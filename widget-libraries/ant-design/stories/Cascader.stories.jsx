@@ -10,8 +10,7 @@ export default {
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
   argTypes: {
-    // allowClear: { description: "Allow clear", type: "boolean" },
-    // autoFocus: { description: "Auto focus", type: "boolean" },
+    autoFocus: { description: "Auto focus", type: "boolean" },
     bordered: { description: "Bordered", type: "boolean" },
     disabled: { description: "Disabled", type: "boolean" },
     placeholder: { description: "Placeholder", type: "string" },
@@ -30,8 +29,6 @@ export default {
       type: "options",
       options: ["error", "warning"],
     },
-    // multiple: { description: "Multiple", type: "boolean" },
-    // showSearch: { description: "Show Search", type: "boolean" },
   },
 };
 
@@ -87,6 +84,7 @@ const Template = (args) => {
 export const SimpleCascader = Template.bind({});
 SimpleCascader.args = {
   options: CascaderData,
+  autoFocus: false,
   bordered: true,
   disabled: false,
   placeholder: "Placeholder",
