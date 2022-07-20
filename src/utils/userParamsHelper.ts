@@ -57,7 +57,7 @@ export const createUserParams = (
       );
     }
 
-    if (value.control?.type === 'select' || value.type?.name == "options") {
+    if (value.control?.type === "select" || value.type?.name == "options") {
       userParam.options = [];
       userParam.type = "enum";
       value?.options?.forEach((option: any) => {
