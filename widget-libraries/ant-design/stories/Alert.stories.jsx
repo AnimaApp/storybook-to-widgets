@@ -18,7 +18,7 @@ export default {
   argTypes: {
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "info", "warning", "error"],
     },
     message: { description: "Message", type: "string" },
