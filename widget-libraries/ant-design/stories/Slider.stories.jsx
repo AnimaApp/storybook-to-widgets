@@ -44,7 +44,7 @@ export default {
     },
     orientation: {
       description: "Orientation",
-      type: "options",
+      control: { type: "select" },
       options: ["horizontal", "vertical"],
     },
   },

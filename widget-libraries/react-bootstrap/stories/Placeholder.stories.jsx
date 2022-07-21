@@ -8,12 +8,12 @@ export default {
   argTypes: {
     // animation: {
     //   description: "Animation",
-    //   type: "options",
+    //   control: { type: "select" },
     //   options: ["glow", "wave"],
     // },
     bg: {
       description: "Bg",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",
@@ -27,7 +27,7 @@ export default {
     },
     // size: {
     //   description: "Size",
-    //   type: "options",
+    //   control: { type: "select" },
     //   options: ["xs", "sm", "lg"],
     // },
     width: { description: "Width", type: "string" },

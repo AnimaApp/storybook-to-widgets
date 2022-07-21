@@ -10,11 +10,11 @@ export default {
     label: { description: "Label", type: "string" },
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: ["radio", "checkbox", "switch"],
     },
     defaultChecked: { description: "Default checked", type: "boolean" },
-  }
+  },
 };
 
 const Template = (args) => {
@@ -33,5 +33,5 @@ SimpleCheck.args = {
   disabled: false,
   label: "Label",
   type: "checkbox",
-  defaultChecked: false
+  defaultChecked: false,
 };

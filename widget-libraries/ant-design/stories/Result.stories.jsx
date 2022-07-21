@@ -14,7 +14,7 @@ export default {
   argTypes: {
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "error", "info", "warning", "404", "403", "500"],
     },
     title: { description: "Title", type: "string" },

@@ -18,7 +18,7 @@ export default {
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
     bordered: {
@@ -42,20 +42,20 @@ export default {
       type: "boolean",
     },
     prefixIconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Prefix Icon Name",
       transform: iconTransform,
     },
     suffixIconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Suffix Icon Name",
       transform: iconTransform,
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "error", "warning"],
     },
     disabled: {

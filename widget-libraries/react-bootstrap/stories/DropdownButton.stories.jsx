@@ -8,8 +8,7 @@ export default {
   title: "React Bootstrap/Dropdown button",
   component: ReactBootstrap.DropdownButton,
   parameters: {
-    custom_css:
-      '.${nodeClass} a { display: inherit; }',
+    custom_css: ".${nodeClass} a { display: inherit; }",
   },
   argTypes: {
     title: {
@@ -18,7 +17,7 @@ export default {
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",
@@ -33,7 +32,7 @@ export default {
     },
     drop: {
       description: "Dropdown direction",
-      type: "options",
+      control: { type: "select" },
       options: ["up", "start", "end", "down"],
     },
     item1: {

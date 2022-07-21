@@ -7,12 +7,12 @@ export default {
   argTypes: {
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "rectangular", "text"],
     },
     animation: {
       description: "Animation",
-      type: "options",
+      control: { type: "select" },
       options: ["pulse", "wave", false],
     },
     width: {

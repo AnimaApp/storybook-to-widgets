@@ -8,7 +8,7 @@ export default {
   argTypes: {
     shape: {
       description: "Shape",
-      type: "options",
+      control: { type: "select" },
       options: ["circle", "square"],
     },
     size: {

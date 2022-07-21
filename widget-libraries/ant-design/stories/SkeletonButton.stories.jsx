@@ -13,12 +13,12 @@ export default {
     active: { description: "Active", type: "boolean" },
     shape: {
       description: "Shape",
-      type: "options",
+      control: { type: "select" },
       options: ["circle", "round", "default"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "default", "large"],
     },
   },

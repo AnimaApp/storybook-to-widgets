@@ -13,7 +13,7 @@ export default {
     active: { description: "Active", type: "boolean" },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "default", "large"],
     },
   },

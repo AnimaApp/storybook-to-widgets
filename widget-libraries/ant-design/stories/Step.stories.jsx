@@ -17,7 +17,7 @@ export default {
         component: "Step",
       },
     },
-    container: Antd.Steps
+    container: Antd.Steps,
   },
   argTypes: {
     title: { description: "Title", type: "string" },
@@ -25,16 +25,16 @@ export default {
     description: { description: "Description", type: "string" },
     disabled: {
       description: "Disabled",
-      type: "options",
+      control: { type: "select" },
       options: ["true", "false"],
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "wait", "process", "finish", "error"],
     },
     icon: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,
@@ -64,7 +64,7 @@ SimpleStep.args = {
   description: "description",
   disabled: false,
   status: "wait",
-  icon: "None"
+  icon: "None",
 };
 
 SimpleStep.storyInfo = {

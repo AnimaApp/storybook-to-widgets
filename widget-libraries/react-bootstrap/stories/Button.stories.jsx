@@ -12,14 +12,14 @@ export default {
     disabled: { description: "Disabled", type: "boolean" },
     size: {
       description: "Size",
-      type: "options",
-      options: [ "Small", "Normal", "Large"],
+      control: { type: "select" },
+      options: ["Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",

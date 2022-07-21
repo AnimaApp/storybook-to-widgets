@@ -15,7 +15,7 @@ export default {
     loading: { description: "Loading", type: "boolean" },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "small"],
     },
     title: { description: "Title", type: "string" },

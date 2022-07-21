@@ -42,7 +42,7 @@ export default {
     width: { description: "Width" },
     theme: {
       description: "Theme",
-      type: "options",
+      control: { type: "select" },
       options: ["dark", "light"],
     },
   },

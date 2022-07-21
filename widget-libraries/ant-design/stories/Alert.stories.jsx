@@ -25,7 +25,7 @@ export default {
     description: { description: "Description", type: "string" },
     showIcon: { description: "Show Icon", type: "boolean" },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,
