@@ -21,7 +21,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "small"],
     },
     showSizeChanger: {

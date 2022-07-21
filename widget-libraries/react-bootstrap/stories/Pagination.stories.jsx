@@ -15,7 +15,7 @@ export default {
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,

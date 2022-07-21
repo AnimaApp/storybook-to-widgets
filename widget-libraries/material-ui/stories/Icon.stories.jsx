@@ -9,7 +9,7 @@ export default {
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: [
         "inherit",
         "action",
@@ -24,11 +24,11 @@ export default {
     },
     fontSize: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["inherit", "large", "medium", "small"],
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

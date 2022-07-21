@@ -12,12 +12,12 @@ export default {
   argTypes: {
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: ["date", "month", "week", "year", "quarter"],
     },
     format: {
       description: "Format",
-      type: "options",
+      control: { type: "select" },
       options: [
         "MM/DD/YY",
         "DD/MM/YY",
@@ -49,7 +49,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
     placeholder: {
@@ -58,7 +58,7 @@ export default {
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "default", "warning"],
     },
     disabled: {

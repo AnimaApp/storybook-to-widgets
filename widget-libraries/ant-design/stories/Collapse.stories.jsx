@@ -18,7 +18,7 @@ export default {
     width: { description: "Width", type: "number" },
     collapsible: {
       description: "Collapsible",
-      type: "options",
+      control: { type: "select" },
       options: ["header", "disabled"],
     },
     item: {

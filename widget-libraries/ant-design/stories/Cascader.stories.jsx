@@ -16,17 +16,17 @@ export default {
     placeholder: { description: "Placeholder", type: "string" },
     placement: {
       description: "Placement",
-      type: "options",
+      control: { type: "select" },
       options: ["bottomLeft", "bottomRight", "topLeft", "topRight"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["large", "middle", "small"],
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "warning"],
     },
   },

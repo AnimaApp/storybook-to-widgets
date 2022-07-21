@@ -7,12 +7,12 @@ export default {
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "error", "info", "success", "warning"],
     },
     underline: {
       description: "Underline",
-      type: "options",
+      control: { type: "select" },
       options: ["always", "hover", "none"],
     },
     label: {

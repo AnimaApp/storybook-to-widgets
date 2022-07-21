@@ -14,7 +14,7 @@ export default {
     disabled: { description: "Disabled", type: "boolean" },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["large", "middle", "small"],
     },
   },

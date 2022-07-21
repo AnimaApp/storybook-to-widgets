@@ -9,7 +9,7 @@ export default {
     dismissible: { description: "Dismissible", type: "boolean" },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",

@@ -7,12 +7,12 @@ export default {
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium"],
     },
     disabled: {
@@ -21,7 +21,7 @@ export default {
     },
     orientation: {
       description: "Orientation",
-      type: "options",
+      control: { type: "select" },
       options: ["vertical", "horizontal"],
       defaultValue: "horizontal",
     },

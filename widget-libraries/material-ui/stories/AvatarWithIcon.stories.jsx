@@ -9,12 +9,12 @@ export default {
   argTypes: {
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "rounded", "square"],
     },
 
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

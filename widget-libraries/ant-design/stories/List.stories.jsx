@@ -15,14 +15,14 @@ export default {
 
     itemLayout: {
       description: "Item layout",
-      type: "options",
+      control: { type: "select" },
       options: ["horizontal", "vertical"],
     },
     loading: { description: "Loading", type: "boolean" },
 
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "large", "small"],
     },
     split: { description: "Split", type: "boolean" },

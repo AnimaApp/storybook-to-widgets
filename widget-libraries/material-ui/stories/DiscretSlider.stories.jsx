@@ -7,7 +7,7 @@ export default {
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary"],
     },
     min: {
@@ -20,7 +20,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium"],
     },
     step: {
@@ -37,13 +37,13 @@ export default {
     },
     orientation: {
       description: "Orientation",
-      type: "options",
+      control: { type: "select" },
       options: ["vertical", "horizontal"],
       defaultValue: "horizontal",
     },
     valueLabelDisplay: {
       description: "Display Label",
-      type: "options",
+      control: { type: "select" },
       options: ["auto", "on", "off"],
       defaultValue: "auto",
     },

@@ -12,8 +12,8 @@ export default {
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
-      options: [ "Small", "Normal", "Large"],
+      control: { type: "select" },
+      options: ["Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,
     },
@@ -34,7 +34,7 @@ export default {
       type: "story",
       storyInfo: SimpleToggleButton.storyInfo,
     },
-  }
+  },
 };
 
 const Template = (args) => {
