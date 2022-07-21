@@ -14,19 +14,19 @@ export default {
     showInfo: { description: "Show value", type: "boolean" },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "exception", "normal", "active"],
     },
     gapDegree: { description: "Gap degree", type: "number" },
     gapPosition: {
       description: "Gap position",
-      type: "options",
+      control: { type: "select" },
       options: ["top", "bottom", "left", "right"],
     },
     strokeWidth: { description: "Stroke width", type: "number" },
     strokeStyle: {
       description: "Stroke style",
-      type: "options",
+      control: { type: "select" },
       options: ["round", "butt", "square"],
     },
   },

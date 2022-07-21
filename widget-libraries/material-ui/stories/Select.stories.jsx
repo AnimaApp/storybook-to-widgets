@@ -8,7 +8,7 @@ export default {
   argTypes: {
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["filled", "outlined", "standard"],
     },
     disabled: {

@@ -15,17 +15,17 @@ export default {
     centered: { description: "Centered", type: "boolean" },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["large", "default", "small"],
     },
     tabPosition: {
       description: "Tab Position",
-      type: "options",
+      control: { type: "select" },
       options: ["top", "right", "bottom", "left"],
     },
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: ["line", "card"],
     },
     width: { description: "Width", type: "number" },

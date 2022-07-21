@@ -11,19 +11,19 @@ export default {
   argTypes: {
     animation: {
       description: "Animation",
-      type: "options",
+      control: { type: "select" },
       options: ["border", "grow"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["Small", "Large"],
       mapping: { Small: "sm", Large: "lg" },
       transform: sizesTransform,
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",
@@ -35,7 +35,7 @@ export default {
         "dark",
       ],
     },
-  }
+  },
 };
 
 const Template = (args) => {

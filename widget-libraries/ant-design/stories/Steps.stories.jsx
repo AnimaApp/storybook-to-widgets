@@ -13,22 +13,22 @@ export default {
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "default"],
     },
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "navigation"],
     },
     direction: {
       description: "Direction",
-      type: "options",
+      control: { type: "select" },
       options: ["horizontal", "vertical"],
     },
     labelPlacement: {
       description: "Label Placement",
-      type: "options",
+      control: { type: "select" },
       options: ["horizontal", "vertical"],
     },
     current: { description: "Current", type: "number" },
@@ -47,7 +47,7 @@ export default {
       description: "step",
       storyInfo: SimpleStep.storyInfo,
     },
-  }
+  },
 };
 
 const Template = (args) => {

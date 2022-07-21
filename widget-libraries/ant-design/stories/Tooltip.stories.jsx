@@ -24,7 +24,7 @@ export default {
     },
     placement: {
       description: "Placement",
-      type: "options",
+      control: { type: "select" },
       options: [
         "top",
         "left",

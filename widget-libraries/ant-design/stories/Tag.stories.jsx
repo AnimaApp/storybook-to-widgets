@@ -20,7 +20,7 @@ export default {
     closable: { description: "Closable", type: "boolean" },
     label: { description: "Label", type: "string" },
     icon: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,
@@ -41,5 +41,5 @@ export const SimpleTag = Template.bind({});
 SimpleTag.args = {
   closable: false,
   label: "Tag 1",
-  icon: "None"
+  icon: "None",
 };

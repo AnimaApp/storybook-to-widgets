@@ -7,17 +7,17 @@ export default {
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "info", "success", "warning"],
     },
     severity: {
       description: "Severity",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "info", "success", "warning"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["filled", "outlined", "standard"],
     },
   },

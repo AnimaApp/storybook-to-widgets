@@ -20,7 +20,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "default"],
     },
     checkedLabel: {

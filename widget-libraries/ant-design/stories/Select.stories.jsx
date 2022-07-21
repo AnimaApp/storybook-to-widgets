@@ -24,17 +24,17 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
     mode: {
       description: "Mode",
-      type: "options",
+      control: { type: "select" },
       options: ["multiple", "tags"],
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "default", "warning"],
     },
     items: {
@@ -57,7 +57,7 @@ export default {
 
 const Template = (args) => (
   <Antd.Select
-    style={{ minWidth: '100px' }}
+    style={{ minWidth: "100px" }}
     bordered={args.bordered}
     checked={args.checked}
     showArrow={args.showArrow}

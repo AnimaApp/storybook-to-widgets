@@ -18,7 +18,7 @@ export default {
   argTypes: {
     label: { description: "Label", type: "string" },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,

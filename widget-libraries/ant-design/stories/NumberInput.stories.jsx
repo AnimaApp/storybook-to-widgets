@@ -22,7 +22,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
     bordered: {
@@ -50,14 +50,14 @@ export default {
       type: "number",
     },
     prefixIconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Prefix Icon Name",
       transform: iconTransform,
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "error", "warning"],
     },
     disabled: {

@@ -15,7 +15,7 @@ export default {
     },
     placement: {
       description: "Placement",
-      type: "options",
+      control: { type: "select" },
       options: [
         "bottom-end",
         "bottom-start",
@@ -32,7 +32,7 @@ export default {
       ],
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

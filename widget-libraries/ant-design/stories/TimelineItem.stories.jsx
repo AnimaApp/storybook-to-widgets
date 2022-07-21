@@ -24,7 +24,7 @@ export default {
     label: { description: "Label", type: "string" },
     position: {
       description: "Position",
-      type: "options",
+      control: { type: "select" },
       options: ["right", "left"],
     },
   },

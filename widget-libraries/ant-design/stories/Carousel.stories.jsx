@@ -14,13 +14,13 @@ export default {
     autoplay: { description: "Autoplay", type: "boolean" },
     dotPosition: {
       description: "Dot position",
-      type: "options",
+      control: { type: "select" },
       options: ["top", "bottom", "left", "right"],
     },
     dots: { description: "Show dots", type: "boolean" },
     effect: {
       description: "Effect",
-      type: "options",
+      control: { type: "select" },
       options: ["scrollx", "fade"],
     },
     item: {

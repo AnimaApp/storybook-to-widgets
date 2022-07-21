@@ -12,7 +12,7 @@ export default {
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
     placeholder: {
@@ -21,7 +21,7 @@ export default {
     },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "default", "warning"],
     },
     disabled: {

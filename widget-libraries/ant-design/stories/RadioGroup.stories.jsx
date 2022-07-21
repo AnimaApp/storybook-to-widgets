@@ -13,12 +13,12 @@ export default {
   argTypes: {
     optionType: {
       description: "Option Type",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "button"],
     },
     buttonStyle: {
       description: "Button style",
-      type: "options",
+      control: { type: "select" },
       infotip: "Applicable only when 'Option Type' is button",
       options: ["outline", "solid"],
     },
@@ -28,12 +28,12 @@ export default {
     },
     direction: {
       description: "Direction",
-      type: "options",
+      control: { type: "select" },
       options: ["horizontal", "vertical"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       infotip: "Applicable only when 'Option Type' is button",
       options: ["small", "medium", "large"],
     },
