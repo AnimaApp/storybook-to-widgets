@@ -6,6 +6,9 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Chip",
   component: MuiMaterial.Chip,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

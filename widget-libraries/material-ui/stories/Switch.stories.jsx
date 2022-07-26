@@ -4,6 +4,9 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Switch",
   component: MuiMaterial.Switch,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

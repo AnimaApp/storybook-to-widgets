@@ -4,6 +4,9 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Avatar With Image",
   component: MuiMaterial.Avatar,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",

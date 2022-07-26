@@ -8,6 +8,9 @@ const sizesTransform =
 export default {
   title: "React Bootstrap/Button",
   component: ReactBootstrap.Button,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     disabled: { description: "Disabled", type: "boolean" },
     size: {

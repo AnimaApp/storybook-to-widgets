@@ -6,6 +6,9 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Avatar with icon",
   component: MuiMaterial.Avatar,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",
