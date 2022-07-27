@@ -5,6 +5,9 @@ import { SimpleMenuItem } from "./MenuItem.stories";
 export default {
   title: "Material UI/Select",
   component: MuiMaterial.Select,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",

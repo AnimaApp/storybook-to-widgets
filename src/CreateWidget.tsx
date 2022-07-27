@@ -70,6 +70,7 @@ const createWidgetApi = async (
       description: widgetStory.description,
       widget_library_name: libraryName,
       root_story: widgetStory?.id,
+      use_figma_layers: widgetStory?.useFigmaLayers,
     };
 
     await AnimaAPI.POST("/widgets/create", body);

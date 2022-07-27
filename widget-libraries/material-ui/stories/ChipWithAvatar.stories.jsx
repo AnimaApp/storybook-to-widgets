@@ -7,6 +7,9 @@ import { ImageAvatar } from "./AvatarWithImage.stories";
 export default {
   title: "Material UI/Chip With Avatar",
   component: MuiMaterial.Chip,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

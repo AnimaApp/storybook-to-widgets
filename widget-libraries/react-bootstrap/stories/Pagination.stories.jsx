@@ -11,6 +11,7 @@ export default {
   component: ReactBootstrap.Pagination,
   parameters: {
     custom_css: ".${nodeClass} a { display: inherit; }",
+    useFigmaLayers: true,
   },
   argTypes: {
     size: {

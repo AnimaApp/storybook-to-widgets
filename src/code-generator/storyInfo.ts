@@ -19,6 +19,7 @@ export type StoryInfo = {
   titleArg?: string;
   onlyAddedOnce?: boolean;
   layout?: string;
+  useFigmaLayers?: boolean;
 };
 
 const storyIdFromStoryInfo = (
@@ -68,6 +69,7 @@ const getStoryInfo = (story: Story, sbApi: API): StoryInfo => {
   const titleArg = story?.parameters?.titleArg;
   const onlyAddedOnce = story?.parameters?.onlyAddedOnce || false;
   const layout = story?.parameters?.layout;
+  const useFigmaLayers = story?.parameters?.useFigmaLayers || false;
 
   // @ts-expect-error
   const title = story?.title ? story?.title : "";
@@ -96,6 +98,7 @@ const getStoryInfo = (story: Story, sbApi: API): StoryInfo => {
     titleArg,
     layout,
     onlyAddedOnce,
+    useFigmaLayers
   };
   return storyCodeInfo;
 };

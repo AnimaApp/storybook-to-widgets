@@ -6,6 +6,9 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Button",
   component: MuiMaterial.Button,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
