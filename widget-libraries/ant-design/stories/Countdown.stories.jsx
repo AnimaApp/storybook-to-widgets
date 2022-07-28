@@ -3,6 +3,8 @@ import "antd/dist/antd.css";
 import * as Antd from "antd";
 import withSecondsMapped from "../decorators/withSecondsMapped";
 
+const deadlineTransform = "<%= Date.now() + param * 1000 %>";
+
 export default {
   title: "Ant Design/Countdown",
   component: Antd.Statistic.Countdown,
@@ -14,6 +16,7 @@ export default {
     deadline: {
       description: "Deadline",
       type: "number",
+      transform: deadlineTransform,
     },
     title: { description: "Title", type: "string" },
   },
