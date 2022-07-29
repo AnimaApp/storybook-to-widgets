@@ -1,9 +1,6 @@
 import React from "react";
 import "antd/dist/antd.css";
 import * as Antd from "antd";
-import withSecondsMapped from "../decorators/withSecondsMapped";
-
-const deadlineTransform = "<%= Date.now() + param * 1000 %>";
 
 export default {
   title: "Ant Design/Countdown",
@@ -16,15 +13,18 @@ export default {
     deadline: {
       description: "Deadline",
       type: "number",
-      transform: deadlineTransform,
     },
     title: { description: "Title", type: "string" },
   },
-  decorators: [withSecondsMapped()],
 };
 
 const Template = (args) => {
-  return <Antd.Statistic.Countdown value={args.deadline} title={args.title} />;
+  return (
+    <Antd.Statistic.Countdown
+      value={Date.now() + args.deadline * 1000}
+      title={args.title}
+    />
+  );
 };
 
 export const SimpleCountdown = Template.bind({});
