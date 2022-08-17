@@ -9,6 +9,15 @@ const createLibraryApi = async (library: any, dependencies: any) => {
   try {
     let dependenciesArray = ["react", "react-dom"];
     const exculdedDependencies: string[] = library?.["excluded_packages"];
+
+    if (library?.code_template_params?.dependencies) {
+      const themeDependencies = Object.fromEntries(
+        Object.entries(dependencies).filter(
+          ([key]) => library.code_template_params.dependencies.includes(key)
+        )
+      );
+      library.code_template_params.dependencies = themeDependencies;
+    }
     const filteredDependencies = Object.fromEntries(
       Object.entries(dependencies).filter(
         ([key]) => !exculdedDependencies?.includes(key)
