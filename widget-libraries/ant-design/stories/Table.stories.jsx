@@ -3,6 +3,47 @@ import "antd/dist/antd.css";
 import * as Antd from "antd";
 import { SimpleTableColumn } from "./TableColumn.stories";
 
+export default {
+    title: 'Ant Design/Table',
+    component: Antd.Table,
+    parameters: {
+        custom_css:
+            '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+        docs: {
+            description: {
+                component: 'Table',
+            },
+        },
+    },
+    argTypes: {
+        title: { description: 'Title', type: 'boolean' },
+        bordered: { description: 'Bordered', type: 'boolean' },
+        showHeader: { description: 'Show header', type: 'boolean' },
+        size: {
+            description: 'Size',
+            control: { type: 'select' },
+            options: ['default', 'middle', 'small'],
+        },
+        loading: { description: 'Loading', type: 'boolean' },
+        item: {
+            type: "story",
+            description: "item",
+            storyInfo: SimpleTableColumn.storyInfo,
+        },
+        item2: {
+            type: "story",
+            description: "item",
+            storyInfo: SimpleTableColumn.storyInfo,
+        },
+        item3: {
+            type: "story",
+            description: "item",
+            storyInfo: SimpleTableColumn.storyInfo,
+        },
+    },
+};
+
+
 const dataSource = [
     {
         key: '1',
@@ -45,49 +86,6 @@ const columns = [
 
 
 
-export default {
-    title: 'Ant Design/Table',
-    component: Antd.Table,
-    parameters: {
-        custom_css:
-            '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
-        docs: {
-            description: {
-                component: 'Table',
-            },
-        },
-    },
-    argTypes: {
-        title: { description: 'Title', type: 'boolean' },
-        bordered: { description: 'Bordered', type: 'boolean' },
-        showHeader: { description: 'Show header', type: 'boolean' },
-        size: {
-            description: 'Size',
-            control: { type: 'select' },
-            options: ['default', 'middle', 'small'],
-        },
-        loading: { description: 'Loading', type: 'boolean' },
-        item: {
-            type: "story",
-            description: "item",
-            storyInfo: SimpleTableColumn.storyInfo,
-        },
-        item2: {
-            type: "story",
-            description: "item",
-            storyInfo: SimpleTableColumn.storyInfo,
-        },
-        item3: {
-            type: "story",
-            description: "item",
-            storyInfo: SimpleTableColumn.storyInfo,
-        },
-    },
-};
-
-
-
-
 const Template = (args) => {
     return (
         <Antd.Table
@@ -96,7 +94,6 @@ const Template = (args) => {
             size={args.size}
             loading={args.loading}
             dataSource={args.dataSource}
-        // columns={args.columns}
         >
             <SimpleTableColumn {...args.item} />
             <SimpleTableColumn {...args.item2} />

@@ -30,7 +30,7 @@ const Template = (args) => {
       severity={args.severity}
       variant={args.variant}
     >
-      {args.children}
+      <MuiMaterial.AlertTitle>{args.title}</MuiMaterial.AlertTitle>
     </MuiMaterial.Alert>
   );
 };
@@ -40,5 +40,5 @@ SimpleAlert.args = {
   color: "primary",
   severity: "success",
   variant: "outlined",
-  children: "This is an alert",
+  title: "This is an alert",
 };
