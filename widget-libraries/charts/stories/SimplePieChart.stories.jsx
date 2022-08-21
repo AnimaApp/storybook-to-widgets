@@ -32,6 +32,7 @@ const Template = (args) => (
       label
     />
     {args.ShowTooltip && <Recharts.Tooltip />}
+    <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
   </Recharts.PieChart>
 );
 
