@@ -35,7 +35,7 @@ const Template = (args) => (
     <Recharts.XAxis dataKey={args.xAxisDataKey} />
     <Recharts.YAxis />
     {args.ShowTooltip && <Recharts.Tooltip />}
-
+    <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
     <Recharts.Area
       type="monotone"
       dataKey={args.area1Key}

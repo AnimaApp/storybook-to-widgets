@@ -12,10 +12,7 @@ export default {
     },
   },
   argTypes: {
-    ShowXAxis: { description: "Show X axis" },
-    ShowYAxis: { description: "Show Y axis" },
     ShowCartesianGrid: { description: "Show CartesianGrid" },
-    ShowLegend: { description: "Show Legend" },
     ShowTooltip: { description: "Show Tooltip" },
     line1Color: { description: "Line1 Color" },
     line2Color: { description: "Line2 Color" },
@@ -30,12 +27,10 @@ export default {
 const Template = (args) => (
   <Recharts.LineChart {...args}>
     {args.ShowCartesianGrid && <Recharts.CartesianGrid strokeDasharray="3 3" />}
-    <Recharts.XAxis dataKey="name" hide={!args.ShowXAxis} />
-    <Recharts.YAxis hide={!args.ShowYAxis} />
+    <Recharts.XAxis dataKey="name" />
+    <Recharts.YAxis />
     {args.ShowTooltip && <Recharts.Tooltip />}
-    {args.ShowLegend && (
-      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
-    )}
+    <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
     <Recharts.Line
       type="monotone"
       dataKey={args.line1Key}
@@ -53,7 +48,7 @@ const Template = (args) => (
 
 export const Simple = Template.bind({});
 Simple.args = {
-  width: 450,
+  width: 300,
   height: 170,
   margin: {
     top: 5,
@@ -100,8 +95,5 @@ Simple.args = {
   align: "center",
   verticalAlign: "bottom",
   ShowCartesianGrid: true,
-  ShowXAxis: false,
-  ShowYAxis: false,
   ShowTooltip: true,
-  ShowLegend: false,
 };
