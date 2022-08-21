@@ -12,9 +12,7 @@ export default {
     },
   },
   argTypes: {
-    ShowLegend: { description: "Show Legend" },
     ShowTooltip: { description: "Show Tooltip" },
-    dataFillColor: { description: "Fill Color" },
     dataKey: { description: "Data Key" },
     align: { description: "Align" },
     verticalAlign: { description: "Vertical Align" },
@@ -55,8 +53,6 @@ const Template = (args) => (
           </text>
         );
       }}
-      outerRadius={80}
-      fill={args.dataFillColor}
       dataKey={args.dataKey}
       outerRadius={args.dataOuterRadius}
     >
@@ -77,10 +73,8 @@ SinglePie.args = {
     left: 20,
     bottom: 5,
   },
-  dataFillColor: "#3366FF",
-  dataOuterRadius: 60,
+  dataOuterRadius: 75,
   dataKey: "value",
-
   data: [
     { name: "Group A", value: 400, color: "#3366FF" },
     { name: "Group B", value: 300, color: "#009379" },
@@ -90,5 +84,4 @@ SinglePie.args = {
   align: "center",
   verticalAlign: "top",
   ShowTooltip: false,
-  ShowLegend: false,
 };
