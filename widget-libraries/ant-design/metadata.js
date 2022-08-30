@@ -8,12 +8,20 @@ export default {
   empty_thumb_url: "https://animaapp.s3.amazonaws.com/widgets/ant-design.svg",
   sample_file_figma_url: "",
   styles_import: ["antd/dist/antd.css", "antd/dist/antd.variable.css"],
-  code_template: 'import React from \"react\";\r\nimport ReactDOM from \"react-dom\";\r\nimport * as AntDesignIcons from \"@ant-design/icons\";\r\nimport * as Antd from \"antd\";\r\n\r\n<%-theme_template%>\r\n\r\nconst Main = args => {\r\n    <%-variableDeclarationCode%>\r\n    return (\r\n    \t<%-theme_prefix%>\r\n\t<%-storyCode%>\r\n\t<%-theme_suffix%>\r\n    );\r\n};\r\n\r\nconst args = <%-params%>;\r\n\r\n\r\nReactDOM.render(<Main {...args} />, document.querySelector(\".${nodeClass}\"));',   
+  code_template:
+    'import React from "react";\r\nimport ReactDOM from "react-dom";\r\n' +
+    'import * as AntDesignIcons from "@ant-design/icons";\r\n' +
+    'import * as Antd from "antd";\r\n\r\n<%-theme_template%>\r\n\r\n' + 
+    'const Main = args => {\r\n    <%-variableDeclarationCode%>\r\n    return (\r\n    \t<%-theme_prefix%>\r\n\t<%-storyCode%>\r\n\t<%-theme_suffix%>\r\n    );\r\n};\r\n\r\n' + 
+    'const args = <%-params%>;\r\n\r\n\r\nReactDOM.render(<Main {...args} />, document.querySelector(".${nodeClass}"));',
   code_template_params: {
     theme_prefix: "<Antd.ConfigProvider>",
     theme_suffix: "</Antd.ConfigProvider>",
     dependencies: ["antd"],
-    theme_template: "Antd.ConfigProvider.config({\r\n      theme: {\r\n          primaryColor: \"<%-theme[\"ant-primary-color\"]%>\",\r\n          secondaryColor: \"<%-theme[\"ant-secondary-color\"]%>\",\r\n          successColor: \"<%-theme[\"ant-success-color\"]%>\",\r\n          warningColor: \"<%-theme[\"ant-warning-color\"]%>\",\r\n          errorColor: \"<%-theme[\"ant-error-color\"]%>\",\r\n          fontSizeBase: \"<%-theme[\"ant-font-size-base\"]%>\",\r\n          borderRadiusBase: \"<%-theme[\"ant-border-radius-base\"]%>\",\r\n          borderColorBase: \"<%-theme[\"ant-border-color-base\"]%>\",\r\n      }\r\n  });"
+    theme_template:
+      'Antd.ConfigProvider.config({\r\n      theme: {\r\n          primaryColor: "<%-theme["ant-primary-color"]%>",\r\n' + 
+      '          secondaryColor: "<%-theme["ant-secondary-color"]%>",\r\n          successColor: "<%-theme["ant-success-color"]%>",\r\n' + 
+      '          warningColor: "<%-theme["ant-warning-color"]%>",\r\n          errorColor: "<%-theme["ant-error-color"]%>",\r\n      }\r\n  });',
   },
   theme: {
     categories: [
