@@ -1,3 +1,5 @@
+import dedent from "dedent";
+
 export default {
   name: "Ant Design",
   description:
@@ -8,27 +10,54 @@ export default {
   empty_thumb_url: "https://animaapp.s3.amazonaws.com/widgets/ant-design.svg",
   sample_file_figma_url: "",
   styles_import: ["antd/dist/antd.css", "antd/dist/antd.variable.css"],
-  code_template:
-    'import React from "react";\r\nimport ReactDOM from "react-dom";\r\n' +
-    'import * as AntDesignIcons from "@ant-design/icons";\r\n' +
-    'import * as Antd from "antd";\r\n\r\n<%-theme_template%>\r\n\r\n' +
-    "const Main = args => {\r\n    <%-variableDeclarationCode%>\r\n    return (\r\n    \t<%-theme_prefix%>\r\n\t<%-storyCode%>\r\n\t<%-theme_suffix%>\r\n    );\r\n};\r\n\r\n" +
-    'const args = <%-params%>;\r\n\r\n\r\nReactDOM.render(<Main {...args} />, document.querySelector(".${nodeClass}"));',
+  code_template: dedent(`import React from "react";
+  import ReactDOM from "react-dom";
+  import * as AntDesignIcons from "@ant-design/icons";
+  import * as Antd from "antd";
+  
+  <%-theme_template%>
+  
+  const Main = args => {
+      <%-variableDeclarationCode%>
+      return (
+        <%-theme_prefix%>
+    <%-storyCode%>
+    <%-theme_suffix%>
+      );
+  };
+  
+  const args = <%-params%>;
+  
+  
+  ReactDOM.render(<Main {...args} />, document.querySelector(".${nodeClass}"));`),
+
   code_template_params: {
     theme_prefix: "<Antd.ConfigProvider>",
     theme_suffix: "</Antd.ConfigProvider>",
     dependencies: ["antd"],
-    theme_template:
-      'Antd.ConfigProvider.config({\r\n      theme: {\r\n          primaryColor: "<%-theme["ant-primary-color"]%>",\r\n' +
-      '          secondaryColor: "<%-theme["ant-secondary-color"]%>",\r\n          successColor: "<%-theme["ant-success-color"]%>",\r\n' +
-      '          warningColor: "<%-theme["ant-warning-color"]%>",\r\n          errorColor: "<%-theme["ant-error-color"]%>",\r\n      }\r\n  });',
-    theme_template_html:
-      "const theme = window.theme;\r\n\r\nAntd.ConfigProvider.config({\r\n  theme\r\n});",
-    theme_template_html_global:
-      'window.theme = {\r\n          primaryColor: "<%-theme["ant-primary-color"]%>",\r\n' +
-      '          secondaryColor: "<%-theme["ant-secondary-color"]%>",\r\n          successColor: "<%-theme["ant-success-color"]%>",\r\n' +
-      '          warningColor: "<%-theme["ant-warning-color"]%>",\r\n          errorColor: "<%-theme["ant-error-color"]%>",\r\n };',
+    theme_template: dedent(`Antd.ConfigProvider.config({
+      theme: {
+          primaryColor: "<%-theme["ant-primary-color"]%>",
+          secondaryColor: "<%-theme["ant-secondary-color"]%>",
+          successColor: "<%-theme["ant-success-color"]%>",
+          warningColor: "<%-theme["ant-warning-color"]%>",
+          errorColor: "<%-theme["ant-error-color"]%>",
+      }
+  });`),
+    theme_template_html: dedent(`const theme = window.theme;
+
+    Antd.ConfigProvider.config({
+      theme
+    });`),
+    theme_template_html_global: dedent(`window.theme = {
+      primaryColor: "<%-theme["ant-primary-color"]%>",
+      secondaryColor: "<%-theme["ant-secondary-color"]%>",
+      successColor: "<%-theme["ant-success-color"]%>",
+      warningColor: "<%-theme["ant-warning-color"]%>",
+      errorColor: "<%-theme["ant-error-color"]%>",
+};`),
   },
+
   theme: {
     categories: [
       {
