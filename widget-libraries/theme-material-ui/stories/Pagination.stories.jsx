@@ -1,0 +1,105 @@
+import React from "react";
+import * as MuiMaterial from "@mui/material";
+
+export default {
+  title: "New Material UI/Pagination",
+  component: MuiMaterial.Pagination,
+  parameters: {
+    useFigmaLayers: true,
+  },
+  argTypes: {
+    color: {
+      description: "Color",
+      control: { type: "select" },
+      options: ["primary", "secondary", "standard"],
+    },
+    variant: {
+      description: "Variant",
+      control: { type: "select" },
+      options: ["outlined", "text"],
+    },
+    shape: {
+      description: "Shape",
+      control: { type: "select" },
+      options: ["circular", "rounded"],
+    },
+    size: {
+      description: "Size",
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
+    disabled: {
+      description: "Disabled",
+      type: "boolean",
+    },
+    count: {
+      description: "Total pages",
+      type: "number",
+    },
+    boundaryCount: {
+      description: "Visible pages beginning & end",
+      type: "number",
+    },
+    siblingCount: {
+      description: "Visible pages before & after current page",
+      type: "number",
+    },
+    defaultPage: {
+      description: "Selected page",
+      type: "number",
+    },
+    hideNextButton: {
+      description: "Hide next-page button",
+      type: "boolean",
+    },
+    hidePrevButton: {
+      description: "Hide previous-page button",
+      type: "boolean",
+    },
+    showFirstButton: {
+      description: "Show first-page button",
+      type: "boolean",
+    },
+    showLastButton: {
+      description: "Show last-page button",
+      type: "boolean",
+    },
+  },
+};
+
+const Template = (args) => {
+  return (
+    <MuiMaterial.Pagination
+      variant={args.variant}
+      color={args.color}
+      disabled={args.disabled}
+      size={args.size}
+      shape={args.shape}
+      count={args.count}
+      boundaryCount={args.boundaryCount}
+      siblingCount={args.siblingCount}
+      defaultPage={args.defaultPage}
+      hideNextButton={args.hideNextButton}
+      hidePrevButton={args.hidePrevButton}
+      showFirstButton={args.showFirstButton}
+      showLastButton={args.showLastButton}
+    />
+  );
+};
+
+export const SimplePagination = Template.bind({});
+SimplePagination.args = {
+  variant: "outlined",
+  color: "primary",
+  size: "medium",
+  shape: "circular",
+  disabled: false,
+  count: 5,
+  boundaryCount: 1,
+  siblingCount: 1,
+  defaultPage: 1,
+  hideNextButton: false,
+  hidePrevButton: false,
+  showFirstButton: false,
+  showLastButton: false,
+};
