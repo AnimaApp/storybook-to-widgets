@@ -40,7 +40,7 @@ export default {
           {
             name: "Primary color",
             type: "css-color",
-            default: "1976d2",
+            default: "#1976d2",
             variable: "mui-primary-color",
           },
           {
