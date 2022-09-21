@@ -62,7 +62,13 @@ const Template = (args) => {
       variant={args.variant}
       label={args.label}
       clickable={args.clickable}
-      avatar={<ImageAvatar {...args.avatar} />}
+      avatar={
+        <ImageAvatar
+          {...args.avatar}
+          style={{ borderRadius: "50%" }}
+          imgProps={{ height: 30, style: { borderRadius: "50%" } }}
+        />
+      }
     />
   );
 };

@@ -50,32 +50,43 @@ export default {
 };
 
 const Template = (args) => (
-  <Recharts.LineChart
-    width={args.width}
-    height={args.height}
-    margin={args.margin}
-    data={args.data}
-  >
-    <SimpleCartesianGrid {...args.cartesiangrid} />
-    <SimpleXAxis {...args.xaxis} />
-    <SimpleYAxis {...args.yaxis} />
-    <SimpleTooltip {...args.tooltip} />
-    <SimpleLegend {...args.legend} />
-    <SimpleLine {...args.line1} />
-    <SimpleLine {...args.line2} />
+  <Recharts.LineChart {...args}>
+    {args.ShowCartesianGrid && <Recharts.CartesianGrid strokeDasharray="3 3" />}
+    <Recharts.XAxis dataKey="name" hide={!args.ShowXAxis} />
+    <Recharts.YAxis hide={!args.ShowYAxis} />
+    {args.ShowTooltip && <Recharts.Tooltip />}
+    {args.ShowLegend && (
+      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
+    )}
+    <Recharts.Line
+      type="monotone"
+      dataKey={args.line1Key}
+      stroke={args.line1Color}
+      dot={false}
+    />
+    <Recharts.Line
+      type="monotone"
+      dataKey={args.line2Key}
+      stroke={args.line2Color}
+      dot={false}
+    />
   </Recharts.LineChart>
 );
 
 export const Simple = Template.bind({});
 Simple.args = {
-  width: 280,
-  height: 150,
+  width: 450,
+  height: 170,
   margin: {
     top: 5,
     right: 30,
     left: 20,
     bottom: 5,
   },
+  line1Color: "#3366FF",
+  line2Color: "#009379",
+  line1Key: "blue",
+  line2Key: "green",
   data: [
     {
       name: "A",
@@ -108,26 +119,11 @@ Simple.args = {
       green: 380,
     },
   ],
-  line1: {
-    lineColor: "#3366FF",
-    lineKey: "blue",
-  },
-  line2: {
-    lineColor: "#009379",
-    lineKey: "green",
-  },
-  legend: {
-    align: "center",
-    verticalAlign: "top",
-  },
-  tooltip: {
-    offset: 10,
-  },
-  xaxis: {
-    xAxisDataKey: "name",
-  },
-  yaxis: {},
-  cartesiangrid: {
-    strokeDasharray: "3 3",
-  },
+  align: "center",
+  verticalAlign: "bottom",
+  ShowCartesianGrid: true,
+  ShowXAxis: false,
+  ShowYAxis: false,
+  ShowTooltip: true,
+  ShowLegend: false,
 };

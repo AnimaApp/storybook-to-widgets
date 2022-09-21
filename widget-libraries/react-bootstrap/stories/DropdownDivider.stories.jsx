@@ -11,7 +11,8 @@ export default {
         component: "Divider",
       },
     },
-  }
+    storyContainerMinWidth: 150,
+  },
 };
 
 const Template = (args) => {
@@ -22,9 +23,9 @@ const Template = (args) => {
   );
 };
 
-export const SimpleDropdownDivider= Template.bind({});
+export const SimpleDropdownDivider = Template.bind({});
 SimpleDropdownDivider.args = {};
 SimpleDropdownDivider.storyInfo = {
   name: "SimpleDropdownDivider",
   kind: "React Bootstrap/DropdownDivider",
-}
+};

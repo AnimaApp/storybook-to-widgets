@@ -17,13 +17,12 @@ export default {
 
 const treeData = [
   {
-    title: "parent 1",
+    title: "Images",
     key: "0-0",
     children: [
       {
-        title: "parent 1-0",
+        title: "Mountains",
         key: "0-0-0",
-        disabled: true,
         children: [
           {
             title: "leaf",
@@ -37,11 +36,12 @@ const treeData = [
         ],
       },
       {
-        title: "parent 1-1",
+        title: "Beach",
         key: "0-0-1",
+        disabled: true,
         children: [
           {
-            title: "sss",
+            title: "leaf",
             key: "0-0-1-0",
           },
         ],
@@ -56,6 +56,7 @@ const Template = (args) => {
       treeData={args.treeData}
       multiple={args.multiple}
       checkable={args.checkable}
+      defaultExpandedKeys={["0-0"]}
     />
   );
 };

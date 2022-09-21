@@ -41,7 +41,8 @@
     "build-storybook": "build-storybook",
     "prerelease": "zx scripts/prepublish-checks.mjs",
     "release": "npm run build && auto shipit",
-    "build:release": "npm run build && npm run build-storybook"
+    "build:release": "npm run build && npm run build-storybook",
+    "component-thumbnails": "cd cl-thumbnails-uploader && npm run start"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "0.19.6",

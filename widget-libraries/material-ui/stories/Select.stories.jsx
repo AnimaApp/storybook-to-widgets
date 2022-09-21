@@ -1,10 +1,10 @@
 import React from "react";
-import * as MuiMaterial from "@mui/material";
+import * as MUI from "@mui/material";
 import { SimpleMenuItem } from "./MenuItem.stories";
 
 export default {
   title: "Material UI/Select",
-  component: MuiMaterial.Select,
+  component: MUI.Select,
   parameters: {
     useFigmaLayers: true,
   },
@@ -50,25 +50,36 @@ export default {
 };
 
 const Template = (args) => {
-  const [state, setState] = React.useState("1");
+  const [state, setState] = React.useState("");
 
   const handleChange = (event) => {
     setState(event.target.value);
   };
 
   return (
-    <MuiMaterial.Select
-      sx={{ width: args.width }}
-      disabled={args.disabled}
-      variant={args.variant}
-      label={args.label}
-      value={state}
-      onChange={handleChange}
-    >
-      <SimpleMenuItem {...args.menuitem} />
-      <SimpleMenuItem {...args.menuitem2} />
-      <SimpleMenuItem {...args.menuitem3} />
-    </MuiMaterial.Select>
+    <MUI.FormControl fullWidth>
+      <MUI.InputLabel id="select-label">{args.label}</MUI.InputLabel>
+      <MUI.Select
+        id="select"
+        labelId="select-label"
+        value={state}
+        label={args.label}
+        onChange={handleChange}
+        variant={args.variant}
+        disabled={args.disabled}
+        sx={{ width: args.width }}
+      >
+        <MUI.MenuItem value={args.menuitem.value}>
+          {args.menuitem.label}
+        </MUI.MenuItem>
+        <MUI.MenuItem value={args.menuitem2.value}>
+          {args.menuitem2.label}
+        </MUI.MenuItem>
+        <MUI.MenuItem value={args.menuitem3.value}>
+          {args.menuitem3.label}
+        </MUI.MenuItem>
+      </MUI.Select>
+    </MUI.FormControl>
   );
 };
 
@@ -80,21 +91,15 @@ SimpleSelect.args = {
   width: "250px",
   value: "1",
   menuitem: {
-    ...SimpleMenuItem.args,
     value: "1",
-    label: "User1",
-    itemKey: 1,
+    label: "User 1",
   },
   menuitem2: {
-    ...SimpleMenuItem.args,
     value: "2",
-    label: "User2",
-    itemKey: 2,
+    label: "User 2",
   },
   menuitem3: {
-    ...SimpleMenuItem.args,
     value: "3",
-    label: "User3",
-    itemKey: 3,
+    label: "User 3",
   },
 };

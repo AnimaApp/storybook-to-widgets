@@ -20,9 +20,7 @@ export default {
   },
 };
 
-const Template = (args) => {
-  return <MuiMaterial.Avatar variant={args.variant} src={args.src} />;
-};
+const Template = (args) => <MuiMaterial.Avatar {...args} />;
 
 export const ImageAvatar = Template.bind({});
 

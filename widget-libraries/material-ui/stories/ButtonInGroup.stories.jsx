@@ -46,8 +46,8 @@ const Template = (args) => {
 export const SimpleButtonInGroup = Template.bind({});
 SimpleButtonInGroup.args = {
   label: "Button 1",
-  startIcon: "None",
-  endIcon: "None",
+  startIcon: undefined,
+  endIcon: undefined,
 };
 
 SimpleButtonInGroup.storyInfo = {

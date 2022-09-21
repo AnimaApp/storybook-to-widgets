@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "target": "es2015",
+    "module": "commonjs",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  },
+}

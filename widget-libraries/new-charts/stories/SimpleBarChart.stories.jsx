@@ -43,32 +43,35 @@ export default {
 };
 
 const Template = (args) => (
-  <Recharts.BarChart
-    width={args.width}
-    height={args.height}
-    margin={args.margin}
-    data={args.data}
-  >
-    <SimpleCartesianGrid {...args.cartesiangrid} />
-    <SimpleXAxis {...args.xaxis} />
-    <SimpleYAxis {...args.yaxis} />
-    <SimpleTooltip {...args.tooltip} />
-    <SimpleLegend {...args.legend} />
-    <SimpleBar {...args.bar1} />
-    <SimpleBar {...args.bar2} />
+  <Recharts.BarChart {...args}>
+    {args.ShowCartesianGrid && <Recharts.CartesianGrid strokeDasharray="3 3" />}
+    <Recharts.XAxis dataKey={args.xAxisDataKey} hide={!args.ShowXAxis} />
+    <Recharts.YAxis hide={!args.ShowYAxis} />
+    {args.ShowTooltip && <Recharts.Tooltip />}
+    {args.ShowLegend && (
+      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
+    )}
+    <Recharts.Bar dataKey={args.data1Key} fill={args.data1Color} />
+    <Recharts.Bar dataKey={args.data2Key} fill={args.data2Color} />
   </Recharts.BarChart>
 );
 
 export const Simple = Template.bind({});
+
 Simple.args = {
-  width: 280,
-  height: 150,
+  width: 450,
+  height: 170,
   margin: {
     top: 5,
     right: 30,
     left: 20,
     bottom: 5,
   },
+  xAxisDataKey: "name",
+  data1Color: "#3366FF",
+  data2Color: "#009379",
+  data1Key: "blue",
+  data2Key: "green",
   data: [
     {
       name: "A",
@@ -101,26 +104,11 @@ Simple.args = {
       green: 380,
     },
   ],
-  legend: {
-    align: "center",
-    verticalAlign: "top",
-  },
-  tooltip: {
-    offset: 10,
-  },
-  xaxis: {
-    xAxisDataKey: "name",
-  },
-  yaxis: {},
-  cartesiangrid: {
-    strokeDasharray: "3 3",
-  },
-  bar1: {
-    dataColor: "#3366FF",
-    dataKey: "blue",
-  },
-  bar2: {
-    dataColor: "#009379",
-    dataKey: "green",
-  },
+  align: "center",
+  verticalAlign: "bottom",
+  ShowCartesianGrid: true,
+  ShowXAxis: false,
+  ShowYAxis: false,
+  ShowLegend: false,
+  ShowTooltip: true,
 };

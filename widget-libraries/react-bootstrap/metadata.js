@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: "React Bootstrap",
   description: "The most popular front-end framework Rebuilt for React.",
   short_description: "Rebuilt with React",
