@@ -10,8 +10,9 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.171.0",
     "aws-sdk": "^2.1218.0",
+    "enquirer": "^2.3.6",
     "fast-glob": "^3.2.12",
-    "listr2": "^4.0.0-beta.3",
+    "listr2": "^5.0.5",
     "playwright": "^1.26.0",
     "yargs": "^17.5.1"
   },

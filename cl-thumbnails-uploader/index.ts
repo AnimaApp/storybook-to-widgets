@@ -3,14 +3,16 @@ import fs from "fs/promises";
 import yargs from "yargs";
 import chalk from "chalk";
 import fastGlob from "fast-glob";
+import nodePath from "path";
 import playwright from "playwright";
 import { hideBin } from "yargs/helpers";
 import { Listr, ListrTaskWrapper } from "listr2";
 
 interface Ctx {
   stories: Record<string, Story>;
-  failed: string[];
   manualScreenshots: string[];
+  libraries: string[];
+  components: string[];
 }
 
 interface Story {
@@ -24,27 +26,33 @@ interface Story {
 const baseUrl = "http://localhost:6006";
 const selector = "#story-container";
 const bucketName = "anima-uploads";
-const screenshotsDir = "screenshots";
+const screenshotsDir = nodePath.join(__dirname, "screenshots");
 
-const options = yargs(hideBin(process.argv)).argv;
-
-const {
-  libraries = "",
-  components = "",
-  skipUpload = false,
-  skipScreenshots = false,
-  containerPadding = 10,
-  skipManualScreenshots = false,
-} = options;
-
-const toList = (value) =>
-  String(value || "")
-    .split(",")
-    .map((s) => s.trim())
-    .filter(Boolean);
-
-const onlyLibraries = toList(libraries);
-const onlyComponents = toList(components);
+const options = yargs(hideBin(process.argv))
+  .command("$0", "Screenshots all stories and uploads them")
+  .boolean([
+    "interactive",
+    "cachedStories",
+    "screenshots",
+    "uploads",
+    "manual-screenshots-uploads",
+  ])
+  .number("containerPadding")
+  .alias("i", "interactive")
+  .describe("i", "Stories to take screenshots of")
+  .describe("cachedStories", "Use data from stories.json")
+  .describe("screenshots", "Skips the screenshots step")
+  .describe("uploads", "Skips uploading screenshots")
+  .describe(
+    "manual-screenshots-uploads",
+    "Skips uploading the manual screenshots"
+  )
+  .describe("container-padding", "Padding around the story container")
+  .default("containerPadding", 10)
+  .default("cachedStories", false)
+  .default("screenshots", true)
+  .default("uploads", true)
+  .default("manualScreenshotsUploads", true).argv;
 
 let page: playwright.Page;
 let browser: playwright.BrowserContext;
@@ -54,18 +62,23 @@ async function prepare(ctx: Ctx) {
     await fs.rm(screenshotsDir, { recursive: true });
   } catch (error) {}
 
-  browser = await playwright.chromium.launchPersistentContext("./.user_data", {
-    headless: true,
-    deviceScaleFactor: 2, // Higher quality screenshots
-  });
+  browser = await playwright.chromium.launchPersistentContext(
+    nodePath.join(__dirname, ".user_data"),
+    {
+      headless: true,
+      deviceScaleFactor: 2, // Higher quality screenshots
+    }
+  );
 
   page = await browser.newPage();
   page.setDefaultTimeout(30_000);
 
-  ctx.failed = [];
   ctx.stories = {};
-
-  ctx.manualScreenshots = await fastGlob(["./manual-screenshots/**/*.png"]);
+  ctx.libraries = [];
+  ctx.components = [];
+  ctx.manualScreenshots = await fastGlob([
+    nodePath.join(__dirname, "manual-screenshots/**/*.png"),
+  ]);
 }
 
 async function collectStories(ctx: Ctx, task: ListrTaskWrapper<Ctx, any>) {
@@ -99,7 +112,10 @@ async function collectStories(ctx: Ctx, task: ListrTaskWrapper<Ctx, any>) {
 
     if (!librariesMetadata[sbLibraryName]) {
       const { default: metadata } = await import(
-        `../widget-libraries/${sbLibraryName}/metadata.js`
+        nodePath.join(
+          __dirname,
+          `../widget-libraries/${sbLibraryName}/metadata.js`
+        )
       );
 
       librariesMetadata[sbLibraryName] = metadata;
@@ -107,39 +123,34 @@ async function collectStories(ctx: Ctx, task: ListrTaskWrapper<Ctx, any>) {
 
     const { name: libraryName } = librariesMetadata[sbLibraryName];
 
-    const skipLibrary =
-      onlyLibraries.length && !onlyLibraries.includes(libraryName);
-
-    const skipComponent =
-      onlyComponents.length && !onlyComponents.includes(componentName);
-
     task.stdout().write(`${libraryName}: ${componentName}`);
-
-    if (skipLibrary || skipComponent) continue;
 
     ctx.stories[id] = { sbLibraryName, componentName, libraryName };
   }
+
+  await fs.writeFile(
+    nodePath.join(__dirname, "stories.json"),
+    JSON.stringify(ctx.stories, null, 2),
+    "utf-8"
+  );
 
   task.title = `${task.title} (found ${Object.keys(ctx.stories).length})`;
 }
 
 async function takeScreenshots(ctx: Ctx, task: ListrTaskWrapper<Ctx, any>) {
   let index = 1;
-  const ids = Object.keys(ctx.stories);
+  for (const id of ctx.components) {
+    task.title = `Taking screenshots (${index} of ${ctx.components.length})`;
 
-  for (const id of ids) {
-    task.title = `Taking screenshots (${index} of ${ids.length})`;
-
-    const { sbLibraryName, componentName } = ctx.stories[id];
+    const { libraryName, componentName } = ctx.stories[id];
 
     try {
       await takeScreenshot(id);
     } catch (error) {
-      const path = `${sbLibraryName}: ${componentName}`;
+      const path = `${libraryName}: ${componentName}`;
       task.output = [task.output, `${chalk.redBright("✖")} ${path}`]
         .filter(Boolean)
         .join("\n");
-      ctx.failed.push(id);
     }
 
     index++;
@@ -154,7 +165,7 @@ async function takeScreenshot(id: string) {
 
   await container.evaluate(
     (el, { containerPadding }) => (el.style.padding = `${containerPadding}px`),
-    { containerPadding }
+    { containerPadding: options.containerPadding }
   );
 
   // Let animations finish. Maybe this should be configurable per story?
@@ -168,30 +179,38 @@ async function takeScreenshot(id: string) {
 }
 
 async function uploadScreenshots(ctx: Ctx, task: ListrTaskWrapper<Ctx, any>) {
-  const { stories, failed } = ctx;
+  const { stories } = ctx;
 
   const s3 = new aws.S3Client({ region: "us-west-2" });
-  const ids = Object.keys(stories);
-  const total = ids.length - failed.length;
+  const ids = ctx.components;
 
   let index = 1;
+  let failed = 0;
   for (const id of ids) {
-    task.title = `Uploading screenshots (${index} of ${total})`;
-    if (failed.includes(id)) continue;
+    try {
+      task.title = `Uploading screenshot ${index} of ${ids.length}${
+        !!failed ? chalk.redBright(` (${failed} failed)`) : ""
+      }`;
 
-    const { libraryName, componentName } = stories[id];
+      const { libraryName, componentName } = stories[id];
 
-    index++;
+      const uploadCommand = new aws.PutObjectCommand({
+        ACL: "public-read",
+        Key: `components-library/${libraryName}/${componentName.toLowerCase()}.png`,
+        Body: await fs.readFile(`${screenshotsDir}/${id}.png`),
+        Bucket: bucketName,
+        ContentType: "image/png",
+      });
 
-    const uploadCommand = new aws.PutObjectCommand({
-      ACL: "public-read",
-      Key: `components-library/${libraryName}/${componentName.toLowerCase()}.png`,
-      Body: await fs.readFile(`${screenshotsDir}/${id}.png`),
-      Bucket: bucketName,
-      ContentType: "image/png",
-    });
-
-    await s3.send(uploadCommand);
+      await s3.send(uploadCommand);
+    } catch (error) {
+      failed++;
+      task.title = `Uploading screenshot ${index} of ${ids.length}${
+        !!failed ? chalk.redBright(` (${failed} failed)`) : ""
+      }`;
+    } finally {
+      index++;
+    }
   }
 }
 
@@ -202,24 +221,34 @@ async function uploadManualScreenshots(
   const s3 = new aws.S3Client({ region: "us-west-2" });
 
   let index = 1;
+  let failed = 0;
   for (const path of manualScreenshots) {
-    task.title = `Uploading manual screenshots (${index} of ${manualScreenshots.length})`;
+    try {
+      task.title = `Uploading manual screenshot ${index} of ${
+        manualScreenshots.length
+      }${!!failed ? chalk.redBright(` (${failed} failed)`) : ""}`;
 
-    const [_, libraryName, componentName] = path.match(
-      /manual\-screenshots\/([^\/]+)\/(.*).png/
-    );
+      const [_, libraryName, componentName] = path.match(
+        /manual\-screenshots\/([^\/]+)\/(.*).png/
+      );
 
-    index++;
+      const uploadCommand = new aws.PutObjectCommand({
+        ACL: "public-read",
+        Key: `components-library/${libraryName}/${componentName.toLowerCase()}.png`,
+        Body: await fs.readFile(path),
+        Bucket: bucketName,
+        ContentType: "image/png",
+      });
 
-    const uploadCommand = new aws.PutObjectCommand({
-      ACL: "public-read",
-      Key: `components-library/${libraryName}/${componentName.toLowerCase()}.png`,
-      Body: await fs.readFile(path),
-      Bucket: bucketName,
-      ContentType: "image/png",
-    });
-
-    await s3.send(uploadCommand);
+      await s3.send(uploadCommand);
+    } catch (error) {
+      failed++;
+      task.title = `Uploading manual screenshot ${index} of ${
+        manualScreenshots.length
+      }${!!failed ? chalk.redBright(` (${failed} failed)`) : ""}`;
+    } finally {
+      index++;
+    }
   }
 }
 
@@ -227,33 +256,92 @@ const tasks = new Listr<Ctx>([
   { title: "Preparing", task: prepare },
   {
     title: "Collecting stories",
-    skip: () => !!skipScreenshots,
+    skip: () => options.cachedStories,
     task: collectStories,
   },
   {
+    skip: () => !options.cachedStories,
+    task: async (ctx, task) => {
+      ctx.stories = JSON.parse(
+        await fs.readFile(nodePath.join(__dirname, "stories.json"), "utf-8")
+      );
+
+      task.title = `Using cached stories (found ${
+        Object.keys(ctx.stories).length
+      })`;
+    },
+  },
+  {
+    task: async (ctx, task) => {
+      const libraries = Array.from(
+        new Set(Object.values(ctx.stories).map((s) => s.libraryName))
+      );
+
+      if (!options.interactive) return (ctx.libraries = libraries);
+
+      ctx.libraries = await task.prompt({
+        type: "MultiSelect",
+        footer: chalk.gray(
+          "(<space> to select, <a> to toggle all, <return> to submit)"
+        ),
+        message: "Choose libraries to screenshot",
+        choices: libraries,
+      });
+    },
+  },
+  {
+    skip: (ctx) => !ctx.libraries.length,
+    task: async (ctx, task) => {
+      if (!options.interactive) {
+        return (ctx.components = Object.keys(ctx.stories));
+      }
+
+      for (const lib of ctx.libraries) {
+        const choices = Object.entries(ctx.stories).map(([key, s]) =>
+          s.libraryName !== lib ? null : { name: s.componentName, value: key }
+        );
+
+        ctx.components = ctx.components.concat(
+          await task.prompt({
+            type: "multiselect",
+            footer: chalk.gray(
+              "(<space> to select, <a> to toggle all, <return> to submit)"
+            ),
+            message: `${chalk.green.underline(lib)} components to screenshot`,
+            choices: choices.filter(Boolean),
+            multiple: true,
+            result(names) {
+              return Object.values(this.map(names));
+            },
+          })
+        );
+      }
+    },
+  },
+  {
     title: "Taking screenshots",
-    skip: () => !!skipScreenshots,
+    skip: (ctx) => !options.screenshots || !ctx.components.length,
     task: takeScreenshots,
     options: { persistentOutput: true },
   },
   {
     title: "Uploading screenshots",
-    skip: ({ stories, failed }) => {
-      const total = Object.keys(stories).length;
-
-      return (
-        !!skipScreenshots || !!skipUpload || !total || total === failed.length
-      );
-    },
-    task: uploadScreenshots,
-    options: { persistentOutput: true },
-  },
-  {
-    title: "Uploading manual screenshots",
-    skip: ({ manualScreenshots }) =>
-      !!skipUpload || !!skipManualScreenshots || !manualScreenshots.length,
-    task: uploadManualScreenshots,
-    options: { persistentOutput: true },
+    task: (_ctx, task) =>
+      task.newListr(
+        [
+          {
+            title: "Automated screenshots",
+            task: uploadScreenshots,
+            skip: () => !options.uploads,
+          },
+          {
+            title: "Manual screenshots",
+            task: uploadManualScreenshots,
+            skip: () => !options.manualScreenshotsUploads,
+          },
+        ],
+        { concurrent: true, rendererOptions: { collapse: false } }
+      ),
   },
   { title: "Cleaning up", task: async () => await browser?.close() },
 ]);

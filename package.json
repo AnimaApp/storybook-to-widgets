@@ -42,7 +42,7 @@
     "prerelease": "zx scripts/prepublish-checks.mjs",
     "release": "npm run build && auto shipit",
     "build:release": "npm run build && npm run build-storybook",
-    "component-thumbnails": "cd cl-thumbnails-uploader && npm run start"
+    "component-thumbnails": "./cl-thumbnails-uploader/node_modules/.bin/ts-node cl-thumbnails-uploader/index.ts"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "0.19.6",
