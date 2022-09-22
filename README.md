@@ -48,7 +48,7 @@ echo "{
 ```
 
 ```sh
-echo "export default {
+echo "module.exports = {
   name: \"Sample\",
   description: \"My sample widget library\",
   short_description: \"Sample widget library\",

@@ -1,10 +1,10 @@
 import React from "react";
-import * as MUI from "@mui/material";
+import * as MuiMaterial from "@mui/material";
 import { SimpleMenuItem } from "./MenuItem.stories";
 
 export default {
   title: "Material UI/Select",
-  component: MUI.Select,
+  component: MuiMaterial.Select,
   parameters: {
     useFigmaLayers: true,
   },
@@ -57,9 +57,11 @@ const Template = (args) => {
   };
 
   return (
-    <MUI.FormControl fullWidth>
-      <MUI.InputLabel id="select-label">{args.label}</MUI.InputLabel>
-      <MUI.Select
+    <MuiMaterial.FormControl fullWidth>
+      <MuiMaterial.InputLabel id="select-label">
+        {args.label}
+      </MuiMaterial.InputLabel>
+      <MuiMaterial.Select
         id="select"
         labelId="select-label"
         value={state}
@@ -69,17 +71,17 @@ const Template = (args) => {
         disabled={args.disabled}
         sx={{ width: args.width }}
       >
-        <MUI.MenuItem value={args.menuitem.value}>
+        <MuiMaterial.MenuItem value={args.menuitem.value}>
           {args.menuitem.label}
-        </MUI.MenuItem>
-        <MUI.MenuItem value={args.menuitem2.value}>
+        </MuiMaterial.MenuItem>
+        <MuiMaterial.MenuItem value={args.menuitem2.value}>
           {args.menuitem2.label}
-        </MUI.MenuItem>
-        <MUI.MenuItem value={args.menuitem3.value}>
+        </MuiMaterial.MenuItem>
+        <MuiMaterial.MenuItem value={args.menuitem3.value}>
           {args.menuitem3.label}
-        </MUI.MenuItem>
-      </MUI.Select>
-    </MUI.FormControl>
+        </MuiMaterial.MenuItem>
+      </MuiMaterial.Select>
+    </MuiMaterial.FormControl>
   );
 };
 

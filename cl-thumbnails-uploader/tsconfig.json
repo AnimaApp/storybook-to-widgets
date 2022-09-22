@@ -6,5 +6,5 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "moduleResolution": "node"
-  },
+  }
 }
