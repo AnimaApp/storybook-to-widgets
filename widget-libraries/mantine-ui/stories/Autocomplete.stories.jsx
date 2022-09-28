@@ -40,8 +40,7 @@ export default {
   },
 };
 
-const data = ['React', 'Angular', 'Svelte', 'Vue']
-
+const data = ["React", "Angular", "Svelte", "Vue"];
 
 const Template = (args) => {
   return (
@@ -69,18 +68,16 @@ export const SimpleAutocomplete = Template.bind({});
 SimpleAutocomplete.args = {
   label: "Label",
   description: "Description",
-  error: "Error",
+  error: null,
   disabled: false,
   required: false,
   initiallyOpened: false,
-  dropdownPosition: "top",
+  dropdownPosition: "bottom",
   limit: 100,
-  maxDropdownHeight: 100,
+  maxDropdownHeight: 400,
   size: "md",
   // icon: to do
   iconWidth: 20,
   variant: "filled",
   data: data,
 };
-
-
