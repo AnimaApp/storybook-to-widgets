@@ -1,0 +1,13 @@
+{
+  "name": "@animaapp/widgets-mantine-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {},
+  "dependencies": {
+    "@mantine/core": "5.4.1",
+    "@mantine/hooks": "5.4.1",
+    "@emotion/react": "11.10.4",
+    "@mantine/dates": "5.4.1"
+  },
+  "devDependencies": {}
+}
