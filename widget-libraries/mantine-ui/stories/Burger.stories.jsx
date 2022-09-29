@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Burger",
-  component: Mantine.Burger,
+  component: MantineCore.Burger,
   parameters: {
     docs: {
       description: {
@@ -24,7 +24,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Burger
+    <MantineCore.Burger
       opened={args.opened}
       size={args.size}
       transitionDuration={args.transitionDuration}

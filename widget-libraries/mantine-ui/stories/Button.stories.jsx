@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Button",
-  component: Mantine.Button,
+  component: MantineCore.Button,
   parameters: {
     docs: {
       description: {
@@ -52,7 +52,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Button
+    <MantineCore.Button
       variant={args.variant}
       size={args.size}
       type={args.type}
@@ -65,7 +65,7 @@ const Template = (args) => {
       disabled={args.disabled}
     >
       {args.label}
-    </Mantine.Button>
+    </MantineCore.Button>
   );
 };
 
