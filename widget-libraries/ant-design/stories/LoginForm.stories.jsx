@@ -15,12 +15,6 @@ export default {
     maxWidth: {
       description: "Max width",
     },
-    color: {
-      description: "Color",
-    },
-    hoverColor: {
-      description: "Hover color",
-    },
     rememberMe: {
       description: "Remember me",
     },
@@ -40,8 +34,7 @@ const Template = (args) => (
   <Antd.Form
     style={{
       maxWidth: args.maxWidth,
-      "--ant-primary-color": args.color,
-      "--ant-primary-color-hover": args.hoverColor,
+
     }}
     name="normal_login"
     className="login-form"
@@ -110,8 +103,6 @@ export const Simple = Template.bind({});
 Simple.args = {
   maxWidth: "250px",
   rememberMe: true,
-  color: "#1890ff",
-  hoverColor: "#40a9ff",
   usernamePlaceholder: "Username",
   passwordPlaceholder: "Password",
   alert: "Please fill username & password",
