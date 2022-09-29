@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Select",
-  component: Mantine.Select,
+  component: MantineCore.Select,
   parameters: {
     docs: {
       description: {
@@ -46,36 +46,35 @@ export default {
 
 const data = [
   {
-    image: 'https://img.icons8.com/clouds/256/000000/futurama-bender.png',
-    label: 'Bender Bending Rodríguez',
-    value: 'Bender Bending Rodríguez',
-    description: 'Fascinated with cooking',
+    image: "https://img.icons8.com/clouds/256/000000/futurama-bender.png",
+    label: "Bender Bending Rodríguez",
+    value: "Bender Bending Rodríguez",
+    description: "Fascinated with cooking",
   },
 
   {
-    image: 'https://img.icons8.com/clouds/256/000000/futurama-mom.png',
-    label: 'Carol Miller',
-    value: 'Carol Miller',
-    description: 'One of the richest people on Earth',
+    image: "https://img.icons8.com/clouds/256/000000/futurama-mom.png",
+    label: "Carol Miller",
+    value: "Carol Miller",
+    description: "One of the richest people on Earth",
   },
   {
-    image: 'https://img.icons8.com/clouds/256/000000/homer-simpson.png',
-    label: 'Homer Simpson',
-    value: 'Homer Simpson',
-    description: 'Overweight, lazy, and often ignorant',
+    image: "https://img.icons8.com/clouds/256/000000/homer-simpson.png",
+    label: "Homer Simpson",
+    value: "Homer Simpson",
+    description: "Overweight, lazy, and often ignorant",
   },
   {
-    image: 'https://img.icons8.com/clouds/256/000000/spongebob-squarepants.png',
-    label: 'Spongebob Squarepants',
-    value: 'Spongebob Squarepants',
-    description: 'Not just a sponge',
+    image: "https://img.icons8.com/clouds/256/000000/spongebob-squarepants.png",
+    label: "Spongebob Squarepants",
+    value: "Spongebob Squarepants",
+    description: "Not just a sponge",
   },
 ];
 
-
 const Template = (args) => {
   return (
-    <Mantine.Select
+    <MantineCore.Select
       label={args.label}
       description={args.description}
       error={args.error}
@@ -118,4 +117,3 @@ SimpleSelect.args = {
   variant: "filled",
   dat: data,
 };
-

@@ -39,4 +39,3 @@ SimpleBurger.args = {
   size: "md",
   transitionDuration: 100,
 };
-

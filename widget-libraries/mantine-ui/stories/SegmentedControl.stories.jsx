@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/SegmentedControl",
-  component: Mantine.SegmentedControl,
+  component: MantineCore.SegmentedControl,
   parameters: {
     docs: {
       description: {
@@ -28,15 +28,15 @@ export default {
 };
 
 const data = [
-  { label: 'React', value: 'react' },
-  { label: 'Angular', value: 'ng' },
-  { label: 'Vue', value: 'vue' },
-  { label: 'Svelte', value: 'svelte' },
-]
+  { label: "React", value: "react" },
+  { label: "Angular", value: "ng" },
+  { label: "Vue", value: "vue" },
+  { label: "Svelte", value: "svelte" },
+];
 
 const Template = (args) => {
   return (
-    <Mantine.SegmentedControl
+    <MantineCore.SegmentedControl
       disabled={args.disabled}
       orientation={args.orientation}
       size={args.size}
@@ -53,4 +53,3 @@ SimpleSegmentedControl.args = {
   size: "md",
   data: data,
 };
-

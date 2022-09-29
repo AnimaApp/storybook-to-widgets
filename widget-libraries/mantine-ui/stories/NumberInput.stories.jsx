@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/NumberInput",
-  component: Mantine.NumberInput,
+  component: MantineCore.NumberInput,
   parameters: {
     docs: {
       description: {
@@ -41,7 +41,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.NumberInput
+    <MantineCore.NumberInput
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -81,5 +81,3 @@ SimpleNumberInput.args = {
   variant: "default",
   hideControls: false,
 };
-
-

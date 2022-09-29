@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/dates";
+import * as MantineCore from "@mantine/dates";
 
 export default {
   title: "Mantine/DateRangePicker",
-  component: Mantine.DateRangePicker,
+  component: MantineCore.DateRangePicker,
   parameters: {
     docs: {
       description: {
@@ -36,7 +36,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.DateRangePicker
+    <MantineCore.DateRangePicker
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -67,5 +67,3 @@ SimpleDateRangePicker.args = {
   iconWidth: 20,
   variant: "default",
 };
-
-

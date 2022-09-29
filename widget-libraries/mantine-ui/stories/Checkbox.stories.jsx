@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Checkbox",
-  component: Mantine.Checkbox,
+  component: MantineCore.Checkbox,
   parameters: {
     docs: {
       description: {
@@ -25,7 +25,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Checkbox
+    <MantineCore.Checkbox
       label={args.label}
       indeterminate={args.indeterminate}
       size={args.size}

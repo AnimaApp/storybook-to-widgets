@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/FileInput",
-  component: Mantine.FileInput,
+  component: MantineCore.FileInput,
   parameters: {
     docs: {
       description: {
@@ -35,7 +35,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.FileInput
+    <MantineCore.FileInput
       label={args.label}
       description={args.description}
       error={args.error}
@@ -64,4 +64,3 @@ SimpleFileInput.args = {
   iconWidth: 20,
   variant: "default",
 };
-

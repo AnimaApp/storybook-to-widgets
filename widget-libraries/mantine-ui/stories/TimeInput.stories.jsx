@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/dates";
+import * as MantineCore from "@mantine/dates";
 
 export default {
   title: "Mantine/TimeInput",
-  component: Mantine.TimeInput,
+  component: MantineCore.TimeInput,
   parameters: {
     docs: {
       description: {
@@ -36,7 +36,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.TimeInput
+    <MantineCore.TimeInput
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -67,4 +67,3 @@ SimpleTimeInput.args = {
   iconWidth: 20,
   variant: "default",
 };
-

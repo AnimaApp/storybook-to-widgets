@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Autocomplete",
-  component: Mantine.Autocomplete,
+  component: MantineCore.Autocomplete,
   parameters: {
     docs: {
       description: {
@@ -44,7 +44,7 @@ const data = ["React", "Angular", "Svelte", "Vue"];
 
 const Template = (args) => {
   return (
-    <Mantine.Autocomplete
+    <MantineCore.Autocomplete
       label={args.label}
       description={args.description}
       error={args.error}

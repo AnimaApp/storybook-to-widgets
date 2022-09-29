@@ -1,10 +1,10 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 import { ColorInput } from "@mantine/core";
 
 export default {
   title: "Mantine/ColorInput",
-  component: Mantine.ColorInput,
+  component: MantineCore.ColorInput,
   parameters: {
     docs: {
       description: {
@@ -45,7 +45,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.ColorInput
+    <MantineCore.ColorInput
       label={args.label}
       description={args.description}
       error={args.error}
@@ -84,5 +84,3 @@ SimpleColorInput.args = {
   swatchesPerRow: 1,
   variant: "default",
 };
-
-

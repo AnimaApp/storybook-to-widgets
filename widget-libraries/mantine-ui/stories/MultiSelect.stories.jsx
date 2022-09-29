@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/MultiSelect",
-  component: Mantine.MultiSelect,
+  component: MantineCore.MultiSelect,
   parameters: {
     docs: {
       description: {
@@ -45,18 +45,18 @@ export default {
 };
 
 const data = [
-  { value: 'react', label: 'React' },
-  { value: 'ng', label: 'Angular' },
-  { value: 'svelte', label: 'Svelte' },
-  { value: 'vue', label: 'Vue' },
-  { value: 'riot', label: 'Riot' },
-  { value: 'next', label: 'Next.js' },
-  { value: 'blitz', label: 'Blitz.js' },
+  { value: "react", label: "React" },
+  { value: "ng", label: "Angular" },
+  { value: "svelte", label: "Svelte" },
+  { value: "vue", label: "Vue" },
+  { value: "riot", label: "Riot" },
+  { value: "next", label: "Next.js" },
+  { value: "blitz", label: "Blitz.js" },
 ];
 
 const Template = (args) => {
   return (
-    <Mantine.MultiSelect
+    <MantineCore.MultiSelect
       label={args.label}
       description={args.description}
       error={args.error}
@@ -99,5 +99,3 @@ SimpleMultiSelect.args = {
   variant: "default",
   data: data,
 };
-
-

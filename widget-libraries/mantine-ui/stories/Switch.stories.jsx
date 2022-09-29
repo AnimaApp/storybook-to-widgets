@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Switch",
-  component: Mantine.Switch,
+  component: MantineCore.Switch,
   parameters: {
     docs: {
       description: {
@@ -26,7 +26,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Switch
+    <MantineCore.Switch
       label={args.label}
       offLabel={args.offLabel}
       onLabel={args.onLabel}
@@ -46,4 +46,3 @@ SimpleSwitch.args = {
   size: "md",
   // thumbIcon: to do
 };
-

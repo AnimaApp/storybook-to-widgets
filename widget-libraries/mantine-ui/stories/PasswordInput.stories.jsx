@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/PasswordInput",
-  component: Mantine.PasswordInput,
+  component: MantineCore.PasswordInput,
   parameters: {
     docs: {
       description: {
@@ -35,7 +35,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.PasswordInput
+    <MantineCore.PasswordInput
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -64,4 +64,3 @@ SimplePasswordInput.args = {
   iconWidth: 20,
   variant: "default",
 };
-

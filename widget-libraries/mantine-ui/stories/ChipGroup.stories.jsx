@@ -1,10 +1,10 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 import { SimpleChip } from "./Chip.stories";
 
 export default {
   title: "Mantine/Chip Group",
-  component: Mantine.Chip.Group,
+  component: MantineCore.Chip.Group,
   parameters: {
     docs: {
       description: {
@@ -54,7 +54,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Chip.Group
+    <MantineCore.Chip.Group
       orientation={args.orientation}
       offset={args.offset}
       spacing={args.spacing}
@@ -64,7 +64,7 @@ const Template = (args) => {
       <SimpleChip {...args.item} />
       <SimpleChip {...args.item2} />
       <SimpleChip {...args.item3} />
-    </Mantine.Chip.Group>
+    </MantineCore.Chip.Group>
   );
 };
 export const SimpleChipGroup = Template.bind({});

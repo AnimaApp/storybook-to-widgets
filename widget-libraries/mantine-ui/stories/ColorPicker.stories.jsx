@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/ColorPicker",
-  component: Mantine.ColorPicker,
+  component: MantineCore.ColorPicker,
   parameters: {
     docs: {
       description: {
@@ -37,7 +37,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.ColorPicker
+    <MantineCore.ColorPicker
       value={args.value}
       withPicker={args.withPicker}
       alphaLabel={args.alphaLabel}

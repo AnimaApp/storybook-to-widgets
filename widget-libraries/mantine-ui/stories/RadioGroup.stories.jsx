@@ -1,10 +1,10 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 import { SimpleRadio } from "./Radio.stories";
 
 export default {
   title: "Mantine/Radio.Group",
-  component: Mantine.Radio.Group,
+  component: MantineCore.Radio.Group,
   parameters: {
     docs: {
       description: {
@@ -57,7 +57,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Radio.Group
+    <MantineCore.Radio.Group
       label={args.label}
       description={args.description}
       error={args.error}
@@ -70,7 +70,7 @@ const Template = (args) => {
       <SimpleRadio {...args.item} />
       <SimpleRadio {...args.item2} />
       <SimpleRadio {...args.item3} />
-    </Mantine.Radio.Group>
+    </MantineCore.Radio.Group>
   );
 };
 

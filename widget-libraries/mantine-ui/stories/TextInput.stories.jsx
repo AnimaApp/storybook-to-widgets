@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/TextInput",
-  component: Mantine.TextInput,
+  component: MantineCore.TextInput,
   parameters: {
     docs: {
       description: {
@@ -35,7 +35,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.TextInput
+    <MantineCore.TextInput
       label={args.label}
       description={args.description}
       error={args.error}
@@ -64,4 +64,3 @@ SimpleTextInput.args = {
   iconWidth: 20,
   variant: "filled",
 };
-

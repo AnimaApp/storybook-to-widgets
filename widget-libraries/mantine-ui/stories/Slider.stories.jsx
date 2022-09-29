@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Slider",
-  component: Mantine.Slider,
+  component: MantineCore.Slider,
   parameters: {
     docs: {
       description: {
@@ -31,7 +31,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Slider
+    <MantineCore.Slider
       label={args.label}
       disabled={args.disabled}
       labelAlwaysOn={args.labelAlwaysOn}
@@ -60,4 +60,3 @@ SimpleSlider.args = {
   thumbSize: 10,
   size: "md",
 };
-

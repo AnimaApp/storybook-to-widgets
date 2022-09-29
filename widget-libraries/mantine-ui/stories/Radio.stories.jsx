@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Radio",
-  component: Mantine.Radio,
+  component: MantineCore.Radio,
   parameters: {
     docs: {
       description: {
@@ -17,7 +17,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <Mantine.Radio label={args.label} />;
+  return <MantineCore.Radio label={args.label} />;
 };
 
 export const SimpleRadio = Template.bind({});

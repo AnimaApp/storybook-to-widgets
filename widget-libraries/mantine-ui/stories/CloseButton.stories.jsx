@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/CloseButton",
-  component: Mantine.CloseButton,
+  component: MantineCore.CloseButton,
   parameters: {
     docs: {
       description: {
@@ -37,7 +37,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.CloseButton
+    <MantineCore.CloseButton
       disabled={args.disabled}
       iconSize={args.iconSize}
       loading={args.loading}

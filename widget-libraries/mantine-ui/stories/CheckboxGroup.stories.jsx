@@ -1,10 +1,10 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 import { SimpleCheckbox } from "./Checkbox.stories";
 
 export default {
   title: "Mantine/Checkbox.Group",
-  component: Mantine.Checkbox.Group,
+  component: MantineCore.Checkbox.Group,
   parameters: {
     docs: {
       description: {
@@ -50,7 +50,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Checkbox.Group
+    <MantineCore.Checkbox.Group
       orientation={args.orientation}
       offset={args.offset}
       spacing={args.spacing}
@@ -60,7 +60,7 @@ const Template = (args) => {
       <SimpleCheckbox {...args.item} />
       <SimpleCheckbox {...args.item2} />
       <SimpleCheckbox {...args.item3} />
-    </Mantine.Checkbox.Group>
+    </MantineCore.Checkbox.Group>
   );
 };
 

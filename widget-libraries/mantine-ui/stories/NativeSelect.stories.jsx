@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/NativeSelect",
-  component: Mantine.NativeSelect,
+  component: MantineCore.NativeSelect,
   parameters: {
     docs: {
       description: {
@@ -33,12 +33,11 @@ export default {
   },
 };
 
-const data = ['React', 'Vue', 'Angular', 'Svelte']
-
+const data = ["React", "Vue", "Angular", "Svelte"];
 
 const Template = (args) => {
   return (
-    <Mantine.NativeSelect
+    <MantineCore.NativeSelect
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -69,5 +68,3 @@ SimpleNativeSelect.args = {
   variant: "filled",
   data: data,
 };
-
-

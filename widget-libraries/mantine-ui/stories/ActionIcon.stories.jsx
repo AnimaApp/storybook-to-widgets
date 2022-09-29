@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/ActionIcon",
-  component: Mantine.ActionIcon,
+  component: MantineCore.ActionIcon,
   parameters: {
     docs: {
       description: {
@@ -39,7 +39,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.ActionIcon
+    <MantineCore.ActionIcon
       variant={args.variant}
       icon={args.icon}
       iconSize={args.iconSize}

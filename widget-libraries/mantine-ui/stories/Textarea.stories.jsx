@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Textarea",
-  component: Mantine.Textarea,
+  component: MantineCore.Textarea,
   parameters: {
     docs: {
       description: {
@@ -38,7 +38,7 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Textarea
+    <MantineCore.Textarea
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -66,11 +66,10 @@ SimpleTextarea.args = {
   disabled: false,
   required: false,
   autosize: false,
-  minRows: 10,
-  maxRows: 20,
+  minRows: 2,
+  maxRows: 4,
   size: "md",
   // icon: to do
   iconWidth: 20,
   variant: "default",
 };
-
