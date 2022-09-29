@@ -24,9 +24,6 @@ export default {
       type: "number",
     },
   },
-  parameters: {
-    storyContainerMinWidth: 300,
-  },
 };
 
 const Template = (args) => {

@@ -47,11 +47,11 @@ const Template = (args) => (
 
 export const SimpleProgressDashboard = Template.bind({});
 SimpleProgressDashboard.args = {
-  percent: 77,
-  status: "success",
+  percent: 40,
+  status: "normal",
   showInfo: true,
   gapDegree: 75,
   gapPosition: "bottom",
-  strokeWidth: 7,
+  strokeWidth: 10,
   strokeStyle: "square",
 };

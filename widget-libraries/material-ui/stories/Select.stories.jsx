@@ -50,38 +50,25 @@ export default {
 };
 
 const Template = (args) => {
-  const [state, setState] = React.useState("");
+  const [state, setState] = React.useState("1");
 
   const handleChange = (event) => {
     setState(event.target.value);
   };
 
   return (
-    <MuiMaterial.FormControl fullWidth>
-      <MuiMaterial.InputLabel id="select-label">
-        {args.label}
-      </MuiMaterial.InputLabel>
-      <MuiMaterial.Select
-        id="select"
-        labelId="select-label"
-        value={state}
-        label={args.label}
-        onChange={handleChange}
-        variant={args.variant}
-        disabled={args.disabled}
-        sx={{ width: args.width }}
-      >
-        <MuiMaterial.MenuItem value={args.menuitem.value}>
-          {args.menuitem.label}
-        </MuiMaterial.MenuItem>
-        <MuiMaterial.MenuItem value={args.menuitem2.value}>
-          {args.menuitem2.label}
-        </MuiMaterial.MenuItem>
-        <MuiMaterial.MenuItem value={args.menuitem3.value}>
-          {args.menuitem3.label}
-        </MuiMaterial.MenuItem>
-      </MuiMaterial.Select>
-    </MuiMaterial.FormControl>
+    <MuiMaterial.Select
+      sx={{ width: args.width }}
+      disabled={args.disabled}
+      variant={args.variant}
+      label={args.label}
+      value={state}
+      onChange={handleChange}
+    >
+      <SimpleMenuItem {...args.menuitem} />
+      <SimpleMenuItem {...args.menuitem2} />
+      <SimpleMenuItem {...args.menuitem3} />
+    </MuiMaterial.Select>
   );
 };
 
@@ -93,15 +80,21 @@ SimpleSelect.args = {
   width: "250px",
   value: "1",
   menuitem: {
+    ...SimpleMenuItem.args,
     value: "1",
-    label: "User 1",
+    label: "User1",
+    itemKey: 1,
   },
   menuitem2: {
+    ...SimpleMenuItem.args,
     value: "2",
-    label: "User 2",
+    label: "User2",
+    itemKey: 2,
   },
   menuitem3: {
+    ...SimpleMenuItem.args,
     value: "3",
-    label: "User 3",
+    label: "User3",
+    itemKey: 3,
   },
 };

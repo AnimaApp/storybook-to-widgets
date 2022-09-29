@@ -33,9 +33,6 @@ export default {
       </div>
     ),
   ],
-  parameters: {
-    storyContainerMinWidth: 150,
-  },
 };
 
 const ContinousSliderTemplate = (args) => {
