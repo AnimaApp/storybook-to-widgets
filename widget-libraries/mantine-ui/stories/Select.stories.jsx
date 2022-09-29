@@ -101,7 +101,7 @@ export const SimpleSelect = Template.bind({});
 SimpleSelect.args = {
   label: "Label",
   description: "Description",
-  error: "Error",
+  error: "",
   disabled: false,
   required: false,
   allowDeselect: false,
@@ -115,5 +115,5 @@ SimpleSelect.args = {
   // icon: to do
   iconWidth: 20,
   variant: "filled",
-  dat: data,
+  data: data,
 };

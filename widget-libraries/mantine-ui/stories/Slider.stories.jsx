@@ -27,6 +27,13 @@ export default {
       options: ["xs", "sm", "md", "lg", "xl"],
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ marginTop: "3em" }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 const Template = (args) => {

@@ -55,7 +55,7 @@ export const SimpleTextInput = Template.bind({});
 SimpleTextInput.args = {
   label: "Label",
   description: "Description",
-  error: "Error",
+  error: "",
   disabled: false,
   required: false,
   multiline: false,

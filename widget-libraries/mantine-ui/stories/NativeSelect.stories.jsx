@@ -59,7 +59,7 @@ SimpleNativeSelect.args = {
   label: "Label",
   placeholder: "Placeholder",
   description: "Description",
-  error: "Error",
+  error: "",
   disabled: false,
   required: false,
   size: "md",
