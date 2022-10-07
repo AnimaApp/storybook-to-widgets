@@ -77,7 +77,7 @@ SimpleColorInput.args = {
   format: "hex",
   // icon: to do
   iconWidth: 10,
-  withPicker: false,
+  withPicker: true,
   withPreview: false,
   withinPortal: false,
   swatches: "",

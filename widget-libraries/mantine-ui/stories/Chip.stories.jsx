@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/Chip",
@@ -18,7 +20,13 @@ export default {
       control: { type: "select" },
       options: ["hex", "rgba", "rgb", "hsl", "hsla"],
     },
-    //    icon:  to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     size: {
       description: "Size",
@@ -41,13 +49,13 @@ export default {
     withPreview: { description: "With Preview ", type: "boolean" },
     withinPortal: { description: "Within Portal ", type: "boolean" },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
   return (
     <MantineCore.Chip
       format={args.format}
-      icon={args.icon}
       iconWidth={args.iconWidth}
       size={args.size}
       required={args.required}
@@ -57,8 +65,13 @@ const Template = (args) => {
       withPicker={args.withPicker}
       withPreview={args.withPreview}
       withinPortal={args.withinPortal}
+      icon={args.iconName}
+      //nese eshte si prop icona e shton keshtu
+      // emriIPropitPerIkoneSicEshteTekMantine={args.iconName}
     >
       {args.label}
+      {/* nese eshte si children e shton keshtu */}
+      {args.iconName && args.iconName}
     </MantineCore.Chip>
   );
 };
@@ -68,7 +81,7 @@ export const SimpleChip = Template.bind({});
 SimpleChip.args = {
   label: "Label",
   format: "hex",
-  //  icon: to do
+  iconName: "Icon2fa",
   iconWidth: 20,
   size: "md",
   required: false,

@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/Textarea",
@@ -26,7 +28,13 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    // icon: to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     variant: {
       description: "Variant",
@@ -34,6 +42,7 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -49,7 +58,7 @@ const Template = (args) => {
       minRows={args.minRows}
       maxRows={args.maxRows}
       size={args.size}
-      icon={args.icon}
+      icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
     />
@@ -69,7 +78,7 @@ SimpleTextarea.args = {
   minRows: 2,
   maxRows: 4,
   size: "md",
-  // icon: to do
+  iconName: "Icon2fa",
   iconWidth: 20,
   variant: "default",
 };

@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/NumberInput",
@@ -28,7 +30,13 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    // icon: to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     variant: {
       description: "Variant",
@@ -37,6 +45,7 @@ export default {
     },
     hideControls: { description: "Hide controls", type: "boolean" },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -53,7 +62,7 @@ const Template = (args) => {
       min={args.min}
       max={args.max}
       size={args.size}
-      icon={args.icon}
+      icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
       hideControls={args.hideControls}
@@ -76,7 +85,7 @@ SimpleNumberInput.args = {
   max: 10,
   step: 1,
   size: "md",
-  // icon: to do
+  iconName: "Icon2fa",
   iconWidth: 20,
   variant: "default",
   hideControls: false,

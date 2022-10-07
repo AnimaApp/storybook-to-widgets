@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/Button",
@@ -43,11 +45,24 @@ export default {
       control: { type: "select" },
       options: ["left", "right"],
     },
-    // leftIcon : to do
-    // rightIcon: to do
+    leftIcon: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
+    rightIcon: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     compact: { description: "Compact", type: "boolean" },
     disabled: { description: "Disabled", type: "boolean" },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -59,8 +74,8 @@ const Template = (args) => {
       uppercase={args.uppercase}
       loading={args.loading}
       loaderPosition={args.loaderPosition}
-      // leftIcon={args.leftIcon}
-      // rightIcon={args.rightIcon}
+      leftIcon={args.leftIcon}
+      rightIcon={args.rightIcon}
       compact={args.compact}
       disabled={args.disabled}
     >
@@ -79,8 +94,8 @@ SimpleButton.args = {
   uppercase: false,
   loading: false,
   loaderPosition: "left",
-  // leftIcon : to do
-  // rightIcon: to do
+  leftIcon: "Icon2fa",
+  rightIcon: "Icon2fa",
   compact: false,
   disabled: false,
 };

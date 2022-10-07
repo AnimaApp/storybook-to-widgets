@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/ActionIcon",
@@ -25,7 +27,13 @@ export default {
         "gradient",
       ],
     },
-    //    icon : todo
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconSize: { description: "Icon size", type: "number" },
     size: {
       description: "Size",
@@ -35,18 +43,21 @@ export default {
     loading: { description: "Loading", type: "boolean" },
     disabled: { description: "Disabled", type: "boolean" },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
   return (
     <MantineCore.ActionIcon
       variant={args.variant}
-      icon={args.icon}
+      icon={args.iconName}
       iconSize={args.iconSize}
       size={args.size}
       loading={args.loading}
       disabled={args.disabled}
-    />
+    >
+      {args.iconName && args.iconName}
+    </MantineCore.ActionIcon>
   );
 };
 
@@ -54,7 +65,7 @@ export const SimpleActionIcon = Template.bind({});
 
 SimpleActionIcon.args = {
   variant: "default",
-  //  icon: to do
+  iconName: "Icon2fa",
   iconSize: 20,
   size: "md",
   loading: false,
