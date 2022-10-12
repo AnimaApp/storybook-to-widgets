@@ -1,8 +1,6 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
 
-
-
 export default {
   title: "Mantine/RingProgress",
   component: MantineCore.RingProgress,
