@@ -87,8 +87,6 @@ SimpleNumberInput.args = {
   max: 10,
   step: 1,
   size: "md",
-  iconName: "Icon2fa",
-  iconWidth: 20,
   variant: "default",
   hideControls: false,
   width: "300px",

@@ -87,23 +87,14 @@ SimpleRadioGroup.args = {
   spacing: "md",
   item: {
     ...SimpleRadio.args,
-    label: "Label",
-    indeterminate: false,
-    size: "md",
-    disabled: false,
+    label: "Radio 1",
   },
   item2: {
     ...SimpleRadio.args,
-    label: "Label",
-    indeterminate: false,
-    size: "md",
-    disabled: false,
+    label: "Radio 2",
   },
   item3: {
     ...SimpleRadio.args,
-    label: "Label",
-    indeterminate: false,
-    size: "md",
-    disabled: false,
+    label: "Radio 3",
   },
 };

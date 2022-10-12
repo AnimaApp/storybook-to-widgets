@@ -37,7 +37,7 @@ const sections =
 const Template = (args) => {
   return (
     <MantineCore.RingProgress
-      label={args.label}
+      label={<div style={{ textAlign: "center" }}>{args.label}</div>}
       size={args.size}
       thickness={args.thickness}
       roundCaps={args.roundCaps}
