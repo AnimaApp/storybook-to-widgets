@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/Autocomplete",
@@ -30,7 +32,13 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    // icon: to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     variant: {
       description: "Variant",
@@ -38,6 +46,7 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
   },
+  decorators: [withIconMapped],
 };
 
 const data = ["React", "Angular", "Svelte", "Vue"];
@@ -55,7 +64,7 @@ const Template = (args) => {
       limit={args.limit}
       maxDropdownHeight={args.maxDropdownHeight}
       size={args.size}
-      icon={args.icon}
+      // icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
       data={args.data}
@@ -76,7 +85,7 @@ SimpleAutocomplete.args = {
   limit: 100,
   maxDropdownHeight: 400,
   size: "md",
-  // icon: to do
+  iconName: "Icon2fa",
   iconWidth: 20,
   variant: "filled",
   data: data,

@@ -26,7 +26,7 @@ export default {
     },
     multiple: { description: "Multiple", type: "boolean" },
     value: { description: "Value", type: "string" },
-    width: { description: "width", type: "string" },
+    width: { description: "Width", type: "string" },
     item: {
       type: "story",
       description: "item",
