@@ -53,7 +53,7 @@ const Template = (args) => {
 export const SimpleNotification = Template.bind({});
 
 SimpleNotification.args = {
-  iconName: "Icon2fa",
+  iconName: "IconCheck",
   loading: false,
   radius: "md",
   title: "Title",
