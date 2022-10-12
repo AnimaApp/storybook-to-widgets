@@ -1,0 +1,68 @@
+import React from "react";
+import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
+
+// const progressProps= {
+//   label
+// animate
+// radius
+// size
+// striped
+// value}
+
+export default {
+  title: "Mantine/Progress",
+  component: MantineCore.Progress,
+  parameters: {
+    docs: {
+      description: {
+        component: "Progress",
+      },
+    },
+  },
+  argTypes: {
+    label: { description: "Label", type: "string" },
+    animate: { description: "Animate", type: "boolean" },
+    radius: {
+      description: "Radius",
+      control: { type: "select" },
+      options: ["xs", "sm", "md", "lg", "xl"],
+    },
+    size: {
+      description: "Size",
+      control: { type: "select" },
+      options: ["xs", "sm", "md", "lg", "xl"],
+    },
+    striped: { description: "Striped", type: "boolean" },
+    value: { description: "Value", type: "number" },
+
+  },
+  decorators: [withIconMapped],
+};
+
+const Template = (args) => {
+  return (
+    <MantineCore.Progress
+      label={args.label}
+      animate={args.animate}
+      radius={args.radius}
+      size={args.size}
+      striped={args.striped}
+      value={args.value}
+
+    />
+  );
+};
+
+export const SimpleNotification = Template.bind({});
+
+SimpleNotification.args = {
+  label: "Label",
+  animate: true,
+  radius: "md",
+  size: "xl",
+  striped: false,
+  value: 50,
+
+};
