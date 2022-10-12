@@ -55,9 +55,9 @@ const Template = (args) => {
   );
 };
 
-export const SimpleNotification = Template.bind({});
+export const SimpleProgress = Template.bind({});
 
-SimpleNotification.args = {
+SimpleProgress.args = {
   label: "Label",
   animate: true,
   radius: "md",

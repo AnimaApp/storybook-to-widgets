@@ -30,6 +30,7 @@ export default {
     title: { description: "Title", type: "string" },
     disallowClose: { description: "Disallow Close", type: "boolean" },
     description: { description: "Description", type: "string" },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -42,6 +43,7 @@ const Template = (args) => {
       radius={args.radius}
       title={args.title}
       disallowClose={args.disallowClose}
+      style={{ width: args.width }}
     >
       {args.description}
     </MantineCore.Notification>
@@ -57,4 +59,5 @@ SimpleNotification.args = {
   title: "Title",
   description: "This is description",
   disallowClose: true,
+  width: "300px"
 };
