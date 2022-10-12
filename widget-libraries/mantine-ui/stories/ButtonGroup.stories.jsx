@@ -1,9 +1,9 @@
 import React from "react";
-import * as Mantine from "@mantine/core";
+import * as MantineCore from "@mantine/core";
 
 export default {
   title: "Mantine/Button Group",
-  component: Mantine.Button.Group,
+  component: MantineCore.Button.Group,
   parameters: {
     docs: {
       description: {
@@ -23,14 +23,14 @@ export default {
 
 const Template = (args) => {
   return (
-    <Mantine.Button.Group
+    <MantineCore.Button.Group
       orientation={args.orientation}
       buttonBorderWidth={args.buttonBorderWidth}
     >
-      <Mantine.Button variant="default">First</Mantine.Button>
-      <Mantine.Button variant="default">Second</Mantine.Button>
-      <Mantine.Button variant="default">Second</Mantine.Button>
-    </Mantine.Button.Group>
+      <MantineCore.Button variant="default">First</MantineCore.Button>
+      <MantineCore.Button variant="default">Second</MantineCore.Button>
+      <MantineCore.Button variant="default">Second</MantineCore.Button>
+    </MantineCore.Button.Group>
   );
 };
 
