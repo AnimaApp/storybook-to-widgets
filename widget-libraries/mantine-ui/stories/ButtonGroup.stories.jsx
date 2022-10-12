@@ -54,7 +54,7 @@ export const SimpleButtonGroup = Template.bind({});
 
 SimpleButtonGroup.args = {
   orientation: "horizontal",
-  buttonBorderWidth: 20,
+  buttonBorderWidth: 1,
   item: {
     ...SimpleButton.args,
     label: "Button 1",
