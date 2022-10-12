@@ -1,6 +1,8 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
 import { ColorInput } from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/ColorInput",
@@ -28,7 +30,13 @@ export default {
       control: { type: "select" },
       options: ["hex", "rgba", "rgb", "hsl", "hsla"],
     },
-    // icon: to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     withPicker: { description: "With picker", type: "boolean" },
     withPreview: { description: "With Preview", type: "boolean" },
@@ -41,6 +49,7 @@ export default {
       options: ["unstyled", "default", "filled"],
     },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -53,7 +62,7 @@ const Template = (args) => {
       disabled={args.disabled}
       size={args.size}
       format={args.format}
-      icon={args.icon}
+      icon={args.iconName}
       iconWidth={args.iconWidth}
       withPicker={args.withPicker}
       withPreview={args.withPreview}
@@ -75,8 +84,8 @@ SimpleColorInput.args = {
   disabled: false,
   size: "md",
   format: "hex",
-  // icon: to do
-  iconWidth: 10,
+  iconName: "Icon2fa",
+  iconWidth: 20,
   withPicker: true,
   withPreview: false,
   withinPortal: false,
