@@ -36,7 +36,7 @@ export default {
     },
     striped: { description: "Striped", type: "boolean" },
     value: { description: "Value", type: "number" },
-
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -50,7 +50,7 @@ const Template = (args) => {
       size={args.size}
       striped={args.striped}
       value={args.value}
-
+      style={{ width: args.width }}
     />
   );
 };
@@ -64,5 +64,5 @@ SimpleProgress.args = {
   size: "xl",
   striped: false,
   value: 50,
-
+  width: "600px",
 };

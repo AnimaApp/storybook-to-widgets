@@ -29,6 +29,7 @@ export default {
       transform: iconTransform,
       required: false,
     },
+    description: { description: "Description", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -41,7 +42,9 @@ const Template = (args) => {
       withCloseButton={args.withCloseButton}
       icon={args.iconName}
       style={{ width: args.width }}
-    />
+    >
+      {args.description}
+    </MantineCore.Alert>
   );
 };
 
@@ -51,6 +54,7 @@ SimpleAlert.args = {
   title: "Title",
   variant: "outline",
   withCloseButton: false,
-  iconName: "Icon2fa",
+  iconName: "IconAlertCircle",
   width: "300px",
+  description: "Alert Description",
 };

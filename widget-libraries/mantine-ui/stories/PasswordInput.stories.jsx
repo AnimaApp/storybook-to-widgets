@@ -1,5 +1,8 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
+
 
 export default {
   title: "Mantine/PasswordInput",
@@ -23,14 +26,22 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    // icon: to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     variant: {
       description: "Variant",
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
+    width: { description: "Width", type: "string" },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -43,9 +54,10 @@ const Template = (args) => {
       disabled={args.disabled}
       required={args.required}
       size={args.size}
-      icon={args.icon}
+      icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
+      style={{ width: args.width }}
     />
   );
 };
@@ -60,7 +72,7 @@ SimplePasswordInput.args = {
   disabled: false,
   required: false,
   size: "md",
-  // icon: to do
   iconWidth: 20,
   variant: "default",
+  width: "300px",
 };

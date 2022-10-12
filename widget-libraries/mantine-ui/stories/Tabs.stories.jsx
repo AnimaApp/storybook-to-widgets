@@ -24,6 +24,7 @@ export default {
       options: ["horizontal", "vertical"],
     },
     value: { description: "Value", type: "string" },
+    defaultValue: { description: "Default value", type: "string" },
     item: {
       type: "story",
       description: "item",
@@ -43,11 +44,14 @@ export default {
 };
 
 const Template = (args) => {
+  const [activeTab, setActiveTab] = React.useState(args.defaultValue)
+
   return (
     <MantineCore.Tabs
       variant={args.variant}
       orientation={args.orientation}
-      value={args.value}
+      value={activeTab}
+      onChange={setActiveTab}
     >
       <SimpleTab {...args.item} />
       <SimpleTab {...args.item2} />
@@ -61,23 +65,20 @@ export const SimpleTabs = Template.bind({});
 SimpleTabs.args = {
   variant: "pills",
   orientation: "vertical",
-  value: "label1",
+  defaultValue: "tab1",
   item: {
     ...SimpleTab.args,
-    value: "label1",
-    // iconName: "Icon2fa",
-    label: "Label 1",
+    value: "tab1",
+    label: "Tab 1",
   },
   item2: {
     ...SimpleTab.args,
-    value: "Label",
-    // iconName: "Icon2fa",
-    label: "Label 2",
+    value: "tab2",
+    label: "Tab 2",
   },
   item3: {
     ...SimpleTab.args,
-    value: "Labe PEWNRl",
-    // iconName: "Icon2fa",
-    label: "Label 3",
+    value: "tab3",
+    label: "Tab 3",
   },
 };

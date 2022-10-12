@@ -38,6 +38,7 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -58,6 +59,7 @@ const Template = (args) => {
       iconWidth={args.iconWidth}
       variant={args.variant}
       data={args.data}
+      style={{ width: args.width }}
     />
   );
 };
@@ -76,4 +78,5 @@ SimpleNativeSelect.args = {
   iconWidth: 20,
   variant: "filled",
   data: data,
+  width: "300px",
 };

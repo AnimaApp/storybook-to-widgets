@@ -41,6 +41,7 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -61,6 +62,7 @@ const Template = (args) => {
       icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
+      style={{ width: args.width }}
     />
   );
 };
@@ -78,7 +80,7 @@ SimpleTextarea.args = {
   minRows: 2,
   maxRows: 4,
   size: "md",
-  iconName: "Icon2fa",
   iconWidth: 20,
   variant: "default",
+  width: "300px",
 };

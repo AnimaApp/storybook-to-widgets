@@ -45,9 +45,10 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "default", "filled"],
     },
-    withPicker: { description: "With Picker ", type: "boolean" },
-    withPreview: { description: "With Preview ", type: "boolean" },
-    withinPortal: { description: "Within Portal ", type: "boolean" },
+    color: {
+      description: "Color",
+      control: { type: "color" },
+    },
   },
   decorators: [withIconMapped],
 };
@@ -62,15 +63,9 @@ const Template = (args) => {
       disabled={args.disabled}
       type={args.type}
       variant={args.variant}
-      withPicker={args.withPicker}
-      withPreview={args.withPreview}
-      withinPortal={args.withinPortal}
-      icon={args.iconName}
-      //nese eshte si prop icona e shton keshtu
-      // emriIPropitPerIkoneSicEshteTekMantine={args.iconName}
+      color={args.color}
     >
       {args.label}
-      {/* nese eshte si children e shton keshtu */}
       {args.iconName && args.iconName}
     </MantineCore.Chip>
   );
@@ -81,16 +76,13 @@ export const SimpleChip = Template.bind({});
 SimpleChip.args = {
   label: "Label",
   format: "hex",
-  iconName: "Icon2fa",
   iconWidth: 20,
   size: "md",
   required: false,
   disabled: false,
   type: "checkbox",
-  variant: "default",
-  withPicker: false,
-  withPreview: false,
-  withinPortal: false,
+  variant: "filled",
+  color: "#0000ff",
 };
 
 SimpleChip.storyInfo = {

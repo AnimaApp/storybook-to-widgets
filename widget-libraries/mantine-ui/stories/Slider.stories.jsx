@@ -26,6 +26,8 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
+    width: { description: "Width", type: "string" },
+    defaultValue: { description: "Default value", type: "number" },
   },
   decorators: [
     (Story) => (
@@ -37,8 +39,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.Slider
+      value={value}
+      onChange={setValue}
       label={args.label}
       disabled={args.disabled}
       labelAlwaysOn={args.labelAlwaysOn}
@@ -49,6 +55,7 @@ const Template = (args) => {
       step={args.step}
       thumbSize={args.thumbSize}
       size={args.size}
+      style={{ width: args.width }}
     />
   );
 };
@@ -66,4 +73,6 @@ SimpleSlider.args = {
   step: 1,
   thumbSize: 10,
   size: "md",
+  width: "400px",
+  defaultValue: 4,
 };

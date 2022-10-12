@@ -45,6 +45,7 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -64,10 +65,11 @@ const Template = (args) => {
       limit={args.limit}
       maxDropdownHeight={args.maxDropdownHeight}
       size={args.size}
-      // icon={args.iconName}
+      icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
       data={args.data}
+      style={{ width: args.width }}
     />
   );
 };
@@ -85,8 +87,8 @@ SimpleAutocomplete.args = {
   limit: 100,
   maxDropdownHeight: 400,
   size: "md",
-  iconName: "Icon2fa",
   iconWidth: 20,
   variant: "filled",
   data: data,
+  width: "300px",
 };

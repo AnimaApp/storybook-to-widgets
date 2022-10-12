@@ -44,6 +44,7 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
     hideControls: { description: "Hide controls", type: "boolean" },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -66,6 +67,7 @@ const Template = (args) => {
       iconWidth={args.iconWidth}
       variant={args.variant}
       hideControls={args.hideControls}
+      style={{ width: args.width }}
     />
   );
 };
@@ -89,4 +91,5 @@ SimpleNumberInput.args = {
   iconWidth: 20,
   variant: "default",
   hideControls: false,
+  width: "300px",
 };

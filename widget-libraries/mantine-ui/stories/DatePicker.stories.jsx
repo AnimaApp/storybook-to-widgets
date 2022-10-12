@@ -1,5 +1,7 @@
 import React from "react";
 import * as MantineDates from "@mantine/dates";
+import { iconOptions, iconTransform } from "../utils";
+import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine/DatePicker",
@@ -24,14 +26,22 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    // icon: to do
+    iconName: {
+      control: { type: "select" },
+      options: iconOptions,
+      description: "Icon",
+      transform: iconTransform,
+      required: false,
+    },
     iconWidth: { description: "Icon width", type: "number" },
     variant: {
       description: "Variant",
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
+    width: { description: "Width", type: "string" },
   },
+  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -45,9 +55,10 @@ const Template = (args) => {
       required={args.required}
       multiline={args.multiline}
       size={args.size}
-      //   icon={args.icon}
+      icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
+      style={{ width: args.width }}
     />
   );
 };
@@ -63,7 +74,8 @@ SimpleDatePicker.args = {
   required: false,
   multiline: false,
   size: "md",
-  // icon: to do
-  iconWidth: 20,
+  iconName: "IconCalendar",
+  iconWidth: 30,
   variant: "default",
+  width: "300px",
 };

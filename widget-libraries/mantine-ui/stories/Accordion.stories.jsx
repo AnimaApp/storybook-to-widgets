@@ -73,7 +73,7 @@ SimpleAccordion.args = {
   variant: "default",
   multiple: false,
   value: "acc1",
-  width: "400px",
+  width: "800px",
   item: {
     ...SimpleAccordionItem.args,
     value: "acc1",

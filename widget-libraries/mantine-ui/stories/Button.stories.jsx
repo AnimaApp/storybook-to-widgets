@@ -87,15 +87,13 @@ const Template = (args) => {
 export const SimpleButton = Template.bind({});
 
 SimpleButton.args = {
-  variant: "default",
+  variant: "filled",
   label: "Label",
   size: "md",
   type: "button",
   uppercase: false,
   loading: false,
   loaderPosition: "left",
-  leftIcon: "Icon2fa",
-  rightIcon: "Icon2fa",
   compact: false,
   disabled: false,
 };

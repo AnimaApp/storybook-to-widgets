@@ -65,7 +65,7 @@ export const SimpleActionIcon = Template.bind({});
 
 SimpleActionIcon.args = {
   variant: "default",
-  iconName: "Icon2fa",
+  iconName: "IconAdjustments",
   iconSize: 20,
   size: "md",
   loading: false,

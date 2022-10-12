@@ -39,6 +39,7 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -57,6 +58,7 @@ const Template = (args) => {
       icon={args.iconName}
       iconWidth={args.iconWidth}
       variant={args.variant}
+      style={{ width: args.width }}
     />
   );
 };
@@ -72,7 +74,6 @@ SimpleTimeInput.args = {
   required: false,
   multiline: false,
   size: "md",
-  iconName: "Icon2fa",
-  iconWidth: 20,
   variant: "default",
+  width: "300px",
 };

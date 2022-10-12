@@ -48,6 +48,7 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "default", "filled"],
     },
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -70,6 +71,7 @@ const Template = (args) => {
       swatches={args.swatches}
       swatchesPerRow={args.swatchesPerRow}
       variant={args.variant}
+      style={{ width: args.width }}
     />
   );
 };
@@ -84,12 +86,12 @@ SimpleColorInput.args = {
   disabled: false,
   size: "md",
   format: "hex",
-  iconName: "Icon2fa",
-  iconWidth: 20,
+  iconWidth: 30,
   withPicker: true,
-  withPreview: false,
+  withPreview: true,
   withinPortal: false,
   swatches: "",
   swatchesPerRow: 1,
   variant: "default",
+  width: "300px",
 };

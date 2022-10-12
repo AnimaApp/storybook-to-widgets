@@ -48,7 +48,7 @@ export default {
       control: { type: "select" },
       options: ["unstyled", "filled", "default"],
     },
-    // data: to do
+    width: { description: "Width", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -83,6 +83,7 @@ const Template = (args) => {
       iconWidth={args.iconWidth}
       variant={args.variant}
       data={args.data}
+      style={{ width: args.width }}
     />
   );
 };
@@ -103,8 +104,8 @@ SimpleMultiSelect.args = {
   maxSelectedValues: 100,
   searchable: false,
   size: "md",
-  iconName: "Icon2fa",
   iconWidth: 20,
   variant: "default",
   data: data,
+  width: "300px",
 };

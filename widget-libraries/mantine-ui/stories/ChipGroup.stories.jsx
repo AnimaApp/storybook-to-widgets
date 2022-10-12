@@ -13,11 +13,7 @@ export default {
     },
   },
   argTypes: {
-    orientation: {
-      description: "Orientation",
-      control: { type: "select" },
-      options: ["vertical", "horizontal"],
-    },
+
     offset: {
       description: "Offset",
       control: { type: "select" },
@@ -55,7 +51,6 @@ export default {
 const Template = (args) => {
   return (
     <MantineCore.Chip.Group
-      orientation={args.orientation}
       offset={args.offset}
       spacing={args.spacing}
       multiple={args.multiple}
@@ -70,7 +65,6 @@ const Template = (args) => {
 export const SimpleChipGroup = Template.bind({});
 
 SimpleChipGroup.args = {
-  orientation: "horizontal",
   offset: "md",
   spacing: "md",
   multiple: false,

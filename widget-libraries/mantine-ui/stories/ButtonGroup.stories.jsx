@@ -1,5 +1,6 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
+import { SimpleButton } from "./Button.stories";
 
 export default {
   title: "Mantine/Button Group",
@@ -18,6 +19,21 @@ export default {
       options: ["horizontal", "vertical"],
     },
     buttonBorderWidth: { description: "Button border width", type: "number" },
+    item: {
+      type: "story",
+      description: "item",
+      storyInfo: SimpleButton.storyInfo,
+    },
+    item2: {
+      type: "story",
+      description: "item",
+      storyInfo: SimpleButton.storyInfo,
+    },
+    item3: {
+      type: "story",
+      description: "item",
+      storyInfo: SimpleButton.storyInfo,
+    },
   },
 };
 
@@ -27,9 +43,9 @@ const Template = (args) => {
       orientation={args.orientation}
       buttonBorderWidth={args.buttonBorderWidth}
     >
-      <MantineCore.Button variant="default">First</MantineCore.Button>
-      <MantineCore.Button variant="default">Second</MantineCore.Button>
-      <MantineCore.Button variant="default">Second</MantineCore.Button>
+      <SimpleButton {...args.item} />
+      <SimpleButton {...args.item2} />
+      <SimpleButton {...args.item3} />
     </MantineCore.Button.Group>
   );
 };
@@ -39,6 +55,22 @@ export const SimpleButtonGroup = Template.bind({});
 SimpleButtonGroup.args = {
   orientation: "horizontal",
   buttonBorderWidth: 20,
+  item: {
+    ...SimpleButton.args,
+    label: "Button 1",
+    variant: "outline",
+  },
+  item2: {
+    ...SimpleButton.args,
+    label: "Button 2",
+    variant: "outline",
+  },
+  item3: {
+    ...SimpleButton.args,
+    label: "Button 3",
+    variant: "outline",
+  },
+
 };
 
 SimpleButtonGroup.storyInfo = {
