@@ -74,8 +74,6 @@ SimpleNativeSelect.args = {
   disabled: false,
   required: false,
   size: "md",
-  iconName: "Icon2fa",
-  iconWidth: 20,
   variant: "filled",
   data: data,
   width: "300px",
