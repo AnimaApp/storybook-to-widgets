@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Burger",
+  title: "Mantine UI/Burger",
   component: MantineCore.Burger,
   parameters: {
     docs: {

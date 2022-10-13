@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleStep } from "./Step.stories";
 
 export default {
-  title: "Mantine/Stepper",
+  title: "Mantine UI/Stepper",
   component: MantineCore.Stepper,
 
   argTypes: {

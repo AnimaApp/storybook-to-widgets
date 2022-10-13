@@ -1,34 +1,31 @@
-import React from 'react';
-import * as MantineCore from '@mantine/core';
+import React from "react";
+import * as MantineCore from "@mantine/core";
 
 export default {
-  title: 'Mantine/Step',
+  title: "Mantine UI/Step",
   component: MantineCore.Stepper.Step,
 
   argTypes: {
-    allowStepClick: { description: 'Allow step click', type: 'boolean' },
+    allowStepClick: { description: "Allow step click", type: "boolean" },
     orientation: {
-      description: 'Orientation',
-      control: { type: 'select' },
-      options: ['horizontal', 'vertical'],
+      description: "Orientation",
+      control: { type: "select" },
+      options: ["horizontal", "vertical"],
     },
     size: {
-      description: 'Size',
-      control: { type: 'select' },
-      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      description: "Size",
+      control: { type: "select" },
+      options: ["xs", "sm", "md", "lg", "xl"],
     },
     state: {
-      description: 'State',
-      control: { type: 'select' },
-      options: ['stepInactive', 'stepProgress', 'stepCompleted'],
+      description: "State",
+      control: { type: "select" },
+      options: ["stepInactive", "stepProgress", "stepCompleted"],
     },
-    withIcon: { description: 'With Icon', type: 'number' },
-    label: { description: 'Label', type: 'string' },
-
+    withIcon: { description: "With Icon", type: "number" },
+    label: { description: "Label", type: "string" },
   },
 };
-
-
 
 const Template = (args) => {
   return (
@@ -40,10 +37,9 @@ const Template = (args) => {
       withIcon={args.withIcon}
       label={args.label}
       //add description prop
-      >
-        {args.label}
-      </MantineCore.Stepper.Step>
-   
+    >
+      {args.label}
+    </MantineCore.Stepper.Step>
   );
 };
 
@@ -51,12 +47,11 @@ export const SimpleStep = Template.bind({});
 
 SimpleStep.args = {
   allowStepClick: false,
-  orientation: 'horizontal',
-  size: 'md',
-  state: 'stepProgress',
+  orientation: "horizontal",
+  size: "md",
+  state: "stepProgress",
   withIcon: 20,
-  label: 'Label',
- 
+  label: "Label",
 };
 
 SimpleStep.storyInfo = {

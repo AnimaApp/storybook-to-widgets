@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Checkbox",
+  title: "Mantine UI/Checkbox",
   component: MantineCore.Checkbox,
   parameters: {
     docs: {

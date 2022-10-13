@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/DateRangePicker",
+  title: "Mantine UI/DateRangePicker",
   component: MantineDates.DateRangePicker,
   parameters: {
     docs: {

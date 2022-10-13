@@ -12,7 +12,7 @@ import withIconMapped from "../decorators/withIconMapped";
 // value}
 
 export default {
-  title: "Mantine/Progress",
+  title: "Mantine UI/Progress",
   component: MantineCore.Progress,
   parameters: {
     docs: {

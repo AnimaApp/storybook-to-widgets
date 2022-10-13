@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Alert",
+  title: "Mantine UI/Alert",
   component: MantineCore.Alert,
   parameters: {
     docs: {

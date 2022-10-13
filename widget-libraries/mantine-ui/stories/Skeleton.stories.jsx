@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Skeleton",
+  title: "Mantine UI/Skeleton",
   component: MantineCore.Skeleton,
   parameters: {
     docs: {
@@ -28,7 +28,7 @@ export default {
       description: "Width",
       type: "number",
     },
-  }
+  },
 };
 
 const Template = (args) => {
@@ -40,7 +40,6 @@ const Template = (args) => {
       radius={args.radius}
       visible={args.visible}
       width={args.width}
-
     />
   );
 };

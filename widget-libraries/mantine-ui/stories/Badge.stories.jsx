@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Badge ",
+  title: "Mantine UI/Badge ",
   component: MantineCore.Badge,
   parameters: {
     docs: {

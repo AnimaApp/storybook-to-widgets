@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleButton } from "./Button.stories";
 
 export default {
-  title: "Mantine/Button Group",
+  title: "Mantine UI/Button Group",
   component: MantineCore.Button.Group,
   parameters: {
     docs: {
@@ -70,7 +70,6 @@ SimpleButtonGroup.args = {
     label: "Button 3",
     variant: "outline",
   },
-
 };
 
 SimpleButtonGroup.storyInfo = {

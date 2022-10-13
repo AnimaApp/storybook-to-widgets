@@ -5,7 +5,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/ColorInput",
+  title: "Mantine UI/ColorInput",
   component: MantineCore.ColorInput,
   parameters: {
     docs: {

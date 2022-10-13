@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/CloseButton",
+  title: "Mantine UI/CloseButton",
   component: MantineCore.CloseButton,
   parameters: {
     docs: {

@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Radio",
+  title: "Mantine UI/Radio",
   component: MantineCore.Radio,
   parameters: {
     docs: {

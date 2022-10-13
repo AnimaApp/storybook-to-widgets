@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleAccordionItem } from "./AccordionItem.stories";
 
 export default {
-  title: "Mantine/Accordion",
+  title: "Mantine UI/Accordion",
   component: MantineCore.Accordion,
   parameters: {
     docs: {

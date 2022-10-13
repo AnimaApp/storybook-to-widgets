@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Notification",
+  title: "Mantine UI/Notification",
   component: MantineCore.Notification,
   parameters: {
     docs: {
@@ -59,5 +59,5 @@ SimpleNotification.args = {
   title: "Title",
   description: "This is description",
   disallowClose: true,
-  width: "300px"
+  width: "300px",
 };

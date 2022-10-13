@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/RingProgress",
+  title: "Mantine UI/RingProgress",
   component: MantineCore.RingProgress,
   parameters: {
     docs: {
@@ -23,16 +23,14 @@ export default {
     },
     roundCaps: { description: "RoundCaps", type: "boolean" },
     sections: { description: "Sections", type: "array" },
-
-  }
+  },
 };
 
-const sections =
-  [
-    { value: 40, color: 'cyan' },
-    { value: 15, color: 'orange' },
-    { value: 15, color: 'grape' },
-  ]
+const sections = [
+  { value: 40, color: "cyan" },
+  { value: 15, color: "orange" },
+  { value: 15, color: "grape" },
+];
 
 const Template = (args) => {
   return (

@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Button",
+  title: "Mantine UI/Button",
   component: MantineCore.Button,
   parameters: {
     docs: {

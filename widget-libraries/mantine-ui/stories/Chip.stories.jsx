@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Chip",
+  title: "Mantine UI/Chip",
   component: MantineCore.Chip,
   parameters: {
     docs: {

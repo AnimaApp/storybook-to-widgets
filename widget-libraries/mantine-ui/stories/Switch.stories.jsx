@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Switch",
+  title: "Mantine UI/Switch",
   component: MantineCore.Switch,
   parameters: {
     docs: {

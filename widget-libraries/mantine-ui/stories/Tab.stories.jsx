@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Tab",
+  title: "Mantine UI/Tab",
   component: MantineCore.Tabs.Tab,
   parameters: {
     docs: {

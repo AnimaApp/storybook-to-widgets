@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Autocomplete",
+  title: "Mantine UI/Autocomplete",
   component: MantineCore.Autocomplete,
   parameters: {
     docs: {

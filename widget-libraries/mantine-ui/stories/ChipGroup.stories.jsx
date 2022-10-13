@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleChip } from "./Chip.stories";
 
 export default {
-  title: "Mantine/Chip Group",
+  title: "Mantine UI/Chip Group",
   component: MantineCore.Chip.Group,
   parameters: {
     docs: {
@@ -13,7 +13,6 @@ export default {
     },
   },
   argTypes: {
-
     offset: {
       description: "Offset",
       control: { type: "select" },

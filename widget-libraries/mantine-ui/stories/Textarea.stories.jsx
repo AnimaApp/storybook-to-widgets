@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine/Textarea",
+  title: "Mantine UI/Textarea",
   component: MantineCore.Textarea,
   parameters: {
     docs: {

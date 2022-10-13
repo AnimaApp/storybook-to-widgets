@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/ColorPicker",
+  title: "Mantine UI/ColorPicker",
   component: MantineCore.ColorPicker,
   parameters: {
     docs: {

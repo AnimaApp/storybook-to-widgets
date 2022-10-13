@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/AccordionItem",
+  title: "Mantine UI/AccordionItem",
   component: MantineCore.Accordion.Item,
   parameters: {
     docs: {

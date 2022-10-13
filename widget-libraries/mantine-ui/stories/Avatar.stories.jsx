@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Avatar",
+  title: "Mantine UI/Avatar",
   component: MantineCore.Avatar,
   parameters: {
     docs: {

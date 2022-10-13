@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleRadio } from "./Radio.stories";
 
 export default {
-  title: "Mantine/Radio.Group",
+  title: "Mantine UI/Radio.Group",
   component: MantineCore.Radio.Group,
   parameters: {
     docs: {

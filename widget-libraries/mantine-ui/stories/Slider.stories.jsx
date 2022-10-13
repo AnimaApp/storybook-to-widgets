@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine/Slider",
+  title: "Mantine UI/Slider",
   component: MantineCore.Slider,
   parameters: {
     docs: {

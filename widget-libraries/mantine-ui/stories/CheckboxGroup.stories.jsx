@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleCheckbox } from "./Checkbox.stories";
 
 export default {
-  title: "Mantine/Checkbox.Group",
+  title: "Mantine UI/Checkbox.Group",
   component: MantineCore.Checkbox.Group,
   parameters: {
     docs: {

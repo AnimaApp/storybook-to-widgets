@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleTab } from "./Tab.stories";
 
 export default {
-  title: "Mantine/Tabs",
+  title: "Mantine UI/Tabs",
   component: MantineCore.Tabs,
   parameters: {
     docs: {
@@ -44,7 +44,7 @@ export default {
 };
 
 const Template = (args) => {
-  const [activeTab, setActiveTab] = React.useState(args.defaultValue)
+  const [activeTab, setActiveTab] = React.useState(args.defaultValue);
 
   return (
     <MantineCore.Tabs
