@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: "Ant Design",
   description:
     "Ant Design is a design language for the web and mobile apps, based on Ant Motion.",
