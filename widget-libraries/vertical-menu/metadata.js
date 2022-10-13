@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   name: "Vertical menu",
   description:
     "An enterprise-class UI design language and React components implementation",
