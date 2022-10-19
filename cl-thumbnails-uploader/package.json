@@ -10,6 +10,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.171.0",
     "aws-sdk": "^2.1218.0",
+    "chalk": "^4",
     "enquirer": "^2.3.6",
     "fast-glob": "^3.2.12",
     "listr2": "^5.0.5",
