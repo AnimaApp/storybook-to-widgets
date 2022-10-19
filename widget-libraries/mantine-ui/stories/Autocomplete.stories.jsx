@@ -79,7 +79,7 @@ export const SimpleAutocomplete = Template.bind({});
 SimpleAutocomplete.args = {
   label: "Label",
   description: "Description",
-  error: null,
+  error: "",
   disabled: false,
   required: false,
   initiallyOpened: false,
