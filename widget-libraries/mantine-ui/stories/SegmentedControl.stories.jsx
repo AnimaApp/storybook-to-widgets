@@ -23,7 +23,7 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    // data: to do
+    defaultValue: { description: "Default Value", type: "string" },
   },
 };
 
@@ -35,8 +35,12 @@ const data = [
 ];
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.SegmentedControl
+      value={value}
+      onChange={setValue}
       disabled={args.disabled}
       orientation={args.orientation}
       size={args.size}
@@ -52,4 +56,5 @@ SimpleSegmentedControl.args = {
   orientation: "horizontal",
   size: "md",
   data: data,
+  defaultValue: "react",
 };
