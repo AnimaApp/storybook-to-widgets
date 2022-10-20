@@ -43,6 +43,7 @@ export default {
     withinPortal: { description: "Within portal", type: "boolean" },
     swatches: { description: "Swatches", type: "string" },
     swatchesPerRow: { description: "Swatches per row", type: "number" },
+    defaultValue: { description: "Default value", type: "string" },
     variant: {
       description: "Variant",
       control: { type: "select" },
@@ -54,8 +55,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.ColorInput
+      value={value}
+      onChange={setValue}
       label={args.label}
       description={args.description}
       error={args.error}
@@ -94,4 +99,5 @@ SimpleColorInput.args = {
   swatchesPerRow: 1,
   variant: "default",
   width: "300px",
+  defaultValue: "#C5D899",
 };
