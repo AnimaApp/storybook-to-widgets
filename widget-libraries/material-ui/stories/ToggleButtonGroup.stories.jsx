@@ -6,6 +6,9 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/ToggleButtonGroup",
   component: MuiMaterial.ToggleButtonGroup,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

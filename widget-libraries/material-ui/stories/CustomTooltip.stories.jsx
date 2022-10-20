@@ -6,6 +6,9 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Custom Tooltip",
   component: MuiMaterial.Tooltip,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     bgColor: { control: "color" },
     color: { control: "color" },

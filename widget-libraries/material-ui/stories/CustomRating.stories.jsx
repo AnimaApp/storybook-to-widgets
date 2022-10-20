@@ -6,6 +6,9 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Custom Rating",
   component: MuiMaterial.Rating,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     size: {
       description: "Size",
