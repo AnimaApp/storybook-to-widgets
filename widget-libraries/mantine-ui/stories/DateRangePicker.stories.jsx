@@ -77,5 +77,5 @@ SimpleDateRangePicker.args = {
   iconName: "IconCalendar",
   iconWidth: 28,
   variant: "default",
-  width: "500px",
+  width: "300px",
 };
