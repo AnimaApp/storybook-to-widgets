@@ -5,7 +5,7 @@ import withIconMapped from "../decorators/withIconMapped";
 import { ImageAvatar } from "./AvatarWithImage.stories";
 
 export default {
-  title: "Material UI/Chip With Avatar",
+  title: "Material UI/Chip with avatar",
   component: MuiMaterial.Chip,
   parameters: {
     useFigmaLayers: true,

@@ -4,6 +4,9 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Link",
   component: MuiMaterial.Link,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

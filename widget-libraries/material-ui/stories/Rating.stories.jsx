@@ -5,6 +5,9 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Rating",
   component: MuiMaterial.Rating,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     size: {
       description: "Size",

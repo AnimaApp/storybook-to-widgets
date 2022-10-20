@@ -6,6 +6,9 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Icon",
   component: MuiMaterial.Icon,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

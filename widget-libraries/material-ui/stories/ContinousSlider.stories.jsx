@@ -2,8 +2,11 @@ import React from "react";
 import * as MuiMaterial from "@mui/material";
 
 export default {
-  title: "Material UI/Continous Slider",
+  title: "Material UI/Continous slider",
   component: MuiMaterial.Slider,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

@@ -2,7 +2,7 @@ import React from "react";
 import * as MuiMaterial from "@mui/material";
 
 export default {
-  title: "Material UI/Avatar With Image",
+  title: "Material UI/Avatar with image",
   component: MuiMaterial.Avatar,
   parameters: {
     useFigmaLayers: true,

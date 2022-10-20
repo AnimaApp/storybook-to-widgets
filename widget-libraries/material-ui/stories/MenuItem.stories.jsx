@@ -5,6 +5,9 @@ export default {
   title: "Material UI/MenuItem",
   component: MuiMaterial.MenuItem,
   parameters: {
+    useFigmaLayers: true,
+  },
+  parameters: {
     docs: {
       description: {
         component: "Menu item",

@@ -6,6 +6,9 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Custom Switch",
   component: MuiMaterial.Switch,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
