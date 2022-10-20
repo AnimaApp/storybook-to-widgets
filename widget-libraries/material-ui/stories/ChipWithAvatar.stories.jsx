@@ -1,8 +1,5 @@
 import React from "react";
 import * as MuiMaterial from "@mui/material";
-import { iconOptions, iconTransform } from "../utils";
-import withIconMapped from "../decorators/withIconMapped";
-import { ImageAvatar } from "./AvatarWithImage.stories";
 
 export default {
   title: "Material UI/Chip with avatar",
@@ -38,19 +35,16 @@ export default {
       description: "Label",
       type: "string",
     },
-    iconName: {
-      control: { type: "select" },
-      options: iconOptions,
-      description: "Icon",
-      transform: iconTransform,
+    imageVariant: {
+      description: "Image variant",
+      type: "options",
+      options: ["circular", "rounded", "square"],
     },
-    avatar: {
-      type: "story",
-      description: "avatar",
-      storyInfo: ImageAvatar.storyInfo,
-    },
-  },
-  decorators: [withIconMapped],
+    imageSrc: {
+      description: "Image source",
+      type: "string",
+    }
+  }
 };
 
 const Template = (args) => {
@@ -62,7 +56,7 @@ const Template = (args) => {
       variant={args.variant}
       label={args.label}
       clickable={args.clickable}
-      avatar={<ImageAvatar {...args.avatar} />}
+      avatar={<MuiMaterial.Avatar variant={args.imageVariant} src={args.imageSrc} />}
     />
   );
 };
@@ -75,5 +69,6 @@ SimpleChipWithAvatar.args = {
   clickable: true,
   variant: "outlined",
   label: "Chip Label",
-  avatar: { variant: "square", src: "https://joeschmoe.io/api/v1/random" },
+  imageVariant: "circular",
+  imageSrc: "https://joeschmoe.io/api/v1/random"
 };

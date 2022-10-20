@@ -14,7 +14,7 @@ export default {
       options: ["circular", "rounded", "square"],
     },
     src: {
-      description: "Src",
+      description: "Source",
       type: "string",
     },
   },
@@ -33,5 +33,5 @@ ImageAvatar.args = {
 
 ImageAvatar.storyInfo = {
   name: "ImageAvatar",
-  kind: "Material UI/Avatar With Image",
+  kind: "Material UI/Avatar with image",
 };
