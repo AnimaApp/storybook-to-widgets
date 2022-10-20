@@ -40,8 +40,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [activePage, setPage] = React.useState(args.initialPage);
+
   return (
     <MantineCore.Pagination
+      page={activePage}
+      onChange={setPage}
       position={args.position}
       radius={args.radius}
       size={args.size}
