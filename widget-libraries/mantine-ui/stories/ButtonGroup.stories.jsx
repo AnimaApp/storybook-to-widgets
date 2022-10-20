@@ -74,5 +74,5 @@ SimpleButtonGroup.args = {
 
 SimpleButtonGroup.storyInfo = {
   name: "SimpleButtonGroup",
-  kind: "Mantine/ButtonGroup",
+  kind: "Mantine UI/Button Group",
 };

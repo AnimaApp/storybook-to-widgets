@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine UI/SegmentedControl",
+  title: "Mantine UI/Segmented Control",
   component: MantineCore.SegmentedControl,
   parameters: {
     docs: {

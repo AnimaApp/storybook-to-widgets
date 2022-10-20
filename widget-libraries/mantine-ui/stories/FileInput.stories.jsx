@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/FileInput",
+  title: "Mantine UI/File Input",
   component: MantineCore.FileInput,
   parameters: {
     docs: {

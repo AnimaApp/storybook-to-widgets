@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine UI/AccordionItem",
+  title: "Mantine UI/Accordion Item",
   component: MantineCore.Accordion.Item,
   parameters: {
     docs: {
@@ -11,6 +11,7 @@ export default {
       },
     },
     container: MantineCore.Accordion,
+    titleArg: "label",
   },
   argTypes: {
     value: { description: "Value", type: "string" },
@@ -44,5 +45,5 @@ SimpleAccordionItem.args = {
 
 SimpleAccordionItem.storyInfo = {
   name: "SimpleAccordionItem",
-  kind: "Mantine/AccordionItem",
+  kind: "Mantine UI/Accordion Item",
 };

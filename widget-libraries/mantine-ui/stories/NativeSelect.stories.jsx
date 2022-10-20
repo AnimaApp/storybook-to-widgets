@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/NativeSelect",
+  title: "Mantine UI/Native Select",
   component: MantineCore.NativeSelect,
   parameters: {
     docs: {

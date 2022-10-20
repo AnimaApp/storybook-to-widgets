@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/TimeInput",
+  title: "Mantine UI/Time Input",
   component: MantineDates.TimeInput,
   parameters: {
     docs: {

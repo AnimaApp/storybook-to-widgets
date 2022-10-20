@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/NumberInput",
+  title: "Mantine UI/Number Input",
   component: MantineCore.NumberInput,
   parameters: {
     docs: {

@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine UI/RingProgress",
+  title: "Mantine UI/Ring Progress",
   component: MantineCore.RingProgress,
   parameters: {
     docs: {

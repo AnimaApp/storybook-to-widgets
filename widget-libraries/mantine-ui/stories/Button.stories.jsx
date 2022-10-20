@@ -12,6 +12,7 @@ export default {
         component: "Button",
       },
     },
+    titleArg: "label",
   },
   argTypes: {
     variant: {
@@ -100,5 +101,5 @@ SimpleButton.args = {
 
 SimpleButton.storyInfo = {
   name: "SimpleButton",
-  kind: "Mantine/Button",
+  kind: "Mantine UI/Button",
 };

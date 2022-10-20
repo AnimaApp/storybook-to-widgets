@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/PasswordInput",
+  title: "Mantine UI/Password Input",
   component: MantineCore.PasswordInput,
   parameters: {
     docs: {

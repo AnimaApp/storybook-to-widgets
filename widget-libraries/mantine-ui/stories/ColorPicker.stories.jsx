@@ -2,7 +2,7 @@ import React from "react";
 import * as MantineCore from "@mantine/core";
 
 export default {
-  title: "Mantine UI/ColorPicker",
+  title: "Mantine UI/Color Picker",
   component: MantineCore.ColorPicker,
   parameters: {
     docs: {
@@ -73,5 +73,5 @@ SimpleColorPicker.args = {
 
 SimpleColorPicker.storyInfo = {
   name: "SimpleColorPicker",
-  kind: "Mantine/ColorPicker",
+  kind: "Mantine UI/Color Picker",
 };

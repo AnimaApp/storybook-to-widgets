@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/DatePicker",
+  title: "Mantine UI/Date Picker",
   component: MantineDates.DatePicker,
   parameters: {
     docs: {

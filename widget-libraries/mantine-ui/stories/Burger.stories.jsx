@@ -23,11 +23,14 @@ export default {
 };
 
 const Template = (args) => {
+  const [opened, setOpened] = React.useState(args.opened);
+
   return (
     <MantineCore.Burger
-      opened={args.opened}
+      opened={opened}
       size={args.size}
       transitionDuration={args.transitionDuration}
+      onClick={() => setOpened((o) => !o)}
     />
   );
 };

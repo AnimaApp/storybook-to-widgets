@@ -4,7 +4,7 @@ import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
 export default {
-  title: "Mantine UI/ActionIcon",
+  title: "Mantine UI/Action Icon",
   component: MantineCore.ActionIcon,
   parameters: {
     docs: {
@@ -74,5 +74,5 @@ SimpleActionIcon.args = {
 
 SimpleActionIcon.storyInfo = {
   name: "SimpleActionIcon",
-  kind: "Mantine/ActionButton",
+  kind: "Mantine UI/Action Icon",
 };
