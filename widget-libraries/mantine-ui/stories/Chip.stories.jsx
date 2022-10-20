@@ -23,7 +23,6 @@ export default {
       transform: iconTransform,
       required: false,
     },
-    iconWidth: { description: "Icon width", type: "number" },
     size: {
       description: "Size",
       control: { type: "select" },
@@ -45,14 +44,10 @@ const Template = (args) => {
   return (
     <MantineCore.Chip
       value={args.value}
-      format={args.format}
-      iconWidth={args.iconWidth}
       size={args.size}
       required={args.required}
       disabled={args.disabled}
-      type={args.type}
       variant={args.variant}
-      color={args.color}
     >
       {args.label}
       {args.iconName && args.iconName}
@@ -64,14 +59,10 @@ export const SimpleChip = Template.bind({});
 
 SimpleChip.args = {
   label: "Label",
-  format: "hex",
-  iconWidth: 20,
   size: "md",
   required: false,
   disabled: false,
-  type: "checkbox",
   variant: "filled",
-  color: "#0000ff",
   value: "react",
 };
 
