@@ -12,7 +12,6 @@ export default {
     },
   },
   argTypes: {
-    value: { description: "Value", type: "string" },
     withPicker: { description: "With picker", type: "boolean" },
     alphaLabel: { description: "Alpha label", type: "string" },
     defaultValue: { description: "Default value", type: "string" },
@@ -36,9 +35,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.ColorPicker
-      value={args.value}
+      value={value}
+      onChange={setValue}
       withPicker={args.withPicker}
       alphaLabel={args.alphaLabel}
       defaultValue={args.defaultValue}
@@ -57,7 +59,6 @@ const Template = (args) => {
 export const SimpleColorPicker = Template.bind({});
 
 SimpleColorPicker.args = {
-  value: "rgba(47, 119, 150, 0.93)",
   withPicker: true,
   alphaLabel: "",
   defaultValue: "rgba(47, 119, 150, 0.93)",
