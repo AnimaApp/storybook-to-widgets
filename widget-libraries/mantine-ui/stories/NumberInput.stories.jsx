@@ -45,13 +45,18 @@ export default {
     },
     hideControls: { description: "Hide controls", type: "boolean" },
     width: { description: "Width", type: "string" },
+    defaultValue: { description: "Default value", type: "number" },
   },
   decorators: [withIconMapped],
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.NumberInput
+      value={value}
+      onChange={(val) => setValue(val)}
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -90,4 +95,5 @@ SimpleNumberInput.args = {
   variant: "default",
   hideControls: false,
   width: "300px",
+  defaultValue: 2,
 };
