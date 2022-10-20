@@ -29,6 +29,7 @@ export default {
       control: { type: "select" },
       options: ["left", "right", "center", "apart"],
     },
+    value: { description: "Value", type: "string" },
     item: {
       type: "story",
       description: "item",
@@ -48,8 +49,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.value);
+
   return (
     <MantineCore.Chip.Group
+      value={value}
+      onChange={setValue}
       offset={args.offset}
       spacing={args.spacing}
       multiple={args.multiple}
@@ -68,16 +73,20 @@ SimpleChipGroup.args = {
   spacing: "md",
   multiple: false,
   position: "left",
+  value: "vue",
   item: {
     ...SimpleChip.args,
-    label: "Label",
+    label: "Label 1",
+    value: "react",
   },
   item2: {
     ...SimpleChip.args,
-    label: "Label",
+    label: "Label 2",
+    value: "vue",
   },
   item3: {
     ...SimpleChip.args,
-    label: "Label",
+    label: "Label 3",
+    value: "angular",
   },
 };

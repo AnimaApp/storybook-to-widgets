@@ -24,6 +24,7 @@ export default {
       options: ["xs", "sm", "md", "lg", "xl"],
     },
     active: { description: "Active", type: "number" },
+    value: { description: "Value", type: "number" },
     item: {
       type: "story",
       description: "item",
@@ -43,13 +44,15 @@ export default {
 };
 
 const Template = (args) => {
+  const [active, setActive] = React.useState(args.active);
+
   return (
     <MantineCore.Stepper
       iconPosition={args.iconPosition}
       iconSize={args.iconSize}
       size={args.size}
       radius={args.radius}
-      active={args.active}
+      active={active}
     >
       <SimpleStep {...args.item} />
       <SimpleStep {...args.item2} />

@@ -51,7 +51,7 @@ const Template = (args) => {
       variant={args.variant}
       orientation={args.orientation}
       value={activeTab}
-      onChange={setActiveTab}
+      onTabChange={setActiveTab}
     >
       <SimpleTab {...args.item} />
       <SimpleTab {...args.item2} />

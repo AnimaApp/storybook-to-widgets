@@ -10,6 +10,7 @@ export default {
         component: "Checkbox",
       },
     },
+    titleArg: "label",
   },
   argTypes: {
     label: { description: "Label", type: "string" },
@@ -20,6 +21,7 @@ export default {
       options: ["xs", "sm", "md", "lg", "xl"],
     },
     disabled: { description: "Disabled", type: "boolean" },
+    value: { description: "Value", type: "string" },
   },
 };
 
@@ -30,6 +32,7 @@ const Template = (args) => {
       indeterminate={args.indeterminate}
       size={args.size}
       disabled={args.disabled}
+      value={args.value}
     />
   );
 };
@@ -41,9 +44,10 @@ SimpleCheckbox.args = {
   indeterminate: false,
   size: "md",
   disabled: false,
+  value: "react"
 };
 
 SimpleCheckbox.storyInfo = {
   name: "SimpleCheckbox",
-  kind: "Mantine/Checkbox",
+  kind: "Mantine UI/Checkbox",
 };

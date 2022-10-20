@@ -13,20 +13,22 @@ export default {
   },
   argTypes: {
     label: { description: "Label", type: "string" },
+    value: { description: "Value", type: "string" },
   },
 };
 
 const Template = (args) => {
-  return <MantineCore.Radio label={args.label} />;
+  return <MantineCore.Radio label={args.label} value={args.value} />;
 };
 
 export const SimpleRadio = Template.bind({});
 
 SimpleRadio.args = {
   label: "Label",
+  value: "react",
 };
 
 SimpleRadio.storyInfo = {
   name: "SimpleRadio",
-  kind: "Mantine/Radio",
+  kind: "Mantine UI/Radio",
 };

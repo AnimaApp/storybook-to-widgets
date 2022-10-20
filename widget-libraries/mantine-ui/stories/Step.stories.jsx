@@ -4,7 +4,9 @@ import * as MantineCore from "@mantine/core";
 export default {
   title: "Mantine UI/Step",
   component: MantineCore.Stepper.Step,
-
+  parameters: {
+    titleArg: "label",
+  },
   argTypes: {
     allowStepClick: { description: "Allow step click", type: "boolean" },
     orientation: {
@@ -36,7 +38,7 @@ const Template = (args) => {
       state={args.state}
       withIcon={args.withIcon}
       label={args.label}
-      //add description prop
+    //add description prop
     >
       {args.label}
     </MantineCore.Stepper.Step>
@@ -56,5 +58,5 @@ SimpleStep.args = {
 
 SimpleStep.storyInfo = {
   name: "SimpleStep",
-  kind: "Mantine/Step",
+  kind: "Mantine UI/Step",
 };

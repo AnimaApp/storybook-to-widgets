@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleRadio } from "./Radio.stories";
 
 export default {
-  title: "Mantine UI/Radio.Group",
+  title: "Mantine UI/Radio Group",
   component: MantineCore.Radio.Group,
   parameters: {
     docs: {
@@ -37,6 +37,7 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
+    value: { description: "Value", type: "string" },
     item: {
       type: "story",
       description: "item",
@@ -56,8 +57,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.value);
+
   return (
     <MantineCore.Radio.Group
+      value={value}
+      onChange={setValue}
       label={args.label}
       description={args.description}
       error={args.error}
@@ -85,16 +90,20 @@ SimpleRadioGroup.args = {
   size: "md",
   offset: "md",
   spacing: "md",
+  value: "react",
   item: {
     ...SimpleRadio.args,
     label: "Radio 1",
+    value: "react",
   },
   item2: {
     ...SimpleRadio.args,
     label: "Radio 2",
+    value: "vue",
   },
   item3: {
     ...SimpleRadio.args,
     label: "Radio 3",
+    value: "angular",
   },
 };

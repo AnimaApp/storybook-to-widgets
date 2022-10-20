@@ -3,7 +3,7 @@ import * as MantineCore from "@mantine/core";
 import { SimpleCheckbox } from "./Checkbox.stories";
 
 export default {
-  title: "Mantine UI/Checkbox.Group",
+  title: "Mantine UI/Checkbox Group",
   component: MantineCore.Checkbox.Group,
   parameters: {
     docs: {
@@ -30,6 +30,7 @@ export default {
     },
     description: { description: "Description", type: "string" },
     error: { description: "Error", type: "string" },
+    value: { description: "Value", type: "string" },
     item: {
       type: "story",
       description: "item",
@@ -49,8 +50,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.value);
+
   return (
     <MantineCore.Checkbox.Group
+      value={value}
+      onChange={setValue}
       orientation={args.orientation}
       offset={args.offset}
       spacing={args.spacing}
@@ -72,25 +77,29 @@ SimpleCheckboxGroup.args = {
   spacing: "md",
   description: "Description",
   error: "",
+  value: ["react"],
   item: {
     ...SimpleCheckbox.args,
-    label: "Label",
+    label: "Label 1",
     indeterminate: false,
     size: "md",
     disabled: false,
+    value: "react",
   },
   item2: {
     ...SimpleCheckbox.args,
-    label: "Label",
+    label: "Label 2",
     indeterminate: false,
     size: "md",
     disabled: false,
+    value: "vue",
   },
   item3: {
     ...SimpleCheckbox.args,
-    label: "Label",
+    label: "Label 3",
     indeterminate: false,
     size: "md",
     disabled: false,
+    value: "angular",
   },
 };

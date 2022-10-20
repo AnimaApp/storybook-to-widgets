@@ -13,6 +13,7 @@ export default {
       },
     },
     container: MantineCore.Tabs,
+    titleArg: "label",
   },
   argTypes: {
     value: { description: "Value", type: "string" },
@@ -46,5 +47,5 @@ SimpleTab.args = {
 
 SimpleTab.storyInfo = {
   name: "SimpleTab",
-  kind: "Mantine/Tab",
+  kind: "Mantine UI/Tab",
 };

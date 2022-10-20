@@ -12,14 +12,10 @@ export default {
         component: "Chip",
       },
     },
+    titleArg: "label",
   },
   argTypes: {
     label: { description: "Label", type: "string" },
-    format: {
-      description: "Format",
-      control: { type: "select" },
-      options: ["hex", "rgba", "rgb", "hsl", "hsla"],
-    },
     iconName: {
       control: { type: "select" },
       options: iconOptions,
@@ -35,20 +31,12 @@ export default {
     },
     required: { description: "Required", type: "boolean" },
     disabled: { description: "Disabled", type: "boolean" },
-    type: {
-      description: "Type",
-      control: { type: "select" },
-      options: ["checkbox", "radio"],
-    },
     variant: {
       description: "Variant",
       control: { type: "select" },
       options: ["unstyled", "default", "filled"],
     },
-    color: {
-      description: "Color",
-      control: { type: "color" },
-    },
+    value: { description: "Value", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -56,6 +44,7 @@ export default {
 const Template = (args) => {
   return (
     <MantineCore.Chip
+      value={args.value}
       format={args.format}
       iconWidth={args.iconWidth}
       size={args.size}
@@ -83,9 +72,10 @@ SimpleChip.args = {
   type: "checkbox",
   variant: "filled",
   color: "#0000ff",
+  value: "react",
 };
 
 SimpleChip.storyInfo = {
   name: "SimpleChip",
-  kind: "Mantine/Chip",
+  kind: "Mantine UI/Chip",
 };
