@@ -45,8 +45,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, onChange] = React.useState(null);
+
   return (
     <MantineDates.DateRangePicker
+      value={value}
+      onChange={onChange}
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
