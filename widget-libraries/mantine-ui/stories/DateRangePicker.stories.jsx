@@ -45,7 +45,7 @@ export default {
 };
 
 const Template = (args) => {
-  const [value, onChange] = React.useState(null);
+  const [value, onChange] = React.useState(args.defaultValue)
 
   return (
     <MantineDates.DateRangePicker
@@ -82,4 +82,6 @@ SimpleDateRangePicker.args = {
   iconWidth: 28,
   variant: "default",
   width: "300px",
+  defaultValue: new Date(),
+
 };
