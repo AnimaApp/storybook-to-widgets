@@ -46,6 +46,7 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
     width: { description: "Width", type: "string" },
+    defaultValue: { description: "Default value", type: "string" },
   },
   decorators: [withIconMapped],
 };
@@ -53,8 +54,12 @@ export default {
 const data = ["React", "Angular", "Svelte", "Vue"];
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.Autocomplete
+      value={value}
+      onChange={setValue}
       label={args.label}
       description={args.description}
       error={args.error}
@@ -91,4 +96,5 @@ SimpleAutocomplete.args = {
   variant: "filled",
   data: data,
   width: "300px",
+  defaultValue: "",
 };

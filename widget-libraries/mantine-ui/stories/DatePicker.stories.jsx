@@ -44,9 +44,15 @@ export default {
   decorators: [withIconMapped],
 };
 
+const newDate = new Date();
+
 const Template = (args) => {
+  const [value, setValue] = React.useState(newDate);
+
   return (
     <MantineDates.DatePicker
+      value={value}
+      onChange={setValue}
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}

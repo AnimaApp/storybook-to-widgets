@@ -39,6 +39,8 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
     width: { description: "Width", type: "string" },
+    defaultValue: { description: "Default value", type: "string" },
+
   },
   decorators: [withIconMapped],
 };
@@ -46,8 +48,12 @@ export default {
 const data = ["React", "Vue", "Angular", "Svelte"];
 
 const Template = (args) => {
+  const [value, setValue] = React.useState(args.defaultValue);
+
   return (
     <MantineCore.NativeSelect
+      value={value}
+      onChange={(event) => setValue(event.currentTarget.value)}
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}
@@ -77,4 +83,5 @@ SimpleNativeSelect.args = {
   variant: "filled",
   data: data,
   width: "300px",
+  defaultValue: "React",
 };

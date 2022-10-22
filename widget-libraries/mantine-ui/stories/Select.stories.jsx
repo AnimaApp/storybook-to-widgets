@@ -82,8 +82,12 @@ const data = [
 ];
 
 const Template = (args) => {
+  const [value, setValue] = React.useState("");
+
   return (
     <MantineCore.Select
+      value={value}
+      onChange={setValue}
       label={args.label}
       description={args.description}
       error={args.error}
@@ -117,9 +121,9 @@ SimpleSelect.args = {
   allowDeselect: false,
   clearable: false,
   initiallyOpened: false,
-  dropdownPosition: "top",
+  dropdownPosition: "bottom",
   limit: 100,
-  maxDropdownHeight: 100,
+  maxDropdownHeight: 500,
   searchable: false,
   size: "md",
   variant: "filled",

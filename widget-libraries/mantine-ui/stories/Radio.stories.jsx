@@ -18,6 +18,7 @@ export default {
 };
 
 const Template = (args) => {
+  const [checked, setChecked] = React.useState(args.value);
   return <MantineCore.Radio label={args.label} value={args.value} />;
 };
 
@@ -25,7 +26,6 @@ export const SimpleRadio = Template.bind({});
 
 SimpleRadio.args = {
   label: "Label",
-  value: "react",
 };
 
 SimpleRadio.storyInfo = {

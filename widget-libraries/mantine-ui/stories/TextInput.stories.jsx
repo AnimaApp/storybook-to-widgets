@@ -44,8 +44,11 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState("");
   return (
     <MantineCore.TextInput
+      value={value}
+      onChange={(event) => setValue(event.currentTarget.value)}
       label={args.label}
       description={args.description}
       error={args.error}

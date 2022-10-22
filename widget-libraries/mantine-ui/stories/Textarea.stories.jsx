@@ -47,8 +47,12 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState("");
+
   return (
     <MantineCore.Textarea
+      value={value}
+      onChange={(event) => setValue(event.currentTarget.value)}
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}

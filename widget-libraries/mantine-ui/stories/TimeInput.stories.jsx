@@ -45,8 +45,11 @@ export default {
 };
 
 const Template = (args) => {
+  const [value, setValue] = React.useState();
   return (
     <MantineDates.TimeInput
+      value={value}
+      onChange={setValue}
       label={args.label}
       placeholder={args.placeholder}
       description={args.description}

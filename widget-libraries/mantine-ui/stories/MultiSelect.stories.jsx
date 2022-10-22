@@ -49,6 +49,9 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
     width: { description: "Width", type: "string" },
+    //add defaultValue as array of strings
+    defaultValue: { description: "Default value", type: "string" },
+
   },
   decorators: [withIconMapped],
 };
@@ -64,8 +67,12 @@ const data = [
 ];
 
 const Template = (args) => {
+  const [value, setValue] = React.useState([args.defaultValue]);
+
   return (
     <MantineCore.MultiSelect
+      value={value}
+      onChange={setValue}
       label={args.label}
       description={args.description}
       error={args.error}
@@ -108,4 +115,5 @@ SimpleMultiSelect.args = {
   variant: "default",
   data: data,
   width: "300px",
+  defaultValue: "react",
 };
