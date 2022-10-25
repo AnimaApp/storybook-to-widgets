@@ -73,6 +73,6 @@ SimpleSlider.args = {
   step: 1,
   thumbSize: 10,
   size: "md",
-  width: "400px",
+  width: "360px",
   defaultValue: 4,
 };

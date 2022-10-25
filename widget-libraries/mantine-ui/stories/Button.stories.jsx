@@ -49,14 +49,14 @@ export default {
     leftIcon: {
       control: { type: "select" },
       options: iconOptions,
-      description: "Icon",
+      description: "Left icon",
       transform: iconTransform,
       required: false,
     },
     rightIcon: {
       control: { type: "select" },
       options: iconOptions,
-      description: "Icon",
+      description: "Right icon",
       transform: iconTransform,
       required: false,
     },

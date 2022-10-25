@@ -56,5 +56,5 @@ SimpleProgress.args = {
   size: "xl",
   striped: false,
   value: 50,
-  width: "600px",
+  width: "360px",
 };

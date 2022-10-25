@@ -11,11 +11,10 @@ export default {
       },
     },
     container: MantineCore.Accordion,
-    titleArg: "label",
+    titleArg: "title",
   },
   argTypes: {
     value: { description: "Value", type: "string" },
-    label: { description: "Label", type: "string" },
     title: { description: "Title", type: "string" },
     description: { description: "Description", type: "string" },
   },
@@ -38,7 +37,6 @@ export const SimpleAccordionItem = Template.bind({});
 
 SimpleAccordionItem.args = {
   value: "Value",
-  label: "Label",
   title: "Title",
   description: "Description",
 };
