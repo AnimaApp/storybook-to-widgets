@@ -34,11 +34,6 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    type: {
-      description: "Type",
-      control: { type: "select" },
-      options: ["button", "reset", "submit"],
-    },
     uppercase: { description: "Uppercase", type: "boolean" },
     loading: { description: "Loading", type: "boolean" },
     loaderPosition: {
@@ -71,7 +66,6 @@ const Template = (args) => {
     <MantineCore.Button
       variant={args.variant}
       size={args.size}
-      type={args.type}
       uppercase={args.uppercase}
       loading={args.loading}
       loaderPosition={args.loaderPosition}
@@ -91,7 +85,6 @@ SimpleButton.args = {
   variant: "filled",
   label: "Label",
   size: "md",
-  type: "button",
   uppercase: false,
   loading: false,
   loaderPosition: "left",

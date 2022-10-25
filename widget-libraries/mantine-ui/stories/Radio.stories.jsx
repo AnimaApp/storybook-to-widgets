@@ -10,6 +10,7 @@ export default {
         component: "Radio",
       },
     },
+    titleArg: "label",
   },
   argTypes: {
     label: { description: "Label", type: "string" },
