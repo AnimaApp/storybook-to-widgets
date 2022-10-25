@@ -28,7 +28,7 @@ export default {
       options: ["xs", "sm", "md", "lg", "xl"],
     },
     title: { description: "Title", type: "string" },
-    disallowClose: { description: "Disallow Close", type: "boolean" },
+    disallowClose: { description: "Disallow close", type: "boolean" },
     description: { description: "Description", type: "string" },
     width: { description: "Width", type: "string" },
   },

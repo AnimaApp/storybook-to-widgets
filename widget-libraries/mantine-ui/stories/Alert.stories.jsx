@@ -20,7 +20,7 @@ export default {
       control: { type: "select" },
       options: ["outline", "light", "filled"],
     },
-    withCloseButton: { description: "With Close Button", type: "boolean" },
+    withCloseButton: { description: "With close button", type: "boolean" },
     width: { description: "Width", type: "string" },
     iconName: {
       control: { type: "select" },

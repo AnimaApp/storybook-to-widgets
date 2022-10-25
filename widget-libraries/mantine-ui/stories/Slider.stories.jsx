@@ -14,8 +14,8 @@ export default {
   argTypes: {
     label: { description: "Label", type: "string" },
     disabled: { description: "Disabled", type: "boolean" },
-    labelAlwaysOn: { description: "Label Always On", type: "boolean" },
-    showLabelOnHover: { description: "Show Label On Hover", type: "boolean" },
+    labelAlwaysOn: { description: "Label always on", type: "boolean" },
+    showLabelOnHover: { description: "Show label on hover", type: "boolean" },
     precision: { description: "Precision", type: "number" },
     min: { description: "Min", type: "number" },
     max: { description: "Max", type: "number" },

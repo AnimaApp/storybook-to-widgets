@@ -27,7 +27,7 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    fullWidth: { description: "Full Width", type: "boolean" },
+    fullWidth: { description: "Full width", type: "boolean" },
     label: { description: "Label", type: "string" },
   },
 };

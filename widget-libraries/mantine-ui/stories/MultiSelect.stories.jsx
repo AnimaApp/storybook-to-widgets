@@ -27,8 +27,8 @@ export default {
       options: ["bottom", "top", "flip"],
     },
     limit: { description: "Limit", type: "number" },
-    maxDropdownHeight: { description: "Max Dropdown Height", type: "number" },
-    maxSelectedValues: { description: "Max Selected Values", type: "number" },
+    maxDropdownHeight: { description: "Max dropdown height", type: "number" },
+    maxSelectedValues: { description: "Max selected values", type: "number" },
     searchable: { description: "Searchable", type: "boolean" },
     size: {
       description: "Size",
@@ -49,7 +49,6 @@ export default {
       options: ["unstyled", "filled", "default"],
     },
     width: { description: "Width", type: "string" },
-    //add defaultValue as array of strings
     defaultValue: { description: "Default value", type: "string" },
 
   },

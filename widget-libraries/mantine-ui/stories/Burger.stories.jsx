@@ -18,7 +18,7 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    transitionDuration: { description: "Transition Duration", type: "number" },
+    transitionDuration: { description: "Transition duration", type: "number" },
   },
 };
 

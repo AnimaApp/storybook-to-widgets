@@ -23,7 +23,7 @@ export default {
       control: { type: "select" },
       options: ["xs", "sm", "md", "lg", "xl"],
     },
-    defaultValue: { description: "Default Value", type: "string" },
+    defaultValue: { description: "Default value", type: "string" },
   },
 };
 

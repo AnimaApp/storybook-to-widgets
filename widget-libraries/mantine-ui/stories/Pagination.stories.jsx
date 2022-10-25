@@ -33,9 +33,9 @@ export default {
       options: ["xs", "sm", "md", "lg", "xl"],
     },
     total: { description: "Total", type: "number" },
-    withControls: { description: "With Controls", type: "boolean" },
-    withEdges: { description: "With Edges", type: "boolean" },
-    initialPage: { description: "Initial Page", type: "number" },
+    withControls: { description: "With controls", type: "boolean" },
+    withEdges: { description: "With edges", type: "boolean" },
+    initialPage: { description: "Initial page", type: "number" },
   },
 };
 

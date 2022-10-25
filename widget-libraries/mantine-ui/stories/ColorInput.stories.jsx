@@ -39,7 +39,7 @@ export default {
     },
     iconWidth: { description: "Icon width", type: "number" },
     withPicker: { description: "With picker", type: "boolean" },
-    withPreview: { description: "With Preview", type: "boolean" },
+    withPreview: { description: "With preview", type: "boolean" },
     withinPortal: { description: "Within portal", type: "boolean" },
     swatches: { description: "Swatches", type: "string" },
     swatchesPerRow: { description: "Swatches per row", type: "number" },

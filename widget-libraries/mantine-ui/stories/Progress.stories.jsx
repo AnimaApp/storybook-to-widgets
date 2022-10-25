@@ -3,14 +3,6 @@ import * as MantineCore from "@mantine/core";
 import { iconOptions, iconTransform } from "../utils";
 import withIconMapped from "../decorators/withIconMapped";
 
-// const progressProps= {
-//   label
-// animate
-// radius
-// size
-// striped
-// value}
-
 export default {
   title: "Mantine UI/Progress",
   component: MantineCore.Progress,

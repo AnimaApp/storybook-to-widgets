@@ -20,7 +20,7 @@ export default {
     error: { description: "Error", type: "string" },
     disabled: { description: "Disabled", type: "boolean" },
     required: { description: "Required", type: "boolean" },
-    decimalSeparator: { description: "Decimal Separator", type: "string" },
+    decimalSeparator: { description: "Decimal separator", type: "string" },
     precision: { description: "Precision", type: "number" },
     min: { description: "Min", type: "number" },
     max: { description: "Max", type: "number" },

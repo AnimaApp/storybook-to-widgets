@@ -28,7 +28,7 @@ export default {
       options: ["bottom", "top", "flip"],
     },
     limit: { description: "Limit", type: "number" },
-    maxDropdownHeight: { description: "Max Dropdown Height", type: "number" },
+    maxDropdownHeight: { description: "Max dropdown height", type: "number" },
     searchable: { description: "Searchable", type: "boolean" },
     size: {
       description: "Size",

@@ -14,11 +14,11 @@ export default {
   },
   argTypes: {
     chevronPosition: {
-      description: "Chevron Position",
+      description: "Chevron position",
       control: { type: "select" },
       options: ["left", "right"],
     },
-    chevronSize: { description: "Chevron Size", type: "number" },
+    chevronSize: { description: "Chevron size", type: "number" },
     variant: {
       description: "Variant",
       control: { type: "select" },

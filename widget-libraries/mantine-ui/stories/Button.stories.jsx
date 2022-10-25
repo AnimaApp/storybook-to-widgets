@@ -42,7 +42,7 @@ export default {
     uppercase: { description: "Uppercase", type: "boolean" },
     loading: { description: "Loading", type: "boolean" },
     loaderPosition: {
-      description: "Loader Position",
+      description: "Loader position",
       control: { type: "select" },
       options: ["left", "right"],
     },
