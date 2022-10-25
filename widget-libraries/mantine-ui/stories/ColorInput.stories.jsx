@@ -17,7 +17,7 @@ export default {
   argTypes: {
     label: { description: "Label", type: "string" },
     description: { description: "Description", type: "string" },
-    error: { description: "Description", type: "string" },
+    error: { description: "Error", type: "string" },
     required: { description: "Required", type: "boolean" },
     disabled: { description: "Disabled", type: "boolean" },
     size: {
