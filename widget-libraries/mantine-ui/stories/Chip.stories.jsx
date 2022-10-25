@@ -1,7 +1,5 @@
 import React from "react";
 import * as MantineCore from "@mantine/core";
-import { iconOptions, iconTransform } from "../utils";
-import withIconMapped from "../decorators/withIconMapped";
 
 export default {
   title: "Mantine UI/Chip",
@@ -16,13 +14,6 @@ export default {
   },
   argTypes: {
     label: { description: "Label", type: "string" },
-    iconName: {
-      control: { type: "select" },
-      options: iconOptions,
-      description: "Icon",
-      transform: iconTransform,
-      required: false,
-    },
     size: {
       description: "Size",
       control: { type: "select" },
@@ -33,11 +24,10 @@ export default {
     variant: {
       description: "Variant",
       control: { type: "select" },
-      options: ["unstyled", "default", "filled"],
+      options: ["outline", "filled"],
     },
     value: { description: "Value", type: "string" },
   },
-  decorators: [withIconMapped],
 };
 
 const Template = (args) => {
@@ -50,7 +40,6 @@ const Template = (args) => {
       variant={args.variant}
     >
       {args.label}
-      {args.iconName && args.iconName}
     </MantineCore.Chip>
   );
 };
@@ -62,8 +51,8 @@ SimpleChip.args = {
   size: "md",
   required: false,
   disabled: false,
-  variant: "filled",
-  value: "react",
+  variant: "outline",
+  value: "",
 };
 
 SimpleChip.storyInfo = {
