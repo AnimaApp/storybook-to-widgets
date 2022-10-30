@@ -52,7 +52,7 @@ const options = yargs(hideBin(process.argv))
   .default("cachedStories", false)
   .default("screenshots", true)
   .default("uploads", true)
-  .default("manualScreenshotsUploads", true).argv;
+  .default("manualScreenshotsUploads", true).parseSync();
 
 let page: playwright.Page;
 let browser: playwright.BrowserContext;
@@ -71,7 +71,7 @@ async function prepare(ctx: Ctx) {
   );
 
   page = await browser.newPage();
-  page.setDefaultTimeout(30_000);
+  page.setDefaultTimeout(60_000);
 
   ctx.stories = {};
   ctx.libraries = [];
