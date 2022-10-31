@@ -12,7 +12,6 @@ export default {
     },
   },
   argTypes: {
-    ShowLegend: { description: "Show Legend" },
     ShowTooltip: { description: "Show Tooltip" },
     dataFillColor: { description: "Fill Color" },
     dataKey: { description: "Data Key" },
@@ -33,9 +32,7 @@ const Template = (args) => (
       label
     />
     {args.ShowTooltip && <Recharts.Tooltip />}
-    {args.ShowLegend && (
-      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
-    )}
+    <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
   </Recharts.PieChart>
 );
 
@@ -50,7 +47,7 @@ SinglePie.args = {
     bottom: 5,
   },
   dataFillColor: "#3366FF",
-  dataOuterRadius: 60,
+  dataOuterRadius: 75,
   dataKey: "value",
   data: [
     { name: "Group A", value: 400 },
@@ -63,5 +60,4 @@ SinglePie.args = {
   align: "center",
   verticalAlign: "top",
   ShowTooltip: false,
-  ShowLegend: false,
 };

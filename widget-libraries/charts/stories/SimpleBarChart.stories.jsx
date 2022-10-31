@@ -5,10 +5,7 @@ export default {
   title: "Charts/SimpleBarChart",
   component: Recharts.BarChart,
   argTypes: {
-    ShowXAxis: { description: "Show X axis" },
-    ShowYAxis: { description: "Show Y axis" },
     ShowCartesianGrid: { description: "Show CartesianGrid" },
-    ShowLegend: { description: "Show Legend" },
     ShowTooltip: { description: "Show Tooltip" },
     data1Key: { description: "Data 1 Key" },
     data2Key: { description: "Data 2 Key" },
@@ -22,12 +19,10 @@ export default {
 const Template = (args) => (
   <Recharts.BarChart {...args}>
     {args.ShowCartesianGrid && <Recharts.CartesianGrid strokeDasharray="3 3" />}
-    <Recharts.XAxis dataKey={args.xAxisDataKey} hide={!args.ShowXAxis} />
-    <Recharts.YAxis hide={!args.ShowYAxis} />
+    <Recharts.XAxis dataKey={args.xAxisDataKey} />
+    <Recharts.YAxis />
     {args.ShowTooltip && <Recharts.Tooltip />}
-    {args.ShowLegend && (
-      <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
-    )}
+    <Recharts.Legend align={args.align} verticalAlign={args.verticalAlign} />
     <Recharts.Bar dataKey={args.data1Key} fill={args.data1Color} />
     <Recharts.Bar dataKey={args.data2Key} fill={args.data2Color} />
   </Recharts.BarChart>
@@ -35,7 +30,7 @@ const Template = (args) => (
 
 export const Simple = Template.bind({});
 Simple.args = {
-  width: 450,
+  width: 300,
   height: 170,
   margin: {
     top: 5,
@@ -83,8 +78,5 @@ Simple.args = {
   align: "center",
   verticalAlign: "bottom",
   ShowCartesianGrid: true,
-  ShowXAxis: false,
-  ShowYAxis: false,
-  ShowLegend: false,
   ShowTooltip: true,
 };
