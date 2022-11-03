@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[17],{1330:function(module){module.exports=JSON.parse('{"name":"@animaapp/widgets-ant-design","version":"1.0.0","private":true,"scripts":{},"dependencies":{"@ant-design/icons":"^4.7.0","antd":"^4.19.1"},"devDependencies":{}}')}}]);

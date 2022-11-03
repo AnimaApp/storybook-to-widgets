@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[30],{1351:function(module){module.exports=JSON.parse('{"name":"@animaapp/widgets-mantine-ui","version":"1.0.0","private":true,"scripts":{},"dependencies":{"@mantine/core":"5.4.1","@mantine/hooks":"5.4.1","@emotion/react":"11.10.4","@mantine/dates":"5.4.1","@tabler/icons":"1.101.0","dayjs":"^1.11.5"},"devDependencies":{}}')}}]);

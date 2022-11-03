@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[85],{1422:function(module){module.exports=JSON.parse('{"sideEffects":false,"module":"./index.js","main":"../node/Box/index.js","types":"./index.d.ts"}')}}]);

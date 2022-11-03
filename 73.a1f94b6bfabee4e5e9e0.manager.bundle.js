@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[73],{1410:function(module){module.exports=JSON.parse('{"sideEffects":false,"module":"./index.js","main":"../node/AccordionDetails/index.js","types":"./index.d.ts"}')}}]);

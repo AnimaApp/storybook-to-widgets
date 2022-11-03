@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{1332:function(module){module.exports=JSON.parse('{"name":"@animaapp/widgets-material-ui","version":"1.0.0","private":true,"scripts":{},"dependencies":{"@mui/material":"5.7.0","@emotion/react":"11.9.0","@emotion/styled":"11.8.1","@mui/icons-material":"5.6.2"},"devDependencies":{}}')}}]);

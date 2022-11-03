@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[150],{1487:function(module){module.exports=JSON.parse('{"sideEffects":false,"module":"./index.js","main":"../node/PaginationItem/index.js","types":"./index.d.ts"}')}}]);

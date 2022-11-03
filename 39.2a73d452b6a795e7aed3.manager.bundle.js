@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[39],{1360:function(module){module.exports=JSON.parse('{"sideEffects":false,"module":"./index.js","main":"../node/BadgeUnstyled/index.js","types":"./index.d.ts"}')}}]);

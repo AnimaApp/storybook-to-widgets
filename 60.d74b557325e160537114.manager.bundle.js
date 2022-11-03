@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[60],{1381:function(module){module.exports=JSON.parse('{"sideEffects":false,"module":"./index.js","main":"../node/TabsListUnstyled/index.js","types":"./index.d.ts"}')}}]);

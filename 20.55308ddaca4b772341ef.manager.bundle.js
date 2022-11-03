@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[20],{1333:function(module){module.exports=JSON.parse('{"name":"@animaapp/widgets-charts-v2","version":"1.0.0","private":true,"scripts":{},"dependencies":{"recharts":"^2.1.9"},"devDependencies":{}}')}}]);
