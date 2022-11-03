@@ -2,16 +2,19 @@ import React from "react";
 import * as MuiMaterial from "@mui/material";
 
 export default {
-  title: "Material UI/Avatar With Image",
+  title: "Material UI/Avatar with image",
   component: MuiMaterial.Avatar,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "rounded", "square"],
     },
     src: {
-      description: "Src",
+      description: "Source",
       type: "string",
     },
   },
@@ -30,5 +33,5 @@ ImageAvatar.args = {
 
 ImageAvatar.storyInfo = {
   name: "ImageAvatar",
-  kind: "Material UI/Avatar With Image",
+  kind: "Material UI/Avatar with image",
 };

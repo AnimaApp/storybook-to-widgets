@@ -14,14 +14,14 @@ export default {
     showInfo: { description: "Show value", type: "boolean" },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "exception", "normal", "active"],
     },
 
     strokeWidth: { description: "Stroke width", type: "number" },
     strokeLinecap: {
       description: "Stroke style",
-      type: "options",
+      control: { type: "select" },
       options: ["round", "butt", "square"],
     },
     width: { description: "Width", type: "number" },

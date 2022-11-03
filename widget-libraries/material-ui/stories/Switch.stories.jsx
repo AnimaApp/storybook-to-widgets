@@ -4,10 +4,13 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Switch",
   component: MuiMaterial.Switch,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: [
         "default",
         "primary",
@@ -20,7 +23,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium"],
     },
     disabled: {

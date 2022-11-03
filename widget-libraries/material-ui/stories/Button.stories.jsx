@@ -6,10 +6,13 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Button",
   component: MuiMaterial.Button,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: [
         "inherit",
         "primary",
@@ -21,26 +24,26 @@ export default {
       ],
     },
     startIcon: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Start Icon",
       transform: iconTransform,
     },
     endIcon: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "End Icon",
       transform: iconTransform,
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["contained", "outlined", "text"],
       defaultValue: "contained",
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     label: {
@@ -89,7 +92,7 @@ SimpleButton.args = {
   disableElevation: false,
   disableRipple: false,
   startIcon: "None",
-  endIcon: "None"
+  endIcon: "None",
 };
 
 SimpleButton.storyInfo = {

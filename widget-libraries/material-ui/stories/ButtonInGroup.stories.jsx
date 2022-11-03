@@ -10,19 +10,19 @@ export default {
     docs: {
       description: {
         component: "Button",
-      }
+      },
     },
     titleArg: "label",
   },
   argTypes: {
     startIcon: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Start Icon",
       transform: iconTransform,
     },
     endIcon: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "End Icon",
       transform: iconTransform,
@@ -30,27 +30,24 @@ export default {
     label: {
       description: "Label",
       type: "string",
-    }
+    },
   },
   decorators: [withIconMapped],
 };
 
 const Template = (args) => {
   return (
-    <MuiMaterial.Button
-      startIcon={args.startIcon}
-      endIcon={args.endIcon}
-    >
+    <MuiMaterial.Button startIcon={args.startIcon} endIcon={args.endIcon}>
       {args.label}
     </MuiMaterial.Button>
   );
 };
 
-export const SimpleButtonInGroup =  Template.bind({});
+export const SimpleButtonInGroup = Template.bind({});
 SimpleButtonInGroup.args = {
   label: "Button 1",
   startIcon: "None",
-  endIcon: "None"
+  endIcon: "None",
 };
 
 SimpleButtonInGroup.storyInfo = {

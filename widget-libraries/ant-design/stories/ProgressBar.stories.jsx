@@ -8,6 +8,7 @@ export default {
   parameters: {
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+    useFigmaLayers: true,
   },
   argTypes: {
     percent: { description: "Percent", type: "number" },
@@ -15,18 +16,18 @@ export default {
     showInfo: { description: "Show value", type: "boolean" },
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "exception", "normal", "active"],
     },
     strokeWidth: { description: "Stroke width", type: "number" },
     strokeLinecap: {
       description: "Stroke style",
-      type: "options",
+      control: { type: "select" },
       options: ["round", "butt", "square"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
   },

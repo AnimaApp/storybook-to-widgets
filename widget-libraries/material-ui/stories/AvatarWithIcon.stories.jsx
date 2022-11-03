@@ -6,15 +6,18 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Avatar with icon",
   component: MuiMaterial.Avatar,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "rounded", "square"],
     },
 
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

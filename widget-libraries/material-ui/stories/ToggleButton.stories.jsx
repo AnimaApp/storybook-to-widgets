@@ -6,15 +6,18 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/ToggleButton",
   component: MuiMaterial.ToggleButton,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "success", "error", "info", "warning"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     disabled: {
@@ -30,7 +33,7 @@ export default {
       type: "boolean",
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

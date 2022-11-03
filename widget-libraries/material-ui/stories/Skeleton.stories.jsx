@@ -4,15 +4,18 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Skeleton",
   component: MuiMaterial.Skeleton,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "rectangular", "text"],
     },
     animation: {
       description: "Animation",
-      type: "options",
+      control: { type: "select" },
       options: ["pulse", "wave", false],
     },
     width: {

@@ -18,14 +18,14 @@ export default {
   argTypes: {
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "info", "warning", "error"],
     },
     message: { description: "Message", type: "string" },
     description: { description: "Description", type: "string" },
     showIcon: { description: "Show Icon", type: "boolean" },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,

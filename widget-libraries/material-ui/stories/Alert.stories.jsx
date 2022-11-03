@@ -4,20 +4,23 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Alert",
   component: MuiMaterial.Alert,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "info", "success", "warning"],
     },
     severity: {
       description: "Severity",
-      type: "options",
+      control: { type: "select" },
       options: ["error", "info", "success", "warning"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["filled", "outlined", "standard"],
     },
   },

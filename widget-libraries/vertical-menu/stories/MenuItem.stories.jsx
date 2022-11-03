@@ -23,7 +23,7 @@ export default {
   },
   argTypes: {
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,

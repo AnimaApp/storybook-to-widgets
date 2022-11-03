@@ -25,7 +25,7 @@ export default {
       type: "string",
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
     },

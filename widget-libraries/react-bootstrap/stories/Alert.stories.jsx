@@ -5,11 +5,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default {
   title: "React Bootstrap/Alert",
   component: ReactBootstrap.Alert,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     dismissible: { description: "Dismissible", type: "boolean" },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",

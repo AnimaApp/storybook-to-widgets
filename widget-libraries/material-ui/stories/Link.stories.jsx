@@ -4,15 +4,18 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Link",
   component: MuiMaterial.Link,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "error", "info", "success", "warning"],
     },
     underline: {
       description: "Underline",
-      type: "options",
+      control: { type: "select" },
       options: ["always", "hover", "none"],
     },
     label: {

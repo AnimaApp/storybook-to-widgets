@@ -4,15 +4,18 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/LinearProgress",
   component: MuiMaterial.LinearProgress,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "error", "info", "success", "warning"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["buffer", "determinate", "indeterminate", "query"],
     },
     value: {

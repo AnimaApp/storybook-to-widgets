@@ -23,7 +23,7 @@ export default {
   argTypes: {
     type: {
       description: "Type",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "default",
@@ -36,12 +36,12 @@ export default {
     },
     shape: {
       description: "Shape",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "circle", "round"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "middle", "large"],
     },
     label: {
@@ -49,7 +49,7 @@ export default {
       type: "string",
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,

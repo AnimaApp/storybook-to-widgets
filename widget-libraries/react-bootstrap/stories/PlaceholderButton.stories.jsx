@@ -11,12 +11,12 @@ export default {
   argTypes: {
     animation: {
       description: "Animation",
-      type: "options",
+      control: { type: "select" },
       options: ["glow", "wave"],
     },
     variant: {
       description: "Bg",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",
@@ -30,13 +30,13 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["Extra Small", "Small", "Normal", "Large"],
       mapping: { "Extra Small": "xs", Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,
     },
     xs: { description: "Columns number", type: "number" },
-  }
+  },
 };
 
 const Template = (args) => {

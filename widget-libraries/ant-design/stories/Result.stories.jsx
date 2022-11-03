@@ -10,11 +10,12 @@ export default {
   parameters: {
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+    useFigmaLayers: true,
   },
   argTypes: {
     status: {
       description: "Status",
-      type: "options",
+      control: { type: "select" },
       options: ["success", "error", "info", "warning", "404", "403", "500"],
     },
     title: { description: "Title", type: "string" },

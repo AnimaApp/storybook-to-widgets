@@ -11,11 +11,12 @@ export default {
   component: ReactBootstrap.Pagination,
   parameters: {
     custom_css: ".${nodeClass} a { display: inherit; }",
+    useFigmaLayers: true,
   },
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["Small", "Normal", "Large"],
       mapping: { Small: "sm", Normal: "", Large: "lg" },
       transform: sizesTransform,

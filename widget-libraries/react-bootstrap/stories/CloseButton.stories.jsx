@@ -9,7 +9,7 @@ export default {
     disabled: { description: "Disabled", type: "boolean" },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["white", "dark"],
     },
   },

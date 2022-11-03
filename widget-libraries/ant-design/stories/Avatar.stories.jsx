@@ -5,10 +5,13 @@ import * as Antd from "antd";
 export default {
   title: "Ant Design/Avatar",
   component: Antd.Avatar,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     shape: {
       description: "Shape",
-      type: "options",
+      control: { type: "select" },
       options: ["circle", "square"],
     },
     size: {

@@ -6,10 +6,13 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Radio",
   component: MuiMaterial.Radio,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: [
         "default",
         "primary",
@@ -22,7 +25,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium"],
     },
     disabled: {
@@ -34,7 +37,7 @@ export default {
       type: "boolean",
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

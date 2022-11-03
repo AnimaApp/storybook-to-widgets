@@ -6,10 +6,13 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Fab",
   component: MuiMaterial.Fab,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: [
         "default",
         "error",
@@ -22,19 +25,19 @@ export default {
       ],
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "extended"],
     },
     disabled: {

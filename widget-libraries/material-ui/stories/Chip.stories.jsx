@@ -6,20 +6,23 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Chip",
   component: MuiMaterial.Chip,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "error", "info", "success", "warning"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["filled", "outlined"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium"],
     },
     clickable: {
@@ -35,7 +38,7 @@ export default {
       type: "string",
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

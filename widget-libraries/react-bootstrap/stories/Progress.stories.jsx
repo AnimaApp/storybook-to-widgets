@@ -13,7 +13,7 @@ export default {
     striped: { description: "Striped", type: "boolean" },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: [
         "primary",
         "secondary",

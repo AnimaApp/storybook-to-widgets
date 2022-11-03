@@ -6,6 +6,9 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Tooltip",
   component: MuiMaterial.Tooltip,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     title: {
       description: "Title",
@@ -13,7 +16,7 @@ export default {
     },
     placement: {
       description: "Placement",
-      type: "options",
+      control: { type: "select" },
       options: [
         "bottom-end",
         "bottom-start",
@@ -30,7 +33,7 @@ export default {
       ],
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

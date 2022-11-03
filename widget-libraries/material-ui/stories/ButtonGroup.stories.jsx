@@ -5,20 +5,23 @@ import { SimpleButtonInGroup } from "./ButtonInGroup.stories";
 export default {
   title: "Material UI/Button group",
   component: MuiMaterial.ButtonGroup,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "error", "info", "success", "warning"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["text", "outlined", "contained"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     disabled: {
@@ -35,7 +38,7 @@ export default {
     },
     orientation: {
       description: "Orientation",
-      type: "options",
+      control: { type: "select" },
       options: ["vertical", "horizontal"],
       defaultValue: "horizontal",
     },

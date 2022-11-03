@@ -4,20 +4,23 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/TextField",
   component: MuiMaterial.TextField,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "error", "info", "success", "warning"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["filled", "outlined", "standard"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium"],
     },
     disabled: {

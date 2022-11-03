@@ -13,7 +13,7 @@ export default {
   argTypes: {
     mode: {
       description: "Mode",
-      type: "options",
+      control: { type: "select" },
       options: ["left", "alternate", "right"],
     },
     reverse: { description: "Reverse", type: "boolean" },

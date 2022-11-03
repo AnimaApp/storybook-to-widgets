@@ -4,25 +4,28 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Pagination",
   component: MuiMaterial.Pagination,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",
-      type: "options",
+      control: { type: "select" },
       options: ["primary", "secondary", "standard"],
     },
     variant: {
       description: "Variant",
-      type: "options",
+      control: { type: "select" },
       options: ["outlined", "text"],
     },
     shape: {
       description: "Shape",
-      type: "options",
+      control: { type: "select" },
       options: ["circular", "rounded"],
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     disabled: {

@@ -6,10 +6,13 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Custom Rating",
   component: MuiMaterial.Rating,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "medium", "large"],
     },
     disabled: {
@@ -26,13 +29,13 @@ export default {
       type: "number",
     },
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,
     },
     emptyIcon: {
-      type: "options",
+      control: { type: "select" },
       options: iconOptions,
       description: "Icon",
       transform: iconTransform,

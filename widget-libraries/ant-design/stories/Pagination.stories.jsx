@@ -11,6 +11,7 @@ export default {
   parameters: {
     custom_css:
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
+    useFigmaLayers: true,
   },
   argTypes: {
     total: {
@@ -21,7 +22,7 @@ export default {
     },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["default", "small"],
     },
     showSizeChanger: {

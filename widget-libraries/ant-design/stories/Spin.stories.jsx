@@ -13,7 +13,7 @@ export default {
     delay: { description: "Delay", type: "number" },
     size: {
       description: "Size",
-      type: "options",
+      control: { type: "select" },
       options: ["small", "default", "large"],
     },
   },

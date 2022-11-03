@@ -17,7 +17,7 @@ export default {
   },
   argTypes: {
     iconName: {
-      type: "options",
+      control: { type: "select" },
       options: options,
       description: "Icon",
       transform: iconTransform,
@@ -70,7 +70,7 @@ const Template = (args) => {
 export const Simple = Template.bind({});
 Simple.args = {
   count: 5,
-  color: '#fadb14',
+  color: "#fadb14",
   iconName: "StarFilled",
   defaultValue: 3.5,
   allowClear: true,
