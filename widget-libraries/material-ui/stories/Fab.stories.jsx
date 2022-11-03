@@ -6,6 +6,9 @@ import { iconOptions, iconTransform } from "../utils";
 export default {
   title: "Material UI/Fab",
   component: MuiMaterial.Fab,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

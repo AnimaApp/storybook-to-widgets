@@ -10,6 +10,7 @@ export default {
       description: {
         component: "Item",
       },
+      useFigmaLayers: true,
     },
     titleArg: "label",
     custom_css:
@@ -33,7 +34,7 @@ export default {
     },
     value: {
       description: "Value",
-    }
+    },
   },
 };
 
@@ -52,7 +53,7 @@ SimpleRadio.args = {
   checked: false,
   disabled: false,
   value: 1,
-  label: "Label"
+  label: "Label",
 };
 
 SimpleRadio.storyInfo = {

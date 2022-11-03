@@ -6,6 +6,9 @@ import withIconMapped from "../decorators/withIconMapped";
 export default {
   title: "Material UI/Radio",
   component: MuiMaterial.Radio,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

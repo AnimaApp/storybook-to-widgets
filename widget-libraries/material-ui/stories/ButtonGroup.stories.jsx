@@ -5,6 +5,9 @@ import { SimpleButtonInGroup } from "./ButtonInGroup.stories";
 export default {
   title: "Material UI/Button group",
   component: MuiMaterial.ButtonGroup,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     color: {
       description: "Color",

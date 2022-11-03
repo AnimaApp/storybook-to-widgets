@@ -10,17 +10,25 @@ export default {
       '.${nodeClass} { font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";}',
   },
   argTypes: {
-    deadline: { description: "Deadline", type: "number" },
+    deadline: {
+      description: "Deadline",
+      type: "number",
+    },
     title: { description: "Title", type: "string" },
   },
 };
 
-const Template = (args) => (
-  <Antd.Statistic.Countdown value={args.deadline} title={args.title} />
-);
+const Template = (args) => {
+  return (
+    <Antd.Statistic.Countdown
+      value={Date.now() + args.deadline * 1000}
+      title={args.title}
+    />
+  );
+};
 
 export const SimpleCountdown = Template.bind({});
 SimpleCountdown.args = {
   title: "Countdown Title",
-  deadline: Date.now() + 1000 * 60 * 60 * 24 * 2 + 1000 * 2,
+  deadline: 60,
 };

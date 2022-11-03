@@ -8,6 +8,9 @@ const sizesTransform =
 export default {
   title: "React Bootstrap/Spinner",
   component: ReactBootstrap.Spinner,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     animation: {
       description: "Animation",

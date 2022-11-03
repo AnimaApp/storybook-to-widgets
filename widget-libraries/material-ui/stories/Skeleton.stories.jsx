@@ -4,6 +4,9 @@ import * as MuiMaterial from "@mui/material";
 export default {
   title: "Material UI/Skeleton",
   component: MuiMaterial.Skeleton,
+  parameters: {
+    useFigmaLayers: true,
+  },
   argTypes: {
     variant: {
       description: "Variant",
